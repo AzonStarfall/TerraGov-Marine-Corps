@@ -412,3 +412,7 @@
   novaepee, OrcaOrca the spriter:
   - rscadd: Add Hotaru armor, another Japanese-Inspired Armor! find it in the style
       line tab!
+2023-08-31:
+  Blundir:
+  - bugfix: fixed order action icon being missing
+  - imageadd: updated hunter invis, pounce, leader assign, vote action icons.
