@@ -95,3 +95,7 @@
   - qol: Spatial agent glasses have all huds now
   yyzsong:
   - rscdel: Removes Big Red office variant 4
+2024-01-12:
+  Lumipharon:
+  - bugfix: Fixed some instances where throw bounces would behave funnily
+  - bugfix: fixed a couple of uncommon throw bugs
