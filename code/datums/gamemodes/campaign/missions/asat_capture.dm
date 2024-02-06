@@ -2,11 +2,12 @@
 /datum/campaign_mission/capture_mission/asat
 	name = "ASAT capture"
 	mission_icon = "asat_capture"
-	map_name = "Lawanka outpost"
+	map_name = "Lawanka Outpost"
 	map_file = '_maps/map_files/Lawanka_Outpost/LawankaOutpost.dmm'
 	map_traits = list(ZTRAIT_AWAY = TRUE, ZTRAIT_RAIN = TRUE)
 	map_light_colours = list(LIGHT_COLOR_PALE_GREEN, LIGHT_COLOR_PALE_GREEN, LIGHT_COLOR_PALE_GREEN, LIGHT_COLOR_PALE_GREEN)
 	mission_flags = MISSION_DISALLOW_TELEPORT
+	max_game_time = 10 MINUTES
 	shutter_open_delay = list(
 		MISSION_STARTING_FACTION = 90 SECONDS,
 		MISSION_HOSTILE_FACTION = 0,
@@ -40,12 +41,15 @@
 	hostile_faction_additional_rewards = "Preserve the ability to use drop pods uncontested"
 
 	objectives_total = 6
-	min_capture_amount = 4
+	min_capture_amount = 5
 
 /datum/campaign_mission/capture_mission/asat/load_pre_mission_bonuses()
 	. = ..()
-	spawn_mech(hostile_faction, 0, 0, 3)
-	spawn_mech(starting_faction, 0, 2)
+	spawn_mech(hostile_faction, 0, 0, 5)
+	spawn_mech(starting_faction, 0, 1, 1)
+
+	var/datum/faction_stats/attacking_team = mode.stat_list[starting_faction]
+	attacking_team.add_asset(/datum/campaign_asset/asset_disabler/som_cas/instant)
 
 /datum/campaign_mission/capture_mission/asat/load_objective_description()
 	starting_faction_objective_description = "Major Victory:Capture all [objectives_total] ASAT systems.[min_capture_amount ? " Minor Victory: Capture at least [min_capture_amount] ASAT systems." : ""]"

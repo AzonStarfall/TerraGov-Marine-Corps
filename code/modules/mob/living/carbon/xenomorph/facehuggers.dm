@@ -100,7 +100,8 @@
 		clear_hugger_source()
 	return ..()
 
-/obj/item/clothing/mask/facehugger/update_icon()
+/obj/item/clothing/mask/facehugger/update_icon_state()
+	. = ..()
 	if(stat == DEAD)
 		var/fertility = sterile ? "impregnated" : "dead"
 		icon_state = "[initial(icon_state)]_[fertility]"
@@ -115,7 +116,7 @@
 
 
 //Deal with picking up facehuggers. "attack_alien" is the universal 'xenos click something while unarmed' proc.
-/obj/item/clothing/mask/facehugger/attack_alien(mob/living/carbon/xenomorph/X, damage_amount = X.xeno_caste.melee_damage, damage_type = BRUTE, damage_flag = "", effects = TRUE, armor_penetration = 0, isrightclick = FALSE)
+/obj/item/clothing/mask/facehugger/attack_alien(mob/living/carbon/xenomorph/X, damage_amount = X.xeno_caste.melee_damage, damage_type = BRUTE, damage_flag = "", effects = TRUE, armor_penetration = X.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(X.status_flags & INCORPOREAL)
 		return
 
@@ -286,12 +287,12 @@
 	if(stat == DEAD || stat == UNCONSCIOUS || !isturf(loc)) //It's dead or inactive or not on a turf don't bother
 		return
 	about_to_jump = TRUE
-	update_overlays()
+	update_appearance(UPDATE_OVERLAYS)
 
 ///Remove the hugger's alert overlay
 /obj/item/clothing/mask/facehugger/proc/remove_danger_overlay()
 	about_to_jump = FALSE
-	update_overlays()
+	update_appearance(UPDATE_OVERLAYS)
 
 /obj/item/clothing/mask/facehugger/proc/check_lifecycle()
 

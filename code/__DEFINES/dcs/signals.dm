@@ -32,6 +32,11 @@
 #define COMSIG_GLOB_VAR_EDIT "!var_edit"
 /// called after an explosion happened : (epicenter, devastation_range, heavy_impact_range, light_impact_range, weak_impact_range, took, orig_dev_range, orig_heavy_range, orig_light_range)
 #define COMSIG_GLOB_EXPLOSION "!explosion"
+///Gamemode has successfully loaded
+#define COMSIG_GLOB_GAMEMODE_LOADED "!gamemode_loaded"
+
+#define COMSIG_GLOB_PLAYER_ROUNDSTART_SPAWNED "!player_roundstart_spawned"
+#define COMSIG_GLOB_PLAYER_LATE_SPAWNED "!player_late_spawned"
 
 #define COMSIG_GLOB_MOB_LOGIN "!mob_login"
 #define COMSIG_GLOB_MOB_LOGOUT "!mob_logout"
@@ -101,7 +106,8 @@
 #define COMSIG_GLOB_CAMPAIGN_DROPBLOCKER_DISABLED "!campaign_dropblocker_disabled"
 ///Override code for NT base rescue mission
 #define COMSIG_GLOB_CAMPAIGN_NT_OVERRIDE_CODE "!campaign_nt_override_code"
-
+///Campaign asset obtained for the first time
+#define COMSIG_CAMPAIGN_NEW_ASSET "campaign_new_asset"
 ///Campaign asset activation successful
 #define COMSIG_CAMPAIGN_ASSET_ACTIVATION "campaign_asset_activation"
 ///Campaign asset disabler activated
@@ -216,10 +222,32 @@
 ///from base of atom/get_mechanics_info(): (/mob)
 #define COMSIG_ATOM_GET_MECHANICS_INFO "atom_mechanics_info"
 	#define COMPONENT_MECHANICS_CHANGE (1<<0)
-#define COMSIG_ATOM_UPDATE_ICON "atom_update_icon"				//from base of atom/update_icon(): ()
-	#define COMSIG_ATOM_NO_UPDATE_ICON_STATE (1<<0)
-	#define COMSIG_ATOM_NO_UPDATE_OVERLAYS (1<<1)
-#define COMSIG_ATOM_UPDATE_OVERLAYS "atom_update_overlays"		//from base of atom/update_overlays(): (list/new_overlays)
+
+///from base of [/atom/proc/update_appearance]: (updates)
+#define COMSIG_ATOM_UPDATE_APPEARANCE "atom_update_appearance"
+	/// If returned from [COMSIG_ATOM_UPDATE_APPEARANCE] it prevents the atom from updating its name.
+	#define COMSIG_ATOM_NO_UPDATE_NAME UPDATE_NAME
+	/// If returned from [COMSIG_ATOM_UPDATE_APPEARANCE] it prevents the atom from updating its desc.
+	#define COMSIG_ATOM_NO_UPDATE_DESC UPDATE_DESC
+	/// If returned from [COMSIG_ATOM_UPDATE_APPEARANCE] it prevents the atom from updating its icon.
+	#define COMSIG_ATOM_NO_UPDATE_ICON UPDATE_ICON
+///from base of [/atom/proc/update_name]: (updates)
+#define COMSIG_ATOM_UPDATE_NAME "atom_update_name"
+///from base of [/atom/proc/update_desc]: (updates)
+#define COMSIG_ATOM_UPDATE_DESC "atom_update_desc"
+///from base of [/atom/update_icon]: ()
+#define COMSIG_ATOM_UPDATE_ICON "atom_update_icon"
+	/// If returned from [COMSIG_ATOM_UPDATE_ICON] it prevents the atom from updating its icon state.
+	#define COMSIG_ATOM_NO_UPDATE_ICON_STATE UPDATE_ICON_STATE
+	/// If returned from [COMSIG_ATOM_UPDATE_ICON] it prevents the atom from updating its overlays.
+	#define COMSIG_ATOM_NO_UPDATE_OVERLAYS UPDATE_OVERLAYS
+///from base of [atom/update_icon_state]: ()
+#define COMSIG_ATOM_UPDATE_ICON_STATE "atom_update_icon_state"
+///from base of [/atom/update_overlays]: (list/new_overlays)
+#define COMSIG_ATOM_UPDATE_OVERLAYS "atom_update_overlays"
+///from base of [/atom/update_icon]: (signalOut, did_anything)
+#define COMSIG_ATOM_UPDATED_ICON "atom_updated_icon"
+
 #define COMSIG_ATOM_EX_ACT "atom_ex_act"						//from base of atom/ex_act(): (severity, target)
 #define COMSIG_ATOM_SET_LIGHT "atom_set_light"					//from base of atom/set_light(): (l_range, l_power, l_color)
 #define COMSIG_ATOM_BULLET_ACT "atom_bullet_act"				//from base of atom/bullet_act(): (/obj/projectile)
@@ -321,6 +349,7 @@
 #define COMSIG_ITEM_ATTACK_ALTERNATE "item_attack_alt"			//from base of obj/item/attack_alternate(): (/mob/living/target, /mob/living/user)
 #define COMSIG_ITEM_ATTACK_SELF "item_attack_self"				//from base of obj/item/attack_self(): (/mob)
 	#define COMPONENT_NO_INTERACT (1<<0)
+#define COMSIG_ITEM_ATTACK_SELF_ALTERNATE "item_attack_self_alternate" //from base of obj/item/attack_self_alternate(): (/mob)
 #define COMSIG_ITEM_EQUIPPED "item_equip"						//from base of obj/item/equipped(): (/mob/equipper, slot)
 #define COMSIG_ITEM_EQUIPPED_TO_SLOT "item_equip_to_slot"			//from base of obj/item/equipped(): (/mob/equipper, slot)
 #define COMSIG_ITEM_EQUIPPED_NOT_IN_SLOT "item_equip_not_in_slot"	//from base of obj/item/equipped(): (/mob/equipper, slot)
@@ -344,7 +373,6 @@
 
 #define COMSIG_ITEM_TOGGLE_ACTION "item_toggle_action"			//from base of obj/item/ui_interact(): (/mob/user)
 #define COMSIG_ITEM_TOGGLE_ACTIVE "item_toggle_active"			//from base of /obj/item/toggle_active(): (new_state)
-#define COMSIG_ITEM_EXCLUSIVE_TOGGLE "item_exclusive_toggle"
 
 #define COMSIG_ITEM_MIDDLECLICKON "item_middleclickon"					//from base of mob/living/carbon/human/MiddleClickOn(): (/atom, /mob)
 #define COMSIG_ITEM_SHIFTCLICKON "item_shiftclickon"					//from base of mob/living/carbon/human/ShiftClickOn(): (/atom, /mob)
@@ -665,7 +693,6 @@
 #define COMSIG_KB_CARBON_SELECTDISARMINTENT_DOWN "keybinding_carbon_selectdisarmintent_down"
 #define COMSIG_KB_CARBON_SELECTGRABINTENT_DOWN "keybinding_carbon_selectgrabintent_down"
 #define COMSIG_KB_CARBON_SELECTHARMINTENT_DOWN "keybinding_carbon_selectharmintent_down"
-#define COMSIG_KB_CARBON_SPECIALCLICK_DOWN "keybinding_carbon_specialclick_down"
 #define COMSIG_KB_CLIENT_GETHELP_DOWN "keybinding_client_gethelp_down"
 #define COMSIG_KB_CLIENT_SCREENSHOT_DOWN "keybinding_client_screenshot_down"
 #define COMSIG_KB_CLIENT_MINIMALHUD_DOWN "keybinding_client_minimalhud_down"
@@ -725,6 +752,7 @@
 #define COMSIG_MECHABILITY_SKYFALL "mechability_skyfall"
 #define COMSIG_MECHABILITY_STRIKE "mechability_strike"
 
+#define COMSIG_ACTION_EXCLUSIVE_TOGGLE "action_exclusive_toggle"
 // xeno abilities for keybindings
 
 #define COMSIG_XENOABILITY_REST "xenoability_rest"
@@ -788,7 +816,7 @@
 #define COMSIG_XENOABILITY_DEVOUR "xenoability_devour"
 #define COMSIG_XENOABILITY_DRAIN "xenoability_drain"
 #define COMSIG_XENOABILITY_TRANSFUSION "xenoability_transfusion"
-#define COMSIG_XENOABILITY_REJUVENATE "xenoability_rejuvenate"
+#define COMSIG_XENOABILITY_OPPOSE "xenoability_oppose"
 #define COMSIG_XENOABILITY_PSYCHIC_LINK "xenoability_psychic_link"
 #define COMSIG_XENOABILITY_CARNAGE "xenoability_carnage"
 #define COMSIG_XENOABILITY_FEAST "xenoability_feast"
@@ -965,6 +993,14 @@
 #define COMSIG_KB_DEFENDORDER "keybind_defendorder"
 #define COMSIG_KB_RETREATORDER "keybind_retreatorder"
 
+//Item toggle keybinds
+#define COMSIG_ITEM_TOGGLE_JETPACK "item_toggle_jetpack"
+#define COMSIG_ITEM_TOGGLE_BLINKDRIVE "item_toggle_blinkdrive"
+
+//Weapon related ability keybinds
+#define COMSIG_WEAPONABILITY_AXESWEEP "weaponability_axesweep"
+#define COMSIG_WEAPONABILITY_AXESWEEP_SELECT "weaponability_axesweep_select"
+#define COMSIG_WEAPONABILITY_SWORDLUNGE "weaponability_swordlunge"
 
 // human modules signals for keybindings
 #define COMSIG_KB_VALI_CONFIGURE "keybinding_vali_configure"

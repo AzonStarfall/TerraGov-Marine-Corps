@@ -3,7 +3,7 @@
 	name = "NT base rescue"
 	mission_icon = "nt_rescue"
 	mission_flags = MISSION_DISALLOW_TELEPORT
-	map_name = "NT site B-403"
+	map_name = "NT Site B-403"
 	map_file = '_maps/map_files/Campaign maps/nt_base/nt_base.dmm'
 	map_traits = list(ZTRAIT_AWAY = TRUE, ZTRAIT_SNOWSTORM = TRUE)
 	map_light_colours = list(COLOR_MISSION_BLUE, COLOR_MISSION_BLUE, COLOR_MISSION_BLUE, COLOR_MISSION_BLUE)
@@ -141,12 +141,13 @@
 	return ..()
 
 /obj/structure/weapon_x_pod/update_icon_state()
+	. = ..()
 	if(occupant)
 		icon_state = initial(icon_state)
 	else
 		icon_state = "[initial(icon_state)]_open"
 
-/obj/structure/weapon_x_pod/attack_alien(mob/living/carbon/xenomorph/X, damage_amount = X.xeno_caste.melee_damage, damage_type = BRUTE, damage_flag = "", effects = TRUE, armor_penetration = 0, isrightclick = FALSE)
+/obj/structure/weapon_x_pod/attack_alien(mob/living/carbon/xenomorph/X, damage_amount = X.xeno_caste.melee_damage, damage_type = BRUTE, damage_flag = "", effects = TRUE, armor_penetration = X.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(X != occupant)
 		return
 	release_occupant()

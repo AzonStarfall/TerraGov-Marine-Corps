@@ -162,7 +162,16 @@
 	. = ..()
 	helmet_overlays = list("damage","band","item") //To make things simple.
 
-/obj/item/clothing/head/helmet/marine/update_icon()
+/obj/item/clothing/head/helmet/marine/on_pocket_insertion()
+	. = ..()
+	update_helmet_overlays()
+
+/obj/item/clothing/head/helmet/marine/on_pocket_removal()
+	. = ..()
+	update_helmet_overlays()
+
+///Updates the helmet_overlays list, inserting and removing images from it as necesarry
+/obj/item/clothing/head/helmet/marine/proc/update_helmet_overlays()
 	if(!attachments_by_slot[ATTACHMENT_SLOT_STORAGE])
 		return
 	if(!istype(attachments_by_slot[ATTACHMENT_SLOT_STORAGE], /obj/item/armor_module/storage))
@@ -201,9 +210,11 @@
 	var/mutable_appearance/M
 	for(var/i in helmet_overlays)
 		M = helmet_overlays[i]
-		if(M)
-			M = mutable_appearance('icons/mob/modular/modular_helmet_storage.dmi',M.icon_state)
-			standing.overlays += M
+		if(!M)
+			continue
+
+		M = mutable_appearance('icons/mob/modular/modular_helmet_storage.dmi', M.icon_state)
+		standing.overlays += M
 
 /obj/item/clothing/head/helmet/marine/specialist
 	name = "\improper B18 helmet"
@@ -480,3 +491,10 @@
 	icon_state = "icc_guard"
 	item_state = "icc_guard"
 	soft_armor = list(MELEE = 60, BULLET = 65, LASER = 40, ENERGY = 60, BOMB = 80, BIO = 10, FIRE = 55, ACID = 40)
+
+/obj/item/clothing/head/helmet/marine/icc/guard/heavy
+	name = "\improper Modelle/22 combat helmet"
+	desc = "A high-quality ICCGF helmet, mostly seen worn by the ICC's highest quality troops, better well known as 'Guardsmen'. Like most helmets of the ICC it is made to fit a utility and combat role with noticeably high resistance to explosions and bullets, this one is heavily reinforced."
+	icon_state = "icc_guard_heavy"
+	item_state = "icc_guard_heavy"
+	soft_armor = list(MELEE = 65, BULLET = 70, LASER = 40, ENERGY = 60, BOMB = 85, BIO = 10, FIRE = 55, ACID = 40)

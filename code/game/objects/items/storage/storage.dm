@@ -748,7 +748,7 @@
 
 ///BubbleWrap - A box can be folded up to make card
 /obj/item/storage/attack_self(mob/user)
-
+	. = ..()
 	//Clicking on itself will empty it, if it has the verb to do that.
 
 	if(allow_quick_empty)
@@ -879,6 +879,7 @@
 	return
 
 /obj/item/storage/update_icon_state()
+	. = ..()
 	if(!sprite_slots)
 		icon_state = initial(icon_state)
 		return

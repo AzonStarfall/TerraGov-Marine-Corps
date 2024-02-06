@@ -73,7 +73,8 @@
 	var/marker_icon = "miner_[mineral_value >= PLATINUM_CRATE_SELL_AMOUNT ? "platinum" : "phoron"]_on"
 	SSminimaps.add_marker(src, MINIMAP_FLAG_ALL, image('icons/UI_icons/map_blips.dmi', null, marker_icon))
 
-/obj/machinery/miner/update_icon()
+/obj/machinery/miner/update_icon_state()
+	. = ..()
 	switch(miner_status)
 		if(MINER_RUNNING)
 			icon_state = "mining_drill_active_[miner_upgrade_type]"
@@ -313,7 +314,7 @@
 	else
 		add_tick += 1
 
-/obj/machinery/miner/attack_alien(mob/living/carbon/xenomorph/X, damage_amount = X.xeno_caste.melee_damage, damage_type = BRUTE, damage_flag = "", effects = TRUE, armor_penetration = 0, isrightclick = FALSE)
+/obj/machinery/miner/attack_alien(mob/living/carbon/xenomorph/X, damage_amount = X.xeno_caste.melee_damage, damage_type = BRUTE, damage_flag = "", effects = TRUE, armor_penetration = X.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(X.status_flags & INCORPOREAL) //Incorporeal xenos cannot attack physically.
 		return
 	if(miner_upgrade_type == MINER_RESISTANT && !(X.mob_size == MOB_SIZE_BIG || X.xeno_caste.caste_flags & CASTE_IS_STRONG))

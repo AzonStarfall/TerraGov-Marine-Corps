@@ -3,7 +3,7 @@
 	name = "Fire support raid"
 	mission_icon = "mortar_raid"
 	mission_flags = MISSION_DISALLOW_DROPPODS
-	map_name = "Jungle outpost SR-422"
+	map_name = "Jungle Outpost SR-422"
 	map_file = '_maps/map_files/Campaign maps/jungle_outpost/jungle_outpost.dmm'
 	map_traits = list(ZTRAIT_AWAY = TRUE, ZTRAIT_RAIN = TRUE)
 	map_light_colours = list(LIGHT_COLOR_PALE_GREEN, LIGHT_COLOR_PALE_GREEN, LIGHT_COLOR_PALE_GREEN, LIGHT_COLOR_PALE_GREEN)
@@ -42,6 +42,12 @@
 	. = ..()
 	for(var/i = 1 to objectives_total)
 		new /obj/item/storage/box/explosive_mines(get_turf(pick(GLOB.campaign_reward_spawners[defending_faction])))
+
+	var/datum/faction_stats/attacking_team = mode.stat_list[starting_faction]
+	if(starting_faction == FACTION_TERRAGOV)
+		attacking_team.add_asset(/datum/campaign_asset/asset_disabler/tgmc_cas/instant)
+	else if(starting_faction == FACTION_SOM)
+		attacking_team.add_asset(/datum/campaign_asset/asset_disabler/som_cas/instant)
 
 /datum/campaign_mission/destroy_mission/fire_support_raid/load_mission_brief()
 	starting_faction_mission_brief = "A [hostile_faction] fire support position has been identified in this area. This key location provides fire support to [hostile_faction] forces across the region. \

@@ -131,7 +131,13 @@
 	name = "sensor tower objective"
 	icon = 'icons/obj/structures/sensor.dmi'
 	icon_state = "sensor"
-	mission_types = list(/datum/campaign_mission/tdm, /datum/campaign_mission/tdm/lv624, /datum/campaign_mission/tdm/first_mission, /datum/campaign_mission/tdm/mech_wars)
+	mission_types = list(
+		/datum/campaign_mission/tdm,
+		/datum/campaign_mission/tdm/lv624,
+		/datum/campaign_mission/tdm/first_mission,
+		/datum/campaign_mission/tdm/mech_wars,
+		/datum/campaign_mission/tdm/mech_wars/som,
+	)
 	spawn_object = /obj/structure/campaign_objective/capture_objective/sensor_tower
 
 /obj/structure/campaign_objective/capture_objective/sensor_tower
@@ -148,6 +154,7 @@
 	countdown.pixel_y = 90
 
 /obj/structure/campaign_objective/capture_objective/sensor_tower/update_icon_state()
+	. = ..()
 	icon_state = initial(icon_state)
 	if(!owning_faction)
 		switch(capturing_faction)

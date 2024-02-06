@@ -6,22 +6,22 @@
 	whitelist_ground_maps = list(MAP_FORT_PHOBOS)
 	bioscan_interval = 3 MINUTES
 	valid_job_types = list(
-		/datum/job/terragov/command/captain/campaign = 1,
-		/datum/job/terragov/command/staffofficer/campaign = 2,
-		/datum/job/terragov/command/fieldcommander/campaign = 1,
-		/datum/job/terragov/squad/engineer = 4,
+		/datum/job/terragov/squad/standard = -1,
 		/datum/job/terragov/squad/corpsman = 8,
+		/datum/job/terragov/squad/engineer = 4,
 		/datum/job/terragov/squad/smartgunner = 4,
 		/datum/job/terragov/squad/leader = 4,
-		/datum/job/terragov/squad/standard = -1,
-		/datum/job/som/command/commander = 1,
-		/datum/job/som/command/staffofficer = 2,
-		/datum/job/som/command/fieldcommander = 1,
-		/datum/job/som/squad/leader = 4,
-		/datum/job/som/squad/veteran = 2,
-		/datum/job/som/squad/engineer = 4,
-		/datum/job/som/squad/medic = 8,
+		/datum/job/terragov/command/fieldcommander/campaign = 1,
+		/datum/job/terragov/command/staffofficer/campaign = 2,
+		/datum/job/terragov/command/captain/campaign = 1,
 		/datum/job/som/squad/standard = -1,
+		/datum/job/som/squad/medic = 8,
+		/datum/job/som/squad/engineer = 4,
+		/datum/job/som/squad/veteran = 2,
+		/datum/job/som/squad/leader = 4,
+		/datum/job/som/command/fieldcommander = 1,
+		/datum/job/som/command/staffofficer = 2,
+		/datum/job/som/command/commander = 1,
 	)
 	///The current mission type being played
 	var/datum/campaign_mission/current_mission
@@ -41,7 +41,7 @@
 	. = ..()
 	for(var/faction in factions)
 		stat_list[faction] = new /datum/faction_stats(faction)
-	RegisterSignal(SSdcs, COMSIG_LIVING_JOB_SET, PROC_REF(register_faction_member))
+	RegisterSignals(SSdcs, list(COMSIG_GLOB_PLAYER_ROUNDSTART_SPAWNED, COMSIG_GLOB_PLAYER_LATE_SPAWNED), PROC_REF(register_faction_member))
 	RegisterSignals(SSdcs, list(COMSIG_GLOB_MOB_DEATH, COMSIG_MOB_GHOSTIZE), PROC_REF(set_death_time))
 	RegisterSignal(SSdcs, COMSIG_GLOB_CAMPAIGN_MISSION_ENDED, PROC_REF(cut_death_list_timer))
 	addtimer(CALLBACK(SSticker.mode, TYPE_PROC_REF(/datum/game_mode/hvh/campaign, intro_sequence)), SSticker.round_start_time + 1 MINUTES)
@@ -123,13 +123,54 @@
 		stat_list[i].get_status_tab_items(source, items)
 
 /datum/game_mode/hvh/campaign/ghost_verbs(mob/dead/observer/observer)
-	return list(/datum/action/campaign_overview)
+	return list(/datum/action/campaign_overview, /datum/action/campaign_loadout)
 
 ///sets up the newly selected mission
 /datum/game_mode/hvh/campaign/proc/load_new_mission(datum/campaign_mission/new_mission)
 	current_mission = new_mission
 	current_mission.load_mission()
+	addtimer(CALLBACK(src, PROC_REF(autobalance_cycle)), CAMPAIGN_AUTOBALANCE_DELAY) //we autobalance teams after a short delay to account for slow respawners
 	TIMER_COOLDOWN_START(src, COOLDOWN_BIOSCAN, bioscan_interval)
+
+///Checks team balance and tries to correct if possible
+/datum/game_mode/hvh/campaign/proc/autobalance_cycle()
+	var/list/autobalance_faction_list = autobalance_check()
+	if(!autobalance_faction_list)
+		return
+
+	for(var/mob/living/carbon/human/faction_member AS in GLOB.alive_human_list_faction[autobalance_faction_list[1]])
+		if(stat_list[faction_member.faction].faction_leader == faction_member)
+			continue
+		swap_player_team(faction_member, autobalance_faction_list[2])
+
+/** Checks team balance
+ * Returns null if teams are nominally balanced
+ * Returns a list with the stronger team first if they are inbalanced
+ */
+/datum/game_mode/hvh/campaign/proc/autobalance_check(ratio = MAX_UNBALANCED_RATIO_TWO_HUMAN_FACTIONS)
+	var/team_one_count = length(GLOB.alive_human_list_faction[factions[1]])
+	var/team_two_count = length(GLOB.alive_human_list_faction[factions[2]])
+
+	if(team_one_count > team_two_count * ratio)
+		return list(factions[1], factions[2])
+	else if(team_one_count < team_two_count * ratio)
+		return list(factions[2], factions[1])
+
+///Actually swaps the player to the other team, unless balance has been restored
+/datum/game_mode/hvh/campaign/proc/swap_player_team(mob/living/carbon/human/user, new_faction)
+	if(tgui_alert(user, "The teams are currently imbalanced, in favour of your team.", "Join the other team?", list("Stay on team", "Change team"), 30 SECONDS) != "Change team")
+		return
+	var/list/current_ratio = autobalance_check(1)
+	if(!current_ratio || current_ratio[2] == user.faction)
+		to_chat(user, span_warning("Team balance already corrected."))
+		return
+	LAZYREMOVE(GLOB.alive_human_list_faction[user.faction], user)
+	user.faction = new_faction //we set this first so the ghost's faction and subsequent job screen is correct, but it means we have to remove from the faction list above first.
+	var/mob/dead/observer/ghost = user.ghostize()
+	user.job.add_job_positions(1)
+	qdel(user)
+	var/datum/game_mode/mode = SSticker.mode
+	mode.player_respawn(ghost) //auto open the respawn screen
 
 //respawn stuff
 
