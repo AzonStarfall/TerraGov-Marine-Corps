@@ -263,3 +263,10 @@
   - qol: style hats now mask hairs behind them so they look like they're layered on
       your head properly
   - imageadd: resprites mimir module worn sprite
+2024-03-19:
+  Lumipharon:
+  - balance: 'Campaign: Reduced game and pregame delays on most missions'
+  - balance: 'Campaign: NT Base Rescue no longer allows firesupport for TGMC'
+  - balance: 'Campaign: NT Base Rescue provides SOM with automatic militia support'
+  - balance: 'Campaign: NT Base Rescue reduced SOM mech count to 4'
+  - balance: 'Campaign: SOM have to destroy 6 objectives to win on Supply Raid'
