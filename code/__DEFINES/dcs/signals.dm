@@ -36,6 +36,9 @@
 ///Gamemode has successfully loaded
 #define COMSIG_GLOB_GAMEMODE_LOADED "!gamemode_loaded"
 
+/// a client (re)connected, after all /client/New() checks have passed : (client/connected_client)
+#define COMSIG_GLOB_CLIENT_CONNECT "!client_connect"
+
 #define COMSIG_GLOB_PLAYER_ROUNDSTART_SPAWNED "!player_roundstart_spawned"
 #define COMSIG_GLOB_PLAYER_LATE_SPAWNED "!player_late_spawned"
 
@@ -204,6 +207,10 @@
 #define COMSIG_ATOM_ATTACKBY_ALTERNATE "atom_attackby_alternate" //from base of atom/attackby_alternate(): (/obj/item, /mob/living)
 	#define COMPONENT_NO_AFTERATTACK (1<<0)						//Return this in response if you don't want afterattack to be called
 
+///Called on an object to "clean it", such as removing blood decals/overlays, etc. The clean types bitfield is sent with it. Return TRUE if any cleaning was necessary and thus performed.
+#define COMSIG_COMPONENT_CLEAN_ACT "clean_act"
+	///Returned by cleanable components when they are cleaned.
+	#define COMPONENT_CLEANED (1<<0)
 ///from base of atom/max_stack_merging(): (obj/item/stack/S)
 #define ATOM_MAX_STACK_MERGING "atom_max_stack_merging"
 ///from base of atom/recalculate_storage_space(): ()
@@ -405,9 +412,6 @@
 
 #define COMSIG_ITEM_VARIANT_CHANGE "item_variant_change"			// called in color_item : (mob/user, variant)
 
-#define COMSIG_NEW_REAGENT_ADD "new_reagent_add"					//from add_reagent(): (reagent_path, amount); it is sent when a reagent gets added for the first time to a holder
-#define COMSIG_REAGENT_DELETING "reagent_deleting"					//from /datum/reagents/del_reagent(): (reagent_path) When a reagent is entirely removed from its holder
-
 #define COMSIG_CLOTHING_MECHANICS_INFO "clothing_mechanics_info"	//from base of /obj/item/clothing/get_mechanics_info()
 	#define COMPONENT_CLOTHING_MECHANICS_TINTED (1<<0)
 	#define COMPONENT_CLOTHING_BLUR_PROTECTION (1<<1)
@@ -541,6 +545,12 @@
 #define COMSIG_MOB_SHOCK_STAGE_CHANGED "mob_shock_stage_changed"
 /// from mob/get_status_tab_items(): (list/items)
 #define COMSIG_MOB_GET_STATUS_TAB_ITEMS "mob_get_status_tab_items"
+/// from mob/proc/dropItemToGround()
+#define COMSIG_MOB_DROPPING_ITEM "mob_dropping_item"
+///From mob/do_after_coefficent()
+#define MOB_GET_DO_AFTER_COEFFICIENT "mob_get_do_after_coefficient"
+///From get_zone_with_miss_chance
+#define MOB_GET_MISS_CHANCE_MOD "mob_get_miss_chance_mod"
 
 //mob/dead/observer
 #define COMSIG_OBSERVER_CLICKON "observer_clickon"				//from mob/dead/observer/ClickOn(): (atom/A, params)
@@ -590,9 +600,14 @@
 
 #define COMSIG_LIVING_UPDATE_PLANE_BLUR "living_update_plane_blur"
 	#define COMPONENT_CANCEL_BLUR (1<<0)
+///From base of mob/living/set_jump_component()
+#define COMSIG_LIVING_SET_JUMP_COMPONENT "living_set_jump_component"
+
+#define COMSIG_LIVING_SWAPPED_HANDS "living_swapped_hands"
+/// From /obj/item/proc/pickup(): (/obj/item/picked_up_item)
+#define COMSIG_LIVING_PICKED_UP_ITEM "living_picked_up_item"
 
 //mob/living/carbon signals
-#define COMSIG_CARBON_SWAPPED_HANDS "carbon_swapped_hands"
 #define COMSIG_CARBON_SETAFKSTATUS "carbon_setafkstatus"		//from base of /mob/living/set_afk_status(): (new_status, afk_timer)
 
 // /mob/living/carbon/human signals
@@ -726,7 +741,8 @@
 #define COMSIG_KB_CLIENT_MOOC_DOWN "keybinding_client_mooc_down"
 #define COMSIG_KB_CLIENT_LOOC_DOWN "keybinding_client_looc_down"
 #define COMSIG_KB_LIVING_RESIST_DOWN "keybinding_living_resist_down"
-#define COMSIG_KB_LIVING_JUMP "keybind_jump"
+#define COMSIG_KB_LIVING_JUMP_DOWN "keybind_living_jump_down"
+#define COMSIG_KB_LIVING_JUMP_UP "keybind_living_jump_up"
 #define COMSIG_KB_MOB_FACENORTH_DOWN "keybinding_mob_facenorth_down"
 #define COMSIG_KB_MOB_FACEEAST_DOWN "keybinding_mob_faceeast_down"
 #define COMSIG_KB_MOB_FACESOUTH_DOWN "keybinding_mob_facesouth_down"
@@ -962,6 +978,9 @@
 #define COMSIG_XENOABILITY_RECALLPUPPETS "xenoability_recallpuppets"
 #define COMSIG_XENOABILITY_BESTOWBLESSINGS "xenoability_giveblessings"
 
+#define COMSIG_XENOABILITY_BANELING_EXPLODE "xenoability_baneling_explode"
+#define COMSIG_XENOABILITY_BANELING_CHOOSE_REAGENT "xenoability_baneling_choose_reagent"
+
 #define COMSIG_XENOABILITY_BEHEMOTH_ROLL "xenoability_behemoth_roll"
 #define COMSIG_XENOABILITY_LANDSLIDE "xenoability_landslide"
 #define COMSIG_XENOABILITY_EARTH_RISER "xenoability_earth_riser"
@@ -1015,6 +1034,7 @@
 #define COMSIG_KB_ATTACKORDER "keybind_attackorder"
 #define COMSIG_KB_DEFENDORDER "keybind_defendorder"
 #define COMSIG_KB_RETREATORDER "keybind_retreatorder"
+#define COMSIG_KB_VEHICLEHONK "keybind_vehiclehonk"
 
 //Item toggle keybinds
 #define COMSIG_ITEM_TOGGLE_JETPACK "item_toggle_jetpack"
@@ -1023,6 +1043,9 @@
 //Weapon related ability keybinds
 #define COMSIG_WEAPONABILITY_AXESWEEP "weaponability_axesweep"
 #define COMSIG_WEAPONABILITY_SWORDLUNGE "weaponability_swordlunge"
+
+//Implant abilities
+#define COMSIG_IMPLANT_ABILITY_SANDEVISTAN "implant_ability_sandevistan"
 
 // human modules signals for keybindings
 #define COMSIG_KB_VALI_CONFIGURE "keybinding_vali_configure"
