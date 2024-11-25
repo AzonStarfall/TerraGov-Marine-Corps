@@ -16,6 +16,7 @@
 /datum/action/ability/xeno_action/ready_charge
 	name = "Toggle Charging"
 	action_icon_state = "ready_charge"
+	action_icon = 'icons/Xeno/actions/crusher.dmi'
 	desc = "Toggles the movement-based charge on and off."
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_TOGGLE_CHARGE,
@@ -296,8 +297,8 @@
 			//There is a chance to do enough damage here to gib certain mobs. Better update immediately.
 			crushed_living.apply_damage(precrush, BRUTE, BODY_ZONE_CHEST, MELEE, updating_health = TRUE)
 			if(QDELETED(crushed_living))
-				charger.visible_message(span_danger("[charger] anihilates [preserved_name]!"),
-				span_xenodanger("We anihilate [preserved_name]!"))
+				charger.visible_message(span_danger("[charger] annihilates [preserved_name]!"),
+				span_xenodanger("We annihilate [preserved_name]!"))
 				return COMPONENT_MOVABLE_PREBUMP_PLOWED
 
 		return precrush2signal(crushed_living.post_crush_act(charger, src))
@@ -308,7 +309,10 @@
 			return precrush2signal(crushed_obj.post_crush_act(charger, src))
 		playsound(crushed_obj.loc, SFX_PUNCH, 25, 1)
 		var/crushed_behavior = crushed_obj.crushed_special_behavior()
-		crushed_obj.take_damage(precrush, BRUTE, MELEE)
+		var/obj_damage_mult = 1
+		if(isarmoredvehicle(crushed) || ishitbox(crushed))
+			obj_damage_mult = 5
+		crushed_obj.take_damage(precrush * obj_damage_mult, BRUTE, MELEE)
 		if(QDELETED(crushed_obj))
 			charger.visible_message(span_danger("[charger] crushes [preserved_name]!"),
 			span_xenodanger("We crush [preserved_name]!"))
@@ -338,11 +342,12 @@
 
 /datum/action/ability/xeno_action/ready_charge/bull_charge
 	action_icon_state = "bull_ready_charge"
+	action_icon = 'icons/Xeno/actions/bull.dmi'
 	charge_type = CHARGE_BULL
 	speed_per_step = 0.15
 	steps_for_charge = 5
 	max_steps_buildup = 10
-	crush_living_damage = 15
+	crush_living_damage = 37
 	plasma_use_multiplier = 2
 
 
@@ -384,6 +389,7 @@
 
 /datum/action/ability/xeno_action/ready_charge/queen_charge
 	action_icon_state = "queen_ready_charge"
+	action_icon = 'icons/Xeno/actions/queen.dmi'
 
 // ***************************************
 // *********** Pre-Crush
@@ -564,7 +570,14 @@
 		if(CHARGE_CRUSH)
 			Paralyze(CHARGE_SPEED(charge_datum) * 2 SECONDS)
 		if(CHARGE_BULL_HEADBUTT)
-			Paralyze(CHARGE_SPEED(charge_datum) * 2.5 SECONDS)
+			Paralyze(CHARGE_SPEED(charge_datum) * 1.5 SECONDS)
+		if(CHARGE_BULL)
+			Paralyze(0.2 SECONDS)
+		if(CHARGE_BULL_GORE)
+			adjust_stagger(CHARGE_SPEED(charge_datum) * 1 SECONDS)
+			adjust_slowdown(CHARGE_SPEED(charge_datum) * 1)
+			reagents.add_reagent(/datum/reagent/toxin/xeno_ozelomelyn, 10)
+			playsound(charger,'sound/effects/spray3.ogg', 15, TRUE)
 
 	if(anchored)
 		charge_datum.do_stop_momentum(FALSE)
@@ -597,8 +610,6 @@
 		if(CHARGE_BULL_GORE)
 			if(world.time > charge_datum.next_special_attack)
 				charge_datum.next_special_attack = world.time + 2 SECONDS
-				attack_alien_harm(charger, charger.xeno_caste.melee_damage * charger.xeno_melee_damage_modifier, charger.zone_selected, FALSE, TRUE, TRUE) //Free gore attack.
-				emote_gored()
 				var/turf/destination = get_step(loc, charger.dir)
 				if(destination)
 					throw_at(destination, 1, 1, charger, FALSE)
@@ -610,7 +621,7 @@
 
 		if(CHARGE_BULL_HEADBUTT)
 			var/fling_dir = charger.a_intent == INTENT_HARM ? charger.dir : REVERSE_DIR(charger.dir)
-			var/fling_dist = min(round(CHARGE_SPEED(charge_datum)) + 1, 3)
+			var/fling_dist = min(round(CHARGE_SPEED(charge_datum)) + 2, 3)
 			var/turf/destination = loc
 			var/turf/temp
 

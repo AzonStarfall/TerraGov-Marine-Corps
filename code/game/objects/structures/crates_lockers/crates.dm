@@ -17,6 +17,8 @@
 	. = ..()
 	var/static/list/connections = list(
 		COMSIG_OBJ_TRY_ALLOW_THROUGH = PROC_REF(can_climb_over),
+		COMSIG_FIND_FOOTSTEP_SOUND = TYPE_PROC_REF(/atom/movable, footstep_override),
+		COMSIG_TURF_CHECK_COVERED = TYPE_PROC_REF(/atom/movable, turf_cover_check),
 	)
 	AddElement(/datum/element/connect_loc, connections)
 
@@ -220,10 +222,22 @@
 /obj/structure/closet/crate/trashcart
 	name = "Trash Cart"
 	desc = "A heavy, metal trashcart with wheels."
-	icon = 'icons/obj/items/storage/storage.dmi'
 	icon_state = "closed_trashcart"
 	icon_opened = "open_trashcart"
 	icon_closed = "closed_trashcart"
+
+/obj/structure/closet/crate/trashcart/Initialize(mapload, ...)
+	. = ..()
+	if(opened)
+		density = FALSE
+
+/obj/structure/closet/crate/trashcart/food
+	desc = "A heavy, metal foodcart with wheels."
+	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi';
+	icon_state = "foodcart2"
+	icon_closed = "foodcart2"
+	icon_opened = "foodcart2_open"
+	name = "food cart"
 
 /obj/structure/closet/crate/wayland
 	name = "Wayland crate"
@@ -242,8 +256,8 @@
 
 
 /obj/structure/closet/crate/miningcar
-	desc = "A mining car. This one doesn't work on rails, but has to be dragged."
-	name = "Mining car (not for rails)"
+	desc = "A mining car. Used on rails, or dragged by hand."
+	name = "\improper mining car"
 	icon_state = "closed_mcart"
 	density = TRUE
 	icon_opened = "open_mcart"
@@ -257,7 +271,6 @@
 /obj/structure/closet/crate/mass_produced_crate
 	name = "Mass Produced Crate"
 	desc = "A rectangular steel crate. Cannot be welded for metal."
-	icon = 'icons/obj/structures/crates.dmi'
 	icon_state = "closed_basic"
 	icon_opened = "open_basic"
 	icon_closed = "closed_basic"

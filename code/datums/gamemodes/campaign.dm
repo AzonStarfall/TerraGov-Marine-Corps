@@ -45,11 +45,12 @@
 		stat_list[faction] = new /datum/faction_stats(faction)
 	RegisterSignals(SSdcs, list(COMSIG_GLOB_PLAYER_ROUNDSTART_SPAWNED, COMSIG_GLOB_PLAYER_LATE_SPAWNED), PROC_REF(register_faction_member))
 	RegisterSignals(SSdcs, list(COMSIG_GLOB_MOB_DEATH, COMSIG_MOB_GHOSTIZE), PROC_REF(set_death_time))
-	RegisterSignal(SSdcs, COMSIG_GLOB_CAMPAIGN_MISSION_ENDED, PROC_REF(cut_death_list_timer))
+	RegisterSignal(SSdcs, COMSIG_GLOB_CAMPAIGN_MISSION_ENDED, PROC_REF(end_mission))
 	addtimer(CALLBACK(SSticker.mode, TYPE_PROC_REF(/datum/game_mode/hvh/campaign, intro_sequence)), SSticker.round_start_time + 1 MINUTES)
 
 /datum/game_mode/hvh/campaign/post_setup()
 	. = ..()
+	INVOKE_ASYNC(src, PROC_REF(scale_loadouts)) //load_new_mission delays other proc calls in this proc both before and after it for whatever reason
 	for(var/obj/effect/landmark/patrol_point/exit_point AS in GLOB.patrol_point_list) //som 'ship' map is now ground, but this ensures we clean up exit points if this changes in the future
 		qdel(exit_point)
 	load_new_mission(new /datum/campaign_mission/tdm/first_mission(factions[1])) //this is the 'roundstart' mission
@@ -115,16 +116,22 @@
 	log_game("[round_finished]\nGame mode: [name]\nRound time: [duration2text()]\nEnd round player population: [length(GLOB.clients)]\nTotal TGMC spawned: [GLOB.round_statistics.total_humans_created[FACTION_TERRAGOV]]\nTotal SOM spawned: [GLOB.round_statistics.total_humans_created[FACTION_SOM]]")
 
 /datum/game_mode/hvh/campaign/end_round_fluff()
-	to_chat(world, span_round_header("Campaign concluded"))
-	to_chat(world, span_round_header("|[round_finished]|"))
-
+	var/announcement_body = ""
 	switch(round_finished)
 		if(MODE_COMBAT_PATROL_SOM_MINOR)
-			to_chat(world, span_round_body("Brave SOM forces are reporting decisive victories against the imperialist TerraGov forces across the planet, forcing their disorganised and chaotic retreat. \
-			With the planet now liberated, the Sons of Mars welcome the people of Palmaria into the light of a new day, ready to help them into a better future as brothers."))
+			announcement_body = "Brave SOM forces are reporting decisive victories against the imperialist TerraGov forces across the planet, forcing their disorganised and chaotic retreat. \
+			With the planet now liberated, the Sons of Mars welcome the people of Palmaria into the light of a new day, ready to help them into a better future as brothers."
 		if(MODE_COMBAT_PATROL_MARINE_MINOR)
-			to_chat(world, span_round_body("TGMC forces have routed the terrorist SOM forces across the planet, destroying their strongholds and returning possession of stolen property to their legitimate corporate owners. \
-			With the SOM threat removed, TerraGov peacekeeping forces begin to move in to ensure a rapid return to law and order, restoring stability, safety, and a guarantee of Palmaria's economic development to the benefit of all citizens."))
+			announcement_body = "TGMC forces have routed the terrorist SOM forces across the planet, destroying their strongholds and returning possession of stolen property to their legitimate corporate owners. \
+			With the SOM threat removed, TerraGov peacekeeping forces begin to move in to ensure a rapid return to law and order, restoring stability, safety, and a guarantee of Palmaria's economic development to the benefit of all citizens."
+
+	send_ooc_announcement(
+		sender_override = "Round Concluded",
+		title = round_finished,
+		text = announcement_body,
+		play_sound = FALSE,
+		style = OOC_ALERT_GAME
+	)
 
 	var/sound/som_track
 	var/sound/tgmc_track
@@ -186,20 +193,28 @@
 ///sets up the newly selected mission
 /datum/game_mode/hvh/campaign/proc/load_new_mission(datum/campaign_mission/new_mission)
 	current_mission = new_mission
-	addtimer(CALLBACK(src, PROC_REF(autobalance_cycle)), CAMPAIGN_AUTOBALANCE_DELAY) //we autobalance teams after a short delay to account for slow respawners
+	addtimer(CALLBACK(src, PROC_REF(autobalance_cycle)), CAMPAIGN_AUTOBALANCE_DELAY, TIMER_CLIENT_TIME) //we autobalance teams after a short delay to account for slow respawners
+	//TIMER_CLIENT_TIME as loading a new z-level messes with the timing otherwise
+	for(var/faction in factions)
+		for(var/player in GLOB.alive_human_list_faction[faction])
+			stat_list[faction].interact(player) //gives the mission brief
 	current_mission.load_mission()
 	TIMER_COOLDOWN_START(src, COOLDOWN_BIOSCAN, bioscan_interval)
 
 ///Checks team balance and tries to correct if possible
-/datum/game_mode/hvh/campaign/proc/autobalance_cycle()
+/datum/game_mode/hvh/campaign/proc/autobalance_cycle(forced = FALSE)
 	var/list/autobalance_faction_list = autobalance_check()
 	if(!autobalance_faction_list)
 		return
 
-	for(var/mob/living/carbon/human/faction_member AS in GLOB.alive_human_list_faction[autobalance_faction_list[1]])
+	message_admins("Campaign autobalance run: [autobalance_faction_list ? "[autobalance_faction_list[1]] has [length(GLOB.alive_human_list_faction[autobalance_faction_list[1]])] players, \
+	[autobalance_faction_list[2]] has [length(GLOB.alive_human_list_faction[autobalance_faction_list[2]])] players." : "teams balanced."] \
+	Forced autobalance is [forced ? "ON." : "OFF."]")
+
+	for(var/mob/living/carbon/human/faction_member in GLOB.alive_human_list_faction[autobalance_faction_list[1]])
 		if(stat_list[faction_member.faction].faction_leader == faction_member)
 			continue
-		swap_player_team(faction_member, autobalance_faction_list[2])
+		INVOKE_ASYNC(src, PROC_REF(swap_player_team), faction_member, autobalance_faction_list[2], forced)
 
 	addtimer(CALLBACK(src, PROC_REF(autobalance_bonus)), CAMPAIGN_AUTOBALANCE_DECISION_TIME + 1 SECONDS)
 
@@ -217,10 +232,12 @@
 		return list(factions[2], factions[1])
 
 ///Actually swaps the player to the other team, unless balance has been restored
-/datum/game_mode/hvh/campaign/proc/swap_player_team(mob/living/carbon/human/user, new_faction)
+/datum/game_mode/hvh/campaign/proc/swap_player_team(mob/living/carbon/human/user, new_faction, forced = FALSE, fund_bonus = TRUE)
 	if(!user.client)
 		return
-	if(tgui_alert(user, "The teams are currently imbalanced, in favour of your team.", "Join the other team?", list("Stay on team", "Change team"), CAMPAIGN_AUTOBALANCE_DECISION_TIME, FALSE) != "Change team")
+	if(forced)
+		to_chat(user, "The teams are currently imbalanced, in favour of your team. Forced autobalance is on, so you may be swapped to the other team.")
+	else if(tgui_alert(user, "The teams are currently imbalanced, in favour of your team.", "Join the other team?", list("Stay on team", "Change team"), CAMPAIGN_AUTOBALANCE_DECISION_TIME, FALSE) != "Change team")
 		return
 	var/list/current_ratio = autobalance_check(1)
 	if(!current_ratio || current_ratio[2] == user.faction)
@@ -232,7 +249,8 @@
 	user.job.add_job_positions(1)
 	qdel(user)
 	var/datum/individual_stats/new_stats = stat_list[new_faction].get_player_stats(ghost)
-	new_stats.give_funds(max(stat_list[new_faction].accumulated_mission_reward * 0.5, 200)) //Added credits for swapping team
+	if(fund_bonus)
+		new_stats.give_funds(max(stat_list[new_faction].accumulated_mission_reward * 0.5, 200)) //Added credits for swapping team
 	player_respawn(ghost) //auto open the respawn screen
 
 ///buffs the weaker team if players don't voluntarily switch
@@ -243,6 +261,21 @@
 
 	var/autobal_num = ROUND_UP((length(GLOB.alive_human_list_faction[autobalance_faction_list[1]]) - length(GLOB.alive_human_list_faction[autobalance_faction_list[2]])) * 0.2)
 	current_mission.spawn_mech(autobalance_faction_list[2], 0, 0, autobal_num, "[autobal_num] additional mechs granted for autobalance")
+
+///Shuffles the teams forcefully
+/datum/game_mode/hvh/campaign/proc/shuffle_teams()
+	var/list/player_list = GLOB.player_list.Copy()
+	player_list = shuffle(player_list)
+	for(var/i = 1 to length(player_list))
+		var/mob/player = player_list[i]
+		var/new_faction_index = (i % 2) + 1
+		var/new_faction = factions[new_faction_index]
+		if(player.faction == new_faction)
+			continue
+		if(ishuman(player))
+			swap_player_team(player, new_faction, TRUE, FALSE)
+		else
+			player.faction = new_faction
 
 //respawn stuff
 
@@ -269,10 +302,22 @@
 		player_respawn(player)
 		return
 
-///Wrapper for cutting the deathlist via timer due to the players not immediately returning to base
-/datum/game_mode/hvh/campaign/proc/cut_death_list_timer(datum/source)
+///Handles post mission cleanup
+/datum/game_mode/hvh/campaign/proc/end_mission(datum/source)
 	SIGNAL_HANDLER
 	addtimer(CALLBACK(src, PROC_REF(cut_death_list)), AFTER_MISSION_TELEPORT_DELAY + 1)
+	scale_loadouts()
+
+///Limited loadout quantities scale by pop
+/datum/game_mode/hvh/campaign/proc/scale_loadouts(pop_override)
+	if(!isnum(pop_override))
+		pop_override = length(GLOB.clients)
+	var/loadout_ratio = clamp((pop_override - CAMPAIGN_LOADOUT_POP_MIN) / (CAMPAIGN_LOADOUT_POP_MAX - CAMPAIGN_LOADOUT_POP_MIN), 0, 1)
+	for(var/job in GLOB.campaign_loadout_items_by_role)
+		for(var/datum/loadout_item/loadout_item AS in GLOB.campaign_loadout_items_by_role[job])
+			if(loadout_item.quantity == -1)
+				continue
+			loadout_item.quantity = floor(LERP(initial(loadout_item.quantity), initial(loadout_item.quantity) * CAMPAIGN_LOADOUT_MULT_MAX, loadout_ratio))
 
 ///cuts the death time and respawn_timers list at mission end
 /datum/game_mode/hvh/campaign/proc/cut_death_list(datum/source)
@@ -350,8 +395,17 @@
 				ready_candidate?.client?.screen?.Cut()
 				qdel(ready_candidate)
 				return
+
+			var/mob/living/carbon/human/human_current
 			if(isobserver(candidate))
+				var/mob/dead/observer/observer_candidate = candidate
+				if(!isnull(observer_candidate.can_reenter_corpse))
+					human_current = observer_candidate.can_reenter_corpse.resolve()
 				qdel(candidate)
+			else if(ishuman(candidate))
+				human_current = candidate
+
+			human_current?.set_undefibbable(TRUE)
 
 
 ///Actually respawns the player, if still able
@@ -370,11 +424,10 @@
 		return
 
 	if(current_mission.mission_state == MISSION_STATE_ACTIVE)
-		var/active_attrition = stat_list[job_datum.faction].active_attrition_points
-		if(active_attrition < job_datum.job_cost)
+		if(stat_list[job_datum.faction].active_attrition_points < job_datum.job_cost)
 			to_chat(usr, span_warning("Unable to spawn. Insufficient attrition."))
 			return
-		active_attrition -= job_datum.job_cost
+		stat_list[job_datum.faction].active_attrition_points -= job_datum.job_cost
 	LateSpawn(ready_candidate)
 	return TRUE
 

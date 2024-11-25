@@ -62,7 +62,7 @@
 		return
 	. += span_xenonotice("An acid well made by [creator]. It currently has <b>[charges]/[XENO_ACID_WELL_MAX_CHARGES] charges</b>.")
 
-/obj/structure/xeno/acidwell/deconstruct(disassembled = TRUE)
+/obj/structure/xeno/acidwell/deconstruct(disassembled = TRUE, mob/living/blame_mob)
 	visible_message(span_danger("[src] suddenly collapses!") )
 	return ..()
 
@@ -93,7 +93,7 @@
 	acid_smoke.set_up(0, src) //acid smoke in the immediate vicinity
 	acid_smoke.start()
 
-	for(var/obj/flamer_fire/F in T) //Extinguish all flames in turf
+	for(var/obj/fire/flamer/F in T) //Extinguish all flames in turf
 		qdel(F)
 
 /obj/structure/xeno/acidwell/attackby(obj/item/I, mob/user, params)

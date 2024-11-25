@@ -29,6 +29,8 @@
 
 #define FALLOFF_SOUNDS 1
 
+#define GUN_FIRE_SOUND_VOLUME 50
+
 ///Frequency stuff only works with 45kbps oggs.
 #define GET_RAND_FREQUENCY (rand(32000, 55000))
 
@@ -151,3 +153,4 @@
 #define SFX_ROBOT_SCREAM "robot_scream"
 #define SFX_ROBOT_PAIN "robot_pain"
 #define SFX_ROBOT_WARCRY "robot_warcry"
+#define SFX_HOVER_TANK "hover_tank"
