@@ -81,9 +81,9 @@
 	var/op_name_faction_two = GLOB.operation_namepool[/datum/operation_namepool].get_random_name()
 	for(var/mob/living/carbon/human/human AS in GLOB.alive_human_list)
 		if(human.faction == factions[1])
-			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>[op_name_faction_one]</u></span><br>" + "Fight to restore peace and order across the planet, and check the SOM threat.<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "TGMC Rapid Reaction Battalion<br>" + "[human.job.title], [human]<br>", /atom/movable/screen/text/screen_text/picture/rapid_response)
+			human.play_screen_text(HUD_ANNOUNCEMENT_FORMATTING(op_name_faction_one, "Fight to restore peace and order across the planet, and check the SOM threat.<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "TGMC Rapid Reaction Battalion<br>" + "[human.job.title], [human]<br>", LEFT_ALIGN_TEXT), /atom/movable/screen/text/screen_text/picture/rapid_response)
 		else if(human.faction == factions[2])
-			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>[op_name_faction_two]</u></span><br>" + "Fight to liberate the people of Palmaria from the yoke of TerraGov oppression!<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "SOM 4th Special Assault Force<br>" + "[human.job.title], [human]<br>", /atom/movable/screen/text/screen_text/picture/saf_four)
+			human.play_screen_text(HUD_ANNOUNCEMENT_FORMATTING(op_name_faction_two, "Fight to liberate the people of Palmaria from the yoke of TerraGov oppression!<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "SOM 4th Special Assault Force<br>" + "[human.job.title], [human]<br>", LEFT_ALIGN_TEXT), /atom/movable/screen/text/screen_text/picture/saf_four)
 
 /datum/game_mode/hvh/campaign/process()
 	if(round_finished)
@@ -91,7 +91,7 @@
 
 	if(!current_mission)
 		return
-	if(TIMER_COOLDOWN_CHECK(src, COOLDOWN_BIOSCAN) || bioscan_interval == 0 || current_mission.mission_state != MISSION_STATE_ACTIVE)
+	if(TIMER_COOLDOWN_RUNNING(src, COOLDOWN_BIOSCAN) || bioscan_interval == 0 || current_mission.mission_state != MISSION_STATE_ACTIVE)
 		return
 	announce_bioscans_marine_som(ztrait = ZTRAIT_AWAY) //todo: make this faction neutral
 
@@ -162,14 +162,16 @@
 	tgmc_track = sound(tgmc_track, channel = CHANNEL_CINEMATIC)
 	ghost_track = sound(ghost_track, channel = CHANNEL_CINEMATIC)
 
-	for(var/mob/mob AS in GLOB.player_list)
-		switch(mob.faction)
+	for(var/mob/hearer AS in GLOB.player_list)
+		if(hearer.client?.prefs?.toggles_sound & SOUND_NOENDOFROUND)
+			continue
+		switch(hearer.faction)
 			if(FACTION_SOM)
-				SEND_SOUND(mob, som_track)
+				SEND_SOUND(hearer, som_track)
 			if(FACTION_TERRAGOV)
-				SEND_SOUND(mob, tgmc_track)
+				SEND_SOUND(hearer, tgmc_track)
 			else
-				SEND_SOUND(mob, ghost_track)
+				SEND_SOUND(hearer, ghost_track)
 
 /datum/game_mode/hvh/campaign/get_status_tab_items(datum/dcs, mob/source, list/items)
 	. = ..()
@@ -207,14 +209,17 @@
 	if(!autobalance_faction_list)
 		return
 
-	message_admins("Campaign autobalance run: [autobalance_faction_list ? "[autobalance_faction_list[1]] has [length(GLOB.alive_human_list_faction[autobalance_faction_list[1]])] players, \
-	[autobalance_faction_list[2]] has [length(GLOB.alive_human_list_faction[autobalance_faction_list[2]])] players." : "teams balanced."] \
+	var/strong_team = autobalance_faction_list[1]
+	var/weak_team = autobalance_faction_list[2]
+
+	message_admins("Campaign autobalance run: [autobalance_faction_list ? "[strong_team] has [length(GLOB.alive_human_list_faction[strong_team])] players, \
+	[weak_team] has [length(GLOB.alive_human_list_faction[weak_team])] players." : "teams balanced."] \
 	Forced autobalance is [forced ? "ON." : "OFF."]")
 
-	for(var/mob/living/carbon/human/faction_member in GLOB.alive_human_list_faction[autobalance_faction_list[1]])
+	for(var/mob/living/carbon/human/faction_member in GLOB.alive_human_list_faction[strong_team])
 		if(stat_list[faction_member.faction].faction_leader == faction_member)
 			continue
-		INVOKE_ASYNC(src, PROC_REF(swap_player_team), faction_member, autobalance_faction_list[2], forced)
+		INVOKE_ASYNC(src, PROC_REF(swap_player_team), faction_member, weak_team, forced)
 
 	addtimer(CALLBACK(src, PROC_REF(autobalance_bonus)), CAMPAIGN_AUTOBALANCE_DECISION_TIME + 1 SECONDS)
 
@@ -226,9 +231,10 @@
 	var/team_one_count = length(GLOB.alive_human_list_faction[factions[1]])
 	var/team_two_count = length(GLOB.alive_human_list_faction[factions[2]])
 
-	if(team_one_count > team_two_count * ratio)
+	//round up so a 1 player difference at lower pop doesn't trigger autobalance
+	if(team_one_count > ROUND_UP(team_two_count * ratio))
 		return list(factions[1], factions[2])
-	else if(team_two_count > team_one_count * ratio)
+	else if(team_two_count > ROUND_UP(team_one_count * ratio))
 		return list(factions[2], factions[1])
 
 ///Actually swaps the player to the other team, unless balance has been restored
@@ -259,8 +265,18 @@
 	if(!autobalance_faction_list)
 		return
 
-	var/autobal_num = ROUND_UP((length(GLOB.alive_human_list_faction[autobalance_faction_list[1]]) - length(GLOB.alive_human_list_faction[autobalance_faction_list[2]])) * 0.2)
-	current_mission.spawn_mech(autobalance_faction_list[2], 0, 0, autobal_num, "[autobal_num] additional mechs granted for autobalance")
+	var/strong_team = autobalance_faction_list[1]
+	var/weak_team = autobalance_faction_list[2]
+	var/pop_diff = length(GLOB.alive_human_list_faction[strong_team]) - length(GLOB.alive_human_list_faction[weak_team])
+
+	//if the pop diff is lower than this, a mech tends to be too strong
+	if(pop_diff >= 5)
+		var/mech_num = ROUND_UP(pop_diff * 0.2)
+		current_mission.spawn_mech(weak_team, 0, 0, mech_num, "[mech_num] additional mechs granted for autobalance")
+		return
+	//if its a low diff, we just give them some more attrition for purchases or respawns
+	stat_list[weak_team].total_attrition_points += pop_diff * 3
+
 
 ///Shuffles the teams forcefully
 /datum/game_mode/hvh/campaign/proc/shuffle_teams()
@@ -404,8 +420,8 @@
 				qdel(candidate)
 			else if(ishuman(candidate))
 				human_current = candidate
-
-			human_current?.set_undefibbable(TRUE)
+			if(human_current)
+				human_current.set_undefibbable(TRUE)
 
 
 ///Actually respawns the player, if still able

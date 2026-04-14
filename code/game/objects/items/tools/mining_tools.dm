@@ -14,7 +14,7 @@
 	worn_icon_state = "pickaxe"
 	w_class = WEIGHT_CLASS_BULKY
 	var/digspeed = 40 //moving the delay to an item var so R&D can make improved picks. --NEO
-	attack_verb = list("hit", "pierced", "sliced", "attacked")
+	attack_verb = list("hits", "pierces", "slices", "attacks")
 	var/drill_sound = 'sound/weapons/genhit.ogg'
 	var/drill_verb = "picking"
 	sharp = IS_SHARP_ITEM_SIMPLE
@@ -81,7 +81,7 @@
 
 /obj/item/tool/pickaxe/plasmacutter
 	name = "plasma cutter"
-	desc = "A tool that cuts with deadly hot plasma. You could use it to cut limbs off of xenos! Or, you know, cut apart walls or mine through stone. Eye protection strongly recommended."
+	desc = "A self-charging tool that uses superheated plasma to cut through anything with ease. You could use it to slice off limbs! Or, you know, cut apart walls or mine through stone. Eye protection is strongly recommended."
 	icon = 'icons/obj/items/tools.dmi'
 	icon_state = "plasma_cutter_off"
 	worn_icon_state = "plasmacutter"
@@ -91,17 +91,17 @@
 	damtype = BURN
 	digspeed = 20 //Can slice though normal walls, all girders, or be used in reinforced wall deconstruction
 	drill_verb = "cutting"
-	attack_verb = list("dissolves", "disintegrates", "liquefies", "subliminates", "vaporizes")
+	attack_verb = list("dissolves", "disintegrates", "liquefies", "subliminates", "vaporizes") //See PC did the verbs correctly the first time around.
 	heat = 3800
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	light_power = 0.6
 	light_color = LIGHT_COLOR_PURPLE
+	tool_behaviour = TOOL_PLASMACUTTER
 	var/cutting_sound = 'sound/items/welder2.ogg'
 	var/powered = FALSE
 	var/dirt_amt_per_dig = 5
 	var/obj/item/cell/rtg/large/cell //The plasma cutter cell is unremovable and recharges over time
-	tool_behaviour = TOOL_WELD_CUTTER
 
 /obj/item/tool/pickaxe/plasmacutter/Initialize(mapload)
 	. = ..()
@@ -146,11 +146,11 @@
 /obj/item/tool/pickaxe/plasmacutter/proc/fizzle_message(mob/user)
 	playsound(src, 'sound/machines/buzz-two.ogg', 25, 1)
 	if(!cell)
-		balloon_alert(user, "No battery installed")
+		balloon_alert(user, "no battery installed!")
 	else if(!powered)
-		balloon_alert(user, "Turned off")
+		balloon_alert(user, "turned off!")
 	else
-		balloon_alert(user, "Insufficient charge")
+		balloon_alert(user, "insufficient charge!")
 		to_chat(user, span_warning("The plasma cutter has inadequate charge remaining! Give the internal battery time to recharge, or attack a living creature! <b>Charge Remaining: [cell.charge]/[cell.maxcharge]</b>"))
 
 /obj/item/tool/pickaxe/plasmacutter/proc/start_cut(mob/user, name = "", atom/source, charge_amount = PLASMACUTTER_BASE_COST, custom_string, no_string, SFX = TRUE)
@@ -169,7 +169,7 @@
 		if(custom_string)
 			to_chat(user, span_notice(custom_string))
 		else
-			balloon_alert(user, "Starts cutting apart")
+			balloon_alert(user, "cutting apart...")
 	return TRUE
 
 /obj/item/tool/pickaxe/plasmacutter/proc/cut_apart(mob/user, name = "", atom/source, charge_amount = PLASMACUTTER_BASE_COST, custom_string)
@@ -181,7 +181,7 @@
 	spark_system.attach(source)
 	spark_system.start(source)
 	use_charge(user, charge_amount, FALSE)
-	balloon_alert(user, "Charge Remaining: [cell.charge]/[cell.maxcharge]")
+	balloon_alert(user, "charge remaining: [cell.charge]/[cell.maxcharge]")
 	if(custom_string)
 		to_chat(user, span_notice(custom_string))
 
@@ -204,7 +204,7 @@
 /obj/item/tool/pickaxe/plasmacutter/proc/use_charge(mob/user, amount = PLASMACUTTER_BASE_COST, mention_charge = TRUE)
 	cell.charge -= min(cell.charge, amount)
 	if(mention_charge)
-		balloon_alert(user, "Charge Remaining: [cell.charge]/[cell.maxcharge]")
+		balloon_alert(user, "charge remaining: [cell.charge]/[cell.maxcharge]")
 	update_plasmacutter()
 
 /obj/item/tool/pickaxe/plasmacutter/proc/calc_delay(mob/user)
@@ -225,7 +225,7 @@
 			powered = FALSE
 			if(!silent)
 				playsound(loc, 'sound/weapons/saberoff.ogg', 25)
-				balloon_alert(user, "Insufficient charge")
+				balloon_alert(user, "insufficient charge!")
 				to_chat(user, span_warning("The plasma cutter abruptly shuts down due to a lack of power!"))
 		force = 5
 		damtype = BRUTE
@@ -290,20 +290,3 @@
 		ST.update_appearance()
 		ST.update_sides()
 		cut_apart(user, target.name, target, 0, "You melt the snow with [src]. ") //costs nothing
-
-
-
-/obj/item/tool/pickaxe/plasmacutter/attack_obj(obj/O, mob/living/user)
-	if(!powered || user.do_actions || CHECK_BITFIELD(O.resistance_flags, INDESTRUCTIBLE) || CHECK_BITFIELD(O.resistance_flags, PLASMACUTTER_IMMUNE))
-		..()
-		return TRUE
-
-	if(!start_cut(user, O.name, O))
-		return TRUE
-
-	if(!do_after(user, calc_delay(user), NONE, O, BUSY_ICON_HOSTILE))
-		return TRUE
-
-	cut_apart(user, O.name, O)
-	O.deconstruct(TRUE)
-	return TRUE

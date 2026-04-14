@@ -7,7 +7,6 @@
 	coverage = 10
 	layer = TABLE_LAYER
 	anchored = TRUE
-	resistance_flags = UNACIDABLE
 	allow_pass_flags = PASS_LOW_STRUCTURE|PASSABLE|PASS_WALKOVER
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 1
@@ -22,13 +21,13 @@
 
 /obj/machinery/optable/Initialize(mapload)
 	. = ..()
-
 	var/static/list/connections = list(
 		COMSIG_OBJ_TRY_ALLOW_THROUGH = PROC_REF(can_climb_over),
 		COMSIG_FIND_FOOTSTEP_SOUND = TYPE_PROC_REF(/atom/movable, footstep_override),
 		COMSIG_TURF_CHECK_COVERED = TYPE_PROC_REF(/atom/movable, turf_cover_check),
 	)
 	AddElement(/datum/element/connect_loc, connections)
+	AddComponent(/datum/component/climbable)
 
 	return INITIALIZE_HINT_LATELOAD
 
@@ -143,6 +142,9 @@
 	else if(ismob(A))
 		..(A, user)
 
+/obj/machinery/optable/ai_should_stay_buckled(mob/living/carbon/npc)
+	return TRUE //nurse, hold him down
+
 /obj/machinery/optable/proc/check_victim()
 	if(locate(/mob/living/carbon/human, loc))
 		var/mob/living/carbon/human/M = locate(/mob/living/carbon/human, loc)
@@ -176,7 +178,7 @@
 
 /obj/machinery/optable/verb/climb_on()
 	set name = "Climb On Table"
-	set category = "Object"
+	set category = "IC.Object"
 	set src in oview(1)
 
 	if(usr.stat || !ishuman(usr) || usr.restrained() || !check_table(usr))
@@ -195,6 +197,17 @@
 		user.transferItemToLoc(I, src)
 		anes_tank = I
 		to_chat(user, span_notice("You connect \the [anes_tank] to \the [src]."))
+
+	if(istype(I, /obj/item/riding_offhand))
+		var/obj/item/riding_offhand/carry_obj = I
+		if(carry_obj.is_rider(user))
+			return
+		if(victim)
+			balloon_alert(user, "already has a patient!")
+			return
+		if(!take_victim(carry_obj.rider, user))
+			return
+		qdel(carry_obj)
 
 /obj/machinery/optable/grab_interact(obj/item/grab/grab, mob/user, base_damage = BASE_OBJ_SLAM_DAMAGE, is_sharp = FALSE)
 	. = ..()

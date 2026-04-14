@@ -230,6 +230,7 @@
 	Has outstanding mobility and handling and can be comfortably fired one handed on its lower fire rate mode. \
 	When set to its higher rate of fire, it unleashes a staggering torrent of firepower, but is difficult to control even two handed, and quickly loses effectiveness at range. \
 	When used with the boarding shield, use of the higher rate of fire is highly unrecommended outside of anything but absolute point blank range. \
+	The accompanying S-144 boarding shield provides incredible resistance to damage, and it also provides resistance against projectile based stuns. \
 	It uses 10x20mm caseless rounds."
 	ui_icon = "riot_shield"
 	item_typepath = /obj/item/weapon/gun/smg/som/one_handed
@@ -264,6 +265,7 @@
 	Has outstanding mobility and handling and can be comfortably fired one handed on its lower fire rate mode. \
 	When set to its higher rate of fire, it unleashes a staggering torrent of firepower, but is difficult to control even two handed, and quickly loses effectiveness at range. \
 	When used with the boarding shield, use of the higher rate of fire is highly unrecommended outside of anything but absolute point blank range. \
+	The accompanying S-144 boarding shield provides incredible resistance to damage, and it also provides resistance against projectile based stuns. \
 	Uses a mix of standard and AP 10x20mm caseless ammunition."
 	loadout_item_flags = NONE
 	secondary_ammo_type = /obj/item/ammo_magazine/smg/som/ap
@@ -295,6 +297,43 @@
 	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/som, SLOT_IN_ACCESSORY)
 	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/satrapine, SLOT_IN_ACCESSORY)
 	wearer.equip_to_slot_or_del(new /obj/item/storage/box/MRE/som, SLOT_IN_ACCESSORY)
+
+/datum/loadout_item/suit_store/main_gun/som_marine/big_rifle
+	name = "V-35"
+	desc = "Equipped with a mag harness, extended barrel and bipod. The V-35 is a more recent addition to the SOM armory, \
+	where its superior per shot firepower serves as a cheaper alternative to vastly more expensive and maintenance intensive volkite weaponry. \
+	A variety of ammunition types further more gives the V-35 significant tactical flexibility that volkite weaponry typically lacks, in addition to the ability to use aim mode. \
+	Uses a mix of standard, incendiary and AT 10x27mm caseless ammunition."
+	ui_icon = "default"
+	item_typepath = /obj/item/weapon/gun/rifle/som_big/support
+	purchase_cost = 35
+
+/datum/loadout_item/suit_store/main_gun/som_marine/big_rifle/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
+	. = ..()
+	if(!isstorageobj(wearer.back))
+		return
+	wearer.equip_to_slot_or_del(new /obj/item/storage/box/MRE, SLOT_IN_BACKPACK)
+	wearer.equip_to_slot_or_del(new ammo_type, SLOT_IN_BACKPACK)
+	wearer.equip_to_slot_or_del(new ammo_type, SLOT_IN_BACKPACK)
+	if(!istype(wearer.back, /obj/item/storage/backpack/satchel))
+		wearer.equip_to_slot_or_del(new ammo_type, SLOT_IN_BACKPACK)
+		wearer.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/som_big/incendiary, SLOT_IN_BACKPACK)
+		wearer.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/som_big/anti_armour, SLOT_IN_BACKPACK)
+
+/datum/loadout_item/suit_store/main_gun/som_marine/big_rifle/role_post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
+	if(istype(wearer.belt, /obj/item/storage/belt))
+		wearer.equip_to_slot_or_del(new ammo_type, SLOT_IN_BELT)
+		wearer.equip_to_slot_or_del(new ammo_type, SLOT_IN_BELT)
+		wearer.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/som_big/incendiary, SLOT_IN_BELT)
+		wearer.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/som_big/incendiary, SLOT_IN_BELT)
+		wearer.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/som_big/anti_armour, SLOT_IN_BELT)
+		wearer.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/som_big/anti_armour, SLOT_IN_BELT)
+
+	wearer.equip_to_slot_or_del(new /obj/item/binoculars, SLOT_IN_ACCESSORY)
+	wearer.equip_to_slot_or_del(new /obj/item/tool/extinguisher/mini, SLOT_IN_ACCESSORY)
+	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_ACCESSORY)
+	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_ACCESSORY)
+	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade/mirage, SLOT_IN_ACCESSORY)
 
 /datum/loadout_item/suit_store/main_gun/som_marine/volkite_charger
 	name = "VX-32 charger"
@@ -346,6 +385,14 @@
 	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_ACCESSORY)
 	wearer.equip_to_slot_or_del(new /obj/item/storage/box/MRE/som, SLOT_IN_ACCESSORY)
 	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary/som, SLOT_IN_ACCESSORY)
+
+	if(istype(wearer.belt, /obj/item/storage/belt/sparepouch))
+		wearer.equip_to_slot_or_del(new /obj/item/storage/pill_bottle/packet/paracetamol, SLOT_IN_BELT)
+		wearer.equip_to_slot_or_del(new /obj/item/storage/pill_bottle/packet/isotonic, SLOT_IN_BELT)
+		wearer.equip_to_slot_or_del(new /obj/item/storage/pill_bottle/packet/tricordrazine, SLOT_IN_BELT)
+		wearer.equip_to_slot_or_del(new /obj/item/clothing/mask/cigarette/cigar/cohiba, SLOT_IN_BELT)
+		wearer.equip_to_slot_or_del(new /obj/item/storage/box/matches, SLOT_IN_BELT)
+		wearer.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/inaprovaline, SLOT_IN_BELT)
 
 	if(!isstorageobj(wearer.back))
 		return

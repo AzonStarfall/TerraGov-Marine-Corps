@@ -45,7 +45,7 @@
 			else
 				new_icon_state = capturing_faction ? "campaign_objective_decap_som" : "campaign_objective_som"
 
-	SSminimaps.add_marker(src, MINIMAP_FLAG_ALL, image('icons/UI_icons/map_blips.dmi', null, new_icon_state, HIGH_FLOAT_LAYER))
+	SSminimaps.add_marker(src, MINIMAP_FLAG_ALL, image('icons/UI_icons/map_blips.dmi', null, new_icon_state, MINIMAP_LABELS_LAYER))
 
 /obj/structure/campaign_objective/capture_objective/attack_hand(mob/living/user)
 	if(!ishuman(user))
@@ -55,13 +55,13 @@
 	if(!capture_check(user))
 		return
 	if(user.do_actions)
-		user.balloon_alert(user, "You are already doing something!")
+		user.balloon_alert(user, "busy!")
 		return
 	begin_capture(user)
 
 ///Starts the capture process
 /obj/structure/campaign_objective/capture_objective/proc/begin_capture(mob/living/user)
-	user.balloon_alert_to_viewers("Activating!")
+	user.balloon_alert_to_viewers("activating...")
 	if(!do_after(user, activation_time, NONE, src))
 		return
 	if(!capture_check(user))
@@ -74,6 +74,7 @@
 		countdown.stop()
 	if(owning_faction == user.faction) //we already own it, we just stopped the enemy cap
 		capturing_faction = null
+		update_icon()
 		return
 	capturing_faction = user.faction
 	update_icon()
@@ -84,17 +85,17 @@
 /obj/structure/campaign_objective/capture_objective/proc/capture_check(mob/living/user)
 	if(capturing_faction)
 		if(capturing_faction == user.faction)
-			user.balloon_alert(user, "Already capturing!")
+			user.balloon_alert(user, "already capturing!")
 			return FALSE
 		else
 			return TRUE //someone else is trying to cap it, whether you already own it or not
 
 	if(owning_faction)
 		if(owning_faction == user.faction)
-			user.balloon_alert(user, "Already yours!")
+			user.balloon_alert(user, "already yours!")
 			return FALSE
 		if(!(capture_flags & CAPTURE_OBJECTIVE_RECAPTURABLE))
-			user.balloon_alert(user, "Cannot recaptured!")
+			user.balloon_alert(user, "can't recapture!")
 			return FALSE
 	return TRUE
 
@@ -148,7 +149,7 @@
 	desc = "A tall tower with a sensor array at the top and a control box at the bottom. Used to hack into colony control."
 	icon = 'icons/obj/structures/sensor.dmi'
 	icon_state = "sensor"
-	obj_flags = NONE
+	obj_flags = BLOCK_Z_OUT_DOWN|BLOCK_Z_IN_UP
 	capture_flags = CAPTURE_OBJECTIVE_RECAPTURABLE
 
 /obj/structure/campaign_objective/capture_objective/sensor_tower/Initialize(mapload)
@@ -219,28 +220,50 @@
 
 /obj/effect/landmark/campaign_structure/asat_system
 	name = "ASAT system"
-	icon = 'icons/obj/structures/campaign_structures.dmi'
-	icon_state = "asat"
+	icon = 'icons/obj/structures/campaign/ASAT.dmi'
+	icon_state = "silo"
+	pixel_x = -26
+	pixel_y = -7
 	mission_types = list(/datum/campaign_mission/capture_mission/asat)
-	spawn_object = /obj/structure/campaign_objective/capture_objective/fultonable/asat_system
+	spawn_object = /obj/structure/campaign_objective/capture_objective/asat_system
 
-/obj/structure/campaign_objective/capture_objective/fultonable/asat_system
+/obj/structure/campaign_objective/capture_objective/asat_system
 	name = "\improper T-4000 ASAT system"
-	icon = 'icons/obj/structures/campaign_structures.dmi'
-	icon_state = "asat"
+	icon = 'icons/obj/structures/campaign/ASAT.dmi'
+	icon_state = "silo"
 	desc = "A sophisticated surface to space missile system designed for attacking orbiting satellites or spacecraft."
+	bound_height = 64
+	bound_width = 96
+	bound_x = -32
+	pixel_x = -26
+	pixel_y = -7
 	capture_flags = CAPTURE_OBJECTIVE_RECAPTURABLE
 	owning_faction = FACTION_TERRAGOV
+	activation_time = 3 SECONDS
+	capture_delay = 90 SECONDS
 
-/obj/structure/campaign_objective/capture_objective/fultonable/asat_system/capture_check(mob/living/user)
+/obj/structure/campaign_objective/capture_objective/asat_system/capture_check(mob/living/user)
 	//This is a 'defend' objective. The defending faction can't actually claim it for themselves, just decap it.
 	if((user.faction == owning_faction) && !capturing_faction)
-		user.balloon_alert(user, "Defend this objective!")
+		user.balloon_alert(user, "defend this objective!")
 		return FALSE
 	return ..()
 
-/obj/structure/campaign_objective/capture_objective/fultonable/asat_system/do_capture(mob/living/user)
+/obj/structure/campaign_objective/capture_objective/asat_system/do_capture(mob/living/user)
 	capturing_faction = null
 	capture_timer = null
 	countdown.stop()
 	finish_capture(user)
+
+/obj/structure/campaign_objective/capture_objective/asat_system/finish_capture(mob/living/user)
+	. = ..()
+	playsound(loc, 'sound/magic/lightningbolt.ogg', 75, 0)
+	new /obj/effect/temp_visual/teleporter_array(loc)
+	visible_message(span_danger("Reality warps around [src] as the missile vanishes in a flash of light!"))
+	capture_flags = NONE
+
+/obj/structure/campaign_objective/capture_objective/asat_system/update_icon_state()
+	icon_state = initial(icon_state)
+	if(owning_faction == initial(owning_faction))
+		return
+	icon_state = "silo_empty"

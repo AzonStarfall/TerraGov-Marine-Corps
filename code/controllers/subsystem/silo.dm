@@ -3,12 +3,11 @@ SUBSYSTEM_DEF(silo)
 	wait = 1 MINUTES
 	priority = FIRE_PRIORITY_SILO
 	can_fire = FALSE
-	init_order = INIT_ORDER_SPAWNING_POOL
 	///How many larva points are added every minutes in total
 	var/current_larva_spawn_rate = 0
 
 /datum/controller/subsystem/silo/Initialize()
-	RegisterSignals(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_XENO_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LAUNCHED), PROC_REF(start_spawning))
+	RegisterSignal(SSdcs, COMSIG_GLOB_GAMESTATE_GROUNDSIDE, PROC_REF(start_spawning))
 	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/silo/fire(resumed = 0)
@@ -42,6 +41,6 @@ SUBSYSTEM_DEF(silo)
 ///Activate the subsystem when shutters open and remove the free spawning when marines are joining
 /datum/controller/subsystem/silo/proc/start_spawning()
 	SIGNAL_HANDLER
-	UnregisterSignal(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_XENO_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LAUNCHED))
+	UnregisterSignal(SSdcs, COMSIG_GLOB_GAMESTATE_GROUNDSIDE)
 	if(SSticker.mode?.round_type_flags & MODE_SILO_RESPAWN)
 		can_fire = TRUE
