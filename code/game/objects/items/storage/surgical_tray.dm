@@ -17,8 +17,6 @@
 	var/monitoring = FALSE
 	/// Set while a tool is temporarily moved out for surgery; suppresses Exited side-effects
 	var/surgery_in_progress = FALSE
-	/// Stable display order for the tool grid; new tools append to the bottom
-	var/list/tool_display_order
 
 /obj/item/storage/surgical_tray/PopulateContents()
 	new /obj/item/tool/surgery/scalpel/manager(src)
@@ -51,7 +49,7 @@
 /obj/item/storage/surgical_tray/proc/monitor_proximity()
 	monitoring = TRUE
 	while(current_viewer && !QDELETED(current_viewer) && \
-	      current_patient && !QDELETED(current_patient))
+	    current_patient && !QDELETED(current_patient))
 		sleep(5)
 		if(!current_viewer || QDELETED(current_viewer))
 			break
@@ -70,19 +68,14 @@
 		return
 	if(AM == selected_tool)
 		selected_tool = null
-	tool_display_order -= AM
 	if(current_viewer && !QDELETED(current_viewer))
 		open_tray_ui(current_viewer)
 
 /// Refresh the UI when items are added to the tray.
 /obj/item/storage/surgical_tray/Entered(atom/movable/AM, old_loc)
 	. = ..()
-	if(surgery_in_progress) // tool is being returned after surgery; Exited already handles the refresh
+	if(surgery_in_progress) // tool is being returned after surgery; suppress the UI refresh
 		return
-	if(!tool_display_order)
-		tool_display_order = list()
-	if(!(AM in tool_display_order))
-		tool_display_order += AM
 	if(current_viewer && !QDELETED(current_viewer))
 		open_tray_ui(current_viewer)
 
@@ -98,53 +91,106 @@
 	current_viewer = user
 	if(!monitoring)
 		INVOKE_ASYNC(src, PROC_REF(monitor_proximity))
-	// --- Doll: white.dmi silhouette at 5x (160×160) ---
-	var/icon/doll_icon = icon('icons/mob/screen/white.dmi', "zone_sel")
+	// --- Doll: silhouette scaled from 64×64 source to 160×160 (2.5x) ---
+	var/icon/doll_icon = icon('icons/mob/screen/surgery64.dmi', "back")
+	doll_icon.Scale(160, 160)
 	var/doll_b64 = icon2base64(doll_icon)
 
-	// Selected zone highlight overlay from zone_sel.dmi (drawn on top, non-interactive)
+	// Selected zone highlight overlay (drawn on top, non-interactive)
 	var/overlay_html = ""
 	if(selected_zone)
-		var/icon/zone_overlay = icon('icons/mob/screen/zone_sel.dmi', selected_zone)
+		var/icon/zone_overlay = icon('icons/mob/screen/surgery64.dmi', selected_zone)
+		zone_overlay.Scale(160, 160)
 		var/overlay_b64 = icon2base64(zone_overlay)
 		overlay_html = "<img src='data:image/png;base64,[overlay_b64]' width='160' height='160' \
 			style='image-rendering:pixelated;position:absolute;top:0;left:0;pointer-events:none;'>"
+
+	// Open incision overlays — one per zone that currently has an active surgical opening
+	var/incision_html = ""
+	if(!QDELETED(current_patient) && iscarbon(current_patient))
+		var/mob/living/carbon/C_incision = current_patient
+		var/static/list/incision_zones = list(
+			BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM,
+			BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN,
+			BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND,
+			BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT,
+		)
+		for(var/zone in incision_zones)
+			var/datum/limb/incision_limb = C_incision.get_limb(zone)
+			if(!incision_limb || incision_limb.surgery_open_stage <= 0)
+				continue
+			// Specify frame 1 explicitly so BYOND gives us a single PNG frame rather than a sprite sheet
+			var/icon/incision_icon = icon('icons/mob/screen/surgery64.dmi', "[zone]_o", SOUTH, 1)
+			incision_icon.Scale(160, 160)
+			var/incision_b64 = icon2base64(incision_icon)
+			incision_html += "<img src='data:image/png;base64,[incision_b64]' width='160' height='160' \
+				style='image-rendering:pixelated;position:absolute;top:0;left:0;pointer-events:none;'>"
 
 
 
 	var/dat = "<table width='100%' height='100%' cellpadding='0' cellspacing='0'><tr>"
 
-	// --- Left panel: 2-column icon grid, stable insertion order ---
-	if(!tool_display_order)
-		tool_display_order = list()
-	var/list/ordered_tools = list()
-	// Add tools in their stable display order
-	for(var/obj/item/t in tool_display_order)
-		if(!QDELETED(t) && t.loc == src)
-			ordered_tools += t
-	// Append any contents item not yet tracked (safety fallback)
-	for(var/obj/item/t in contents)
-		if(!(t in ordered_tools))
-			ordered_tools += t
+	// --- Left panel: fixed-slot tool grid (one slot per canonical tool type) ---
+	var/static/list/slot_types = list(
+		/obj/item/tool/surgery/scalpel/manager,
+		/obj/item/tool/surgery/scalpel,
+		/obj/item/tool/surgery/hemostat,
+		/obj/item/tool/surgery/retractor,
+		/obj/item/tool/surgery/surgical_membrane,
+		/obj/item/tool/surgery/cautery,
+		/obj/item/tool/surgery/circular_saw,
+		/obj/item/tool/surgery/suture,
+		/obj/item/tool/surgery/bonegel,
+		/obj/item/tool/surgery/bonesetter,
+		/obj/item/tool/surgery/FixOVein,
+		/obj/item/stack/nanopaste,
+	)
 
 	dat += "<td valign='top' style='border-right:1px solid #555;padding:8px;width:160px;'>"
 	dat += "<b style='display:block;margin-bottom:6px;'>Tools</b>"
 	dat += "<div style='display:grid;grid-template-columns:1fr 1fr;gap:4px;overflow-y:auto;max-height:370px;'>"
-	for(var/obj/item/tool in ordered_tools)
-		var/is_selected = (tool == selected_tool)
+	var/list/slotted = list()
+	for(var/slot_path in slot_types)
+		var/obj/item/found = null
+		for(var/obj/item/t in contents)
+			if(t in slotted) // skip tools already claimed by an earlier (more-specific) slot
+				continue
+			if(istype(t, slot_path))
+				found = t
+				break
+		if(found)
+			slotted += found
+			var/is_selected = (found == selected_tool)
+			var/cell_style = is_selected ? \
+				"background:#334466;box-shadow:inset 0 0 0 2px #88aaff;" : \
+				"background:#222;"
+			var/icon/tool_icon = icon(found.icon, found.icon_state, SOUTH, 1)
+			var/tool_b64 = icon2base64(tool_icon)
+			dat += "<a href='byond://?src=[REF(src)];select_tool=[REF(found)]' title='[html_encode(found.name)]' \
+				style='display:flex;align-items:center;justify-content:center;padding:4px;[cell_style]text-decoration:none;border-radius:2px;'>"
+			dat += "<img src='data:image/png;base64,[tool_b64]' width='32' height='32' \
+				style='image-rendering:pixelated;'>"
+			dat += "</a>"
+		else
+			dat += "<div style='padding:4px;min-height:40px;background:#111;border-radius:2px;'></div>"
+	// Render any tools in the tray that aren't in the canonical slot list
+	for(var/obj/item/extra in contents)
+		if(extra in slotted)
+			continue
+		var/is_selected = (extra == selected_tool)
 		var/cell_style = is_selected ? \
-			"background:#334466;outline:2px solid #88aaff;" : \
+			"background:#334466;box-shadow:inset 0 0 0 2px #88aaff;" : \
 			"background:#222;"
-		var/icon/tool_icon = icon(tool.icon, tool.icon_state, SOUTH, 1)
+		var/icon/tool_icon = icon(extra.icon, extra.icon_state, SOUTH, 1)
 		var/tool_b64 = icon2base64(tool_icon)
-		dat += "<a href='byond://?src=[REF(src)];select_tool=[REF(tool)]' title='[html_encode(tool.name)]' \
+		dat += "<a href='byond://?src=[REF(src)];select_tool=[REF(extra)]' title='[html_encode(extra.name)]' \
 			style='display:flex;align-items:center;justify-content:center;padding:4px;[cell_style]text-decoration:none;border-radius:2px;'>"
 		dat += "<img src='data:image/png;base64,[tool_b64]' width='32' height='32' \
 			style='image-rendering:pixelated;'>"
 		dat += "</a>"
-	if(!length(contents))
-		dat += "<i style='color:#888;'>Tray is empty.</i>"
 	dat += "</div>"
+	if(surgery_in_progress)
+		dat += "<div style='margin-top:6px;padding:4px 6px;background:#3a1a00;border:1px solid #c07020;border-radius:3px;color:#ffaa44;font-size:0.82em;font-weight:bold;'>&#9881; Surgery in progress...</div>"
 	dat += "</td>"
 
 	// --- Available surgery steps (all steps applicable with tray tools) ---
@@ -174,7 +220,7 @@
 				steps_html += "<span style='display:flex;flex-wrap:wrap;gap:2px;'>"
 				for(var/obj/item/t in valid_tray_tools)
 					var/is_sel = (t == selected_tool)
-					var/tbg = is_sel ? "background:#334466;outline:2px solid #88aaff;" : "background:#1a2233;"
+					var/tbg = is_sel ? "background:#334466;box-shadow:inset 0 0 0 2px #88aaff;" : "background:#1a2233;"
 					var/icon/ti = icon(t.icon, t.icon_state, SOUTH, 1)
 					var/tb64 = icon2base64(ti)
 					steps_html += "<img src='data:image/png;base64,[tb64]' width='24' height='24' title='[html_encode(t.name)]' style='image-rendering:pixelated;[tbg]border-radius:2px;padding:2px;'>"
@@ -198,6 +244,7 @@
 	dat += "<img src='data:image/png;base64,[doll_b64]' width='160' height='160' usemap='#zonesel' \
 		style='image-rendering:pixelated;display:block;cursor:crosshair;'>"
 	dat += overlay_html
+	dat += incision_html
 	dat += "</div>"
 	dat += "<map name='zonesel'>"
 	dat += "<area shape='rect' coords='65,25,90,40'    href='byond://?src=[REF(src)];select_zone=eyes'   title='Eyes'>"
@@ -239,7 +286,10 @@
 	if(href_list["select_tool"])
 		var/obj/item/tool = locate(href_list["select_tool"])
 		if(tool && tool.loc == src)
-			selected_tool = tool
+			if(tool == selected_tool) // clicking the already-selected tool deselects it
+				selected_tool = null
+			else
+				selected_tool = tool
 		else
 			selected_tool = null
 		open_tray_ui(user)
@@ -269,6 +319,7 @@
 			if(user.client?.prefs)
 				user.client.prefs.toggles_gameplay &= ~RADIAL_MEDICAL
 			surgery_in_progress = TRUE
+			open_tray_ui(user) // show "surgery in progress" indicator before the step begins
 			tool.forceMove(user) // puts tool in user.contents so fail_step fires on failure
 			do_surgery(current_patient, user, tool)
 			// Return tool to tray if it wasn't consumed by the surgery step
