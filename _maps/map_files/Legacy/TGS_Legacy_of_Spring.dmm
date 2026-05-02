@@ -657,15 +657,6 @@
 	},
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
-"ep" = (
-/obj/effect/turf_decal/warning_stripes/thin{
-	dir = 9;
-	pixel_y = 1
-	},
-/turf/open/floor/mainship/silver{
-	dir = 8
-	},
-/area/space)
 "eq" = (
 /obj/structure/largecrate/guns,
 /turf/open/floor/mainship/orange{
@@ -887,10 +878,6 @@
 /area/space)
 "ga" = (
 /obj/effect/turf_decal/warning_stripes/thin{
-	dir = 6;
-	pixel_x = 1
-	},
-/obj/effect/turf_decal/warning_stripes/thin{
 	dir = 1;
 	pixel_y = 1
 	},
@@ -898,9 +885,8 @@
 	dir = 1;
 	pixel_y = -4
 	},
-/turf/open/floor/mainship/silver{
-	dir = 8
-	},
+/obj/effect/turf_decal/warning_stripes/thin,
+/turf/open/floor/mainship/floor,
 /area/space)
 "gc" = (
 /obj/machinery/telecomms/broadcaster/preset_left,
@@ -1041,18 +1027,6 @@
 	dir = 10
 	},
 /turf/open/floor/mainship/floor,
-/area/space)
-"hz" = (
-/obj/effect/turf_decal/warning_stripes/thin{
-	dir = 8
-	},
-/obj/machinery/landinglight/tadpole{
-	dir = 8;
-	pixel_x = 4
-	},
-/turf/open/floor/mainship/silver{
-	dir = 8
-	},
 /area/space)
 "hB" = (
 /obj/machinery/vending/marineFood,
@@ -3892,11 +3866,13 @@
 /area/space)
 "Be" = (
 /obj/effect/turf_decal/warning_stripes/thin{
-	dir = 10
-	},
-/turf/open/floor/mainship/silver{
 	dir = 8
 	},
+/obj/machinery/landinglight/tadpole{
+	dir = 8;
+	pixel_x = 4
+	},
+/turf/open/floor/mainship/floor,
 /area/space)
 "Bf" = (
 /obj/effect/turf_decal/trimline/blue/line{
@@ -4196,9 +4172,6 @@
 /area/space)
 "DB" = (
 /obj/effect/turf_decal/warning_stripes/thin{
-	dir = 10
-	},
-/obj/effect/turf_decal/warning_stripes/thin{
 	dir = 1;
 	pixel_y = 1
 	},
@@ -4206,8 +4179,12 @@
 	dir = 1;
 	pixel_y = -4
 	},
+/obj/effect/turf_decal/warning_stripes/thin{
+	dir = 6;
+	pixel_x = 1
+	},
 /turf/open/floor/mainship/silver{
-	dir = 4
+	dir = 8
 	},
 /area/space)
 "DC" = (
@@ -6869,7 +6846,6 @@
 	},
 /area/space)
 "WD" = (
-/obj/effect/turf_decal/warning_stripes/thin,
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 1;
 	pixel_y = 1
@@ -6878,7 +6854,12 @@
 	dir = 1;
 	pixel_y = -4
 	},
-/turf/open/floor/mainship/floor,
+/obj/effect/turf_decal/warning_stripes/thin{
+	dir = 10
+	},
+/turf/open/floor/mainship/silver{
+	dir = 4
+	},
 /area/space)
 "WF" = (
 /obj/structure/ship_ammo/cas/minirocket/illumination,
@@ -25568,19 +25549,19 @@ wT
 wT
 wT
 Lf
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-FP
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
 Ly
 Ly
 Ly
@@ -25705,19 +25686,19 @@ wT
 wT
 wT
 Lf
-mP
-FP
-FP
-FP
-FP
-FP
-FP
-FP
-FP
-FP
-FP
-mP
-FP
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
 Ly
 Ou
 tH
@@ -25842,8 +25823,6 @@ wT
 wT
 wT
 Lf
-uN
-FP
 Ly
 Ly
 Ly
@@ -25851,11 +25830,13 @@ Ly
 Ly
 Ly
 Ly
-Ly
-Ly
-Ly
-Ly
-Ly
+Ou
+tH
+Xa
+hf
+bE
+ib
+TM
 ic
 OZ
 OZ
@@ -25979,20 +25960,20 @@ wT
 wT
 wT
 NQ
-mP
-NQ
 Ly
 Ly
 Ly
 Ly
-Ou
-tH
-Xa
-hf
-bE
-ib
-TM
 Ly
+Ly
+Ly
+FP
+lm
+xI
+sH
+QE
+hp
+OV
 ic
 fs
 OZ
@@ -26116,20 +26097,20 @@ wT
 wT
 wT
 NQ
-mP
-NQ
+Ly
+Ly
+Ly
 Ly
 Ly
 Ly
 Ly
 FP
-lm
+NM
 xI
-sH
-QE
-hp
-OV
-Ly
+si
+si
+si
+si
 ic
 iX
 OZ
@@ -26253,20 +26234,20 @@ wT
 wT
 wT
 NQ
-mP
-NQ
+Ly
+Ly
+Ly
 Ly
 Ly
 Ly
 Ly
 FP
-NM
+ZR
 xI
-si
-si
-si
-si
-Ly
+TQ
+UJ
+tF
+HQ
 ic
 qb
 OZ
@@ -26390,20 +26371,20 @@ wT
 wT
 wT
 NQ
-mP
-NQ
 Ly
 Ly
 Ly
 Ly
-FP
-ZR
-xI
-TQ
-UJ
-tF
-HQ
 Ly
+Ly
+Ly
+hw
+nK
+fp
+FV
+PF
+Fb
+cx
 ic
 OZ
 OZ
@@ -26527,22 +26508,22 @@ wT
 wT
 wT
 NQ
-mP
-NQ
 Ly
 Ly
 Ly
 Ly
-hw
-nK
-fp
-FV
-PF
-Fb
-cx
 Ly
-hw
-nK
+Ou
+hl
+hl
+hl
+hl
+hl
+hl
+hl
+hl
+hl
+Xa
 nK
 nK
 Mg
@@ -26664,30 +26645,30 @@ wT
 wT
 wT
 NQ
-mP
-NQ
-Ly
-Ly
-Ly
-Ou
-hl
-hl
-hl
-hl
-hl
-hl
-hl
-hl
-hl
-Xa
 Ly
 Ly
 Ly
 Ly
 Ly
+iB
+px
+px
+cd
+ec
+ec
+ec
+ec
+ec
+vA
+YD
+KZ
+ID
 Ly
 Ly
-Ly
+dF
+Zf
+eq
+dN
 Pk
 si
 yp
@@ -26801,30 +26782,30 @@ wT
 wT
 wT
 NQ
-mP
-NQ
+Ly
+Ly
 Ly
 Ly
 Ly
 iB
 px
-px
 cd
-ec
-ec
-ec
-ec
-ec
-vA
+yt
+px
+px
+px
+px
+px
+oL
 YD
-KZ
-ID
+uO
+nw
 Ly
 Ly
-dF
-Zf
-eq
-dN
+aU
+eX
+GL
+HL
 Pk
 si
 DL
@@ -26938,30 +26919,30 @@ uB
 Lf
 Lf
 Lf
-mP
-FP
+Ly
+Ly
 Ly
 Ly
 Ly
 iB
 px
-cd
-yt
+IG
+px
 px
 px
 px
 px
 px
 oL
-YD
-uO
-nw
-Ly
-Ly
-aU
-eX
-GL
-HL
+DB
+OY
+OY
+av
+tx
+OY
+OY
+OY
+av
 Pk
 si
 yp
@@ -27074,9 +27055,9 @@ uL
 Qn
 yU
 FP
-mP
-mP
-FP
+Ly
+Ly
+Ly
 Ly
 Ly
 Ly
@@ -27085,20 +27066,20 @@ px
 IG
 px
 px
-px
+yV
 px
 px
 px
 oL
 ga
-OY
-OY
-av
-tx
-OY
-OY
-OY
-av
+Nf
+YM
+xI
+ic
+Th
+eY
+wC
+xI
 Pk
 si
 yp
@@ -27211,9 +27192,9 @@ xz
 mP
 yp
 FP
-mP
-mP
-FP
+Ly
+Ly
+Ly
 Ly
 Ly
 Ly
@@ -27222,20 +27203,20 @@ px
 IG
 px
 px
-yV
+px
 px
 px
 px
 oL
 WD
-Nf
-YM
-xI
-ic
-Th
-eY
-wC
-xI
+Ia
+Ia
+XZ
+cj
+Ia
+Ia
+Ia
+XZ
 Pk
 si
 yp
@@ -27348,31 +27329,31 @@ mP
 mP
 yp
 FP
-mP
-mP
-FP
+Ly
+Ly
+Ly
 Ly
 Ly
 Ly
 iB
 px
-IG
-px
+Sx
+vT
 px
 px
 px
 px
 px
 oL
-DB
-Ia
-Ia
-XZ
-cj
-Ia
-Ia
-Ia
-XZ
+YD
+nk
+Pt
+Ly
+Ly
+Rc
+ss
+ID
+KZ
 Pk
 si
 yp
@@ -27493,23 +27474,23 @@ Ly
 Ly
 iB
 px
+px
 Sx
-vT
-px
-px
-px
-px
-px
-oL
+cu
+cu
+cu
+cu
+cu
+kZ
 YD
-nk
-Pt
+AK
+KJ
 Ly
 Ly
-Rc
-ss
-ID
-KZ
+xE
+OG
+MA
+jB
 Pk
 si
 yp
@@ -27628,25 +27609,25 @@ Ly
 Ly
 Ly
 FP
-iB
-px
-px
-Sx
-cu
-cu
-cu
-cu
-cu
-kZ
-YD
-AK
-KJ
+hw
+Be
+Be
+Be
+Be
+Be
+Be
+Be
+Be
+Be
+fp
 Ly
 Ly
-xE
-OG
-MA
-jB
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
 Pk
 si
 yp
@@ -27765,17 +27746,17 @@ Jr
 Jr
 Jr
 Jr
-Be
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-ep
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
 Jr
 Jr
 Jr
