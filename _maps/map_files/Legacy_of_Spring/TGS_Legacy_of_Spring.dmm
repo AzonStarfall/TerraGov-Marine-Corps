@@ -199,7 +199,7 @@
 /area/space)
 "aW" = (
 /obj/structure/prop/mainship/railing,
-/turf/template_noop,
+/turf/open/openspace,
 /area/space)
 "aX" = (
 /obj/machinery/door/airlock/multi_tile/mainship/marine/general/engi{
@@ -685,7 +685,7 @@
 	teleport_z = 1;
 	teleport_z_offset = 1
 	},
-/turf/template_noop,
+/turf/open/openspace,
 /area/space)
 "do" = (
 /obj/vehicle/ridden/powerloader,
@@ -4081,7 +4081,7 @@
 	teleport_z = 1;
 	teleport_z_offset = 1
 	},
-/turf/template_noop,
+/turf/open/openspace,
 /area/space)
 "wb" = (
 /obj/structure/reagent_dispensers/water_cooler,
@@ -4218,7 +4218,7 @@
 /turf/open/floor/wood,
 /area/space)
 "wT" = (
-/turf/template_noop,
+/turf/open/openspace,
 /area/space)
 "wU" = (
 /obj/effect/turf_decal/siding/wood{
@@ -7810,7 +7810,7 @@
 /obj/machinery/elevator_control_panel/directional/north{
 	linked_elevator_id = "testvator"
 	},
-/turf/template_noop,
+/turf/open/openspace,
 /area/space)
 "Qu" = (
 /obj/structure/closet/firecloset/full,
@@ -8454,7 +8454,7 @@
 /obj/machinery/lift_indicator/directional/north{
 	linked_elevator_id = "testvator"
 	},
-/turf/template_noop,
+/turf/open/openspace,
 /area/space)
 "TV" = (
 /obj/item/pizzabox,
@@ -9309,7 +9309,7 @@
 /obj/structure/prop/mainship/railing{
 	dir = 1
 	},
-/turf/template_noop,
+/turf/open/openspace,
 /area/space)
 "YT" = (
 /obj/structure/platform{
