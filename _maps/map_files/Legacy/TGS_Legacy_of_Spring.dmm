@@ -4554,10 +4554,6 @@
 /obj/structure/closet/secure_closet/military_police,
 /turf/open/floor/mainship/mono,
 /area/space)
-"yv" = (
-/obj/structure/window/framed/mainship/toughened,
-/turf/closed/wall/mainship,
-/area/space)
 "yx" = (
 /obj/item/storage/toolbox/electrical,
 /obj/item/tool/wrench,
@@ -18872,7 +18868,7 @@ Bh
 ZT
 Bh
 Xh
-yv
+sV
 Tv
 KY
 ha
