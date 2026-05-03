@@ -48,6 +48,12 @@
 /obj/structure/table/mainship/nometal,
 /turf/open/floor/mainship/black,
 /area/space)
+"ah" = (
+/obj/machinery/door/airlock/mainship/generic/corporate{
+	dir = 1
+	},
+/turf/open/floor/mainship/mono,
+/area/space)
 "ak" = (
 /obj/structure/prop/flag,
 /turf/open/floor/grass,
@@ -160,6 +166,12 @@
 "aL" = (
 /obj/docking_port/stationary/marine_dropship/cas,
 /turf/open/floor/plating,
+/area/space)
+"aN" = (
+/obj/machinery/door/airlock/mainship/engineering/engine{
+	dir = 2
+	},
+/turf/open/floor/mainship/mono,
 /area/space)
 "aP" = (
 /obj/machinery/vending/weapon,
@@ -306,6 +318,12 @@
 "bA" = (
 /obj/effect/turf_decal/medical_decals/triage/edge,
 /turf/open/floor/mainship/sterile/dark,
+/area/space)
+"bC" = (
+/obj/machinery/door/airlock/mainship/maint{
+	dir = 2
+	},
+/turf/open/floor/mainship/mono,
 /area/space)
 "bE" = (
 /obj/structure/dropship_equipment/shuttle/sentry_holder,
@@ -818,6 +836,12 @@
 	dir = 8
 	},
 /area/space)
+"dZ" = (
+/obj/machinery/door/airlock/mainship/maint{
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/space)
 "ea" = (
 /obj/machinery/door/airlock/mainship/generic/glass{
 	dir = 1
@@ -1051,6 +1075,10 @@
 "fC" = (
 /turf/open/floor/carpet,
 /area/space)
+"fD" = (
+/obj/structure/platform_decoration,
+/turf/open/floor/wood,
+/area/space)
 "fE" = (
 /turf/open/floor/mainship/terragov/north{
 	dir = 5
@@ -1283,6 +1311,12 @@
 /turf/open/floor/mainship/green{
 	dir = 4
 	},
+/area/space)
+"gX" = (
+/obj/machinery/door/airlock/mainship/engineering/CSEoffice{
+	dir = 2
+	},
+/turf/open/floor/mainship/mono,
 /area/space)
 "ha" = (
 /obj/machinery/vending/MarineMed,
@@ -2592,6 +2626,12 @@
 	icon_state = "cargo"
 	},
 /area/space)
+"nV" = (
+/obj/machinery/door/airlock/mainship/command/officer{
+	dir = 2
+	},
+/turf/open/floor/mainship/mono,
+/area/space)
 "nW" = (
 /obj/effect/turf_decal/trimline/blue/arrow_cw{
 	dir = 8
@@ -3081,7 +3121,7 @@
 /turf/open/floor/wood,
 /area/space)
 "qz" = (
-/obj/machinery/vending/engineering,
+/obj/machinery/vending/engivend,
 /turf/open/floor/mainship/black{
 	dir = 10
 	},
@@ -3587,6 +3627,10 @@
 	},
 /turf/open/floor/mainship/floor,
 /area/space)
+"tI" = (
+/obj/machinery/door/airlock/mainship/secure/tcomms,
+/turf/open/floor/mainship/mono,
+/area/space)
 "tL" = (
 /obj/machinery/disposal,
 /turf/open/floor/prison/kitchen,
@@ -3665,6 +3709,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/warning_stripes/box/arrow,
+/turf/open/floor/mainship/mono,
+/area/space)
+"ui" = (
+/obj/machinery/door/airlock/multi_tile/mainship/comdoor/free_access,
 /turf/open/floor/mainship/mono,
 /area/space)
 "uj" = (
@@ -3768,6 +3816,10 @@
 /obj/item/stack/cable_coil,
 /obj/item/tool/wrench,
 /turf/open/floor/mainship/sterile/dark,
+/area/space)
+"uH" = (
+/obj/machinery/door/airlock/mainship/engineering/engine,
+/turf/open/floor/mainship/mono,
 /area/space)
 "uI" = (
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -4224,6 +4276,14 @@
 	dir = 1
 	},
 /area/space)
+"xd" = (
+/obj/machinery/door/airlock/mainship/generic/glass{
+	dir = 1
+	},
+/turf/open/floor/mainship/black{
+	dir = 4
+	},
+/area/space)
 "xf" = (
 /obj/machinery/marine_selector/gear/engi,
 /obj/structure/sign/poster{
@@ -4604,6 +4664,13 @@
 /obj/docking_port/stationary/marine_dropship/minidropship,
 /turf/open/floor/plating,
 /area/space)
+"yW" = (
+/obj/machinery/door/airlock/mainship/maint{
+	no_panel = 1;
+	not_weldable = 1
+	},
+/turf/open/floor/mainship/mono,
+/area/space)
 "yZ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/grass,
@@ -4644,7 +4711,9 @@
 /obj/structure/sign/redcross{
 	dir = 8
 	},
-/turf/open/floor/mainship/mono,
+/turf/open/floor/mainship/black{
+	dir = 8
+	},
 /area/space)
 "zq" = (
 /obj/machinery/chem_master,
@@ -5363,6 +5432,12 @@
 	dir = 5
 	},
 /area/space)
+"Db" = (
+/obj/machinery/door/airlock/mainship/engineering/glass{
+	dir = 1
+	},
+/turf/open/floor/mainship/mono,
+/area/space)
 "Dd" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 8
@@ -5587,6 +5662,10 @@
 	dir = 9
 	},
 /area/space)
+"En" = (
+/obj/machinery/door/airlock/multi_tile/mainship/blackgeneric,
+/turf/open/floor/mainship/mono,
+/area/space)
 "Eo" = (
 /obj/machinery/griddle,
 /turf/open/floor/mainship/mono,
@@ -5675,6 +5754,12 @@
 	},
 /turf/open/floor/mainship/red{
 	dir = 8
+	},
+/area/space)
+"EN" = (
+/obj/machinery/vending/engineering,
+/turf/open/floor/mainship/black{
+	dir = 6
 	},
 /area/space)
 "EQ" = (
@@ -5924,6 +6009,10 @@
 "GB" = (
 /obj/effect/turf_decal/warning_stripes/thin,
 /turf/open/floor/mainship/silver,
+/area/space)
+"GE" = (
+/obj/machinery/door/airlock/multi_tile/mainship/personalglass,
+/turf/open/floor/mainship/mono,
 /area/space)
 "GH" = (
 /obj/effect/turf_decal/warning_stripes/box/arrow{
@@ -6199,6 +6288,12 @@
 	dir = 1
 	},
 /turf/open/floor/mainship/sterile/dark,
+/area/space)
+"Iw" = (
+/obj/machinery/door/airlock/mainship/engineering/atmos{
+	dir = 8
+	},
+/turf/open/floor/mainship/mono,
 /area/space)
 "Iz" = (
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -7240,6 +7335,10 @@
 	dir = 1
 	},
 /area/space)
+"Oa" = (
+/obj/machinery/door/airlock/multi_tile/mainship/comdoor,
+/turf/open/floor/mainship/mono,
+/area/space)
 "Oc" = (
 /obj/machinery/camera/autoname/mainship{
 	dir = 10
@@ -7372,6 +7471,13 @@
 	dir = 1
 	},
 /turf/open/floor/mainship/mono,
+/area/space)
+"OF" = (
+/obj/machinery/door/airlock/mainship/generic{
+	name = "Kitchen";
+	dir = 1
+	},
+/turf/open/floor/freezer,
 /area/space)
 "OG" = (
 /obj/structure/reagent_dispensers/watertank,
@@ -13165,7 +13271,7 @@ px
 px
 px
 px
-px
+dZ
 mP
 mP
 mP
@@ -13297,7 +13403,7 @@ CN
 SZ
 SZ
 CN
-SZ
+uN
 SZ
 SZ
 CN
@@ -14086,7 +14192,7 @@ xM
 gu
 fW
 FP
-mP
+uN
 FP
 FP
 FP
@@ -14101,7 +14207,7 @@ FP
 FP
 FP
 FP
-FP
+uN
 CN
 SZ
 SZ
@@ -14554,8 +14660,8 @@ mP
 mP
 mP
 FP
-px
-px
+AU
+AU
 AU
 AU
 AU
@@ -14692,10 +14798,10 @@ FP
 FP
 FP
 FP
-FP
-FP
-FP
-FP
+Lf
+Lf
+Lf
+Lf
 FP
 FP
 FP
@@ -14832,9 +14938,9 @@ An
 Jm
 mP
 GA
-FP
+Lf
 AU
-px
+AU
 AU
 AU
 Lf
@@ -14969,7 +15075,7 @@ nJ
 Jm
 mP
 GA
-FP
+Lf
 AU
 AU
 AU
@@ -15103,10 +15209,10 @@ mP
 FP
 FP
 FP
-FP
-FP
-FP
-FP
+Lf
+Lf
+Lf
+Lf
 FP
 FP
 AU
@@ -15782,7 +15888,7 @@ FP
 mP
 si
 mP
-mP
+En
 zM
 mP
 mP
@@ -16158,26 +16264,26 @@ mP
 si
 mP
 ea
-mP
-mP
-mP
-mP
-mP
-mP
-mP
+Zz
+Zz
+Zz
+Zz
+Zz
+Zz
+Zz
 zp
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
+Zz
+Zz
+Zz
+Zz
+Zz
+Zz
+Zz
+Zz
+Zz
+Zz
+Zz
+Zz
 mP
 si
 mP
@@ -16431,27 +16537,27 @@ FP
 mP
 si
 mP
-ea
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
+xd
+hI
+hI
+hI
+hI
+hI
+hI
+hI
+hI
+hI
+hI
+hI
+hI
+hI
+hI
+hI
+hI
+hI
+hI
+hI
+hI
 mP
 si
 mP
@@ -16741,7 +16847,7 @@ FP
 mP
 si
 mP
-mP
+En
 zM
 mP
 mP
@@ -17569,10 +17675,10 @@ mP
 FP
 FP
 FP
-FP
-FP
-FP
-FP
+Lf
+Lf
+Lf
+Lf
 FP
 FP
 AU
@@ -17709,7 +17815,7 @@ An
 Jm
 mP
 GA
-FP
+Lf
 AU
 AU
 AU
@@ -17846,7 +17952,7 @@ nJ
 Jm
 mP
 GA
-FP
+Lf
 AU
 AU
 AU
@@ -17980,10 +18086,10 @@ FP
 FP
 FP
 FP
-FP
-FP
-FP
-FP
+Lf
+Lf
+Lf
+Lf
 FP
 FP
 FP
@@ -24953,7 +25059,7 @@ fK
 fK
 FP
 FP
-px
+uN
 FP
 FP
 FP
@@ -24967,7 +25073,7 @@ fK
 FP
 FP
 FP
-px
+uN
 FP
 FP
 FP
@@ -25212,7 +25318,7 @@ wT
 wT
 Lf
 px
-px
+dZ
 yZ
 yZ
 wA
@@ -26028,7 +26134,7 @@ wT
 wT
 Lf
 px
-px
+dZ
 lL
 lL
 lL
@@ -26308,7 +26414,7 @@ Ps
 pE
 uJ
 lL
-ef
+OF
 ef
 ef
 ef
@@ -26711,7 +26817,7 @@ lC
 KR
 un
 nT
-mP
+bC
 px
 FP
 os
@@ -26722,7 +26828,7 @@ bZ
 bZ
 bZ
 JU
-mP
+GE
 AP
 Jr
 To
@@ -26734,7 +26840,7 @@ Wg
 Wg
 hP
 yU
-mP
+GE
 AP
 Jr
 yU
@@ -27164,9 +27270,9 @@ FP
 FP
 FP
 FP
-mP
+MQ
 FP
-mP
+MQ
 FP
 FP
 px
@@ -27270,7 +27376,7 @@ OZ
 yO
 ME
 xk
-mP
+GE
 Pk
 si
 si
@@ -27282,7 +27388,7 @@ si
 si
 si
 yp
-mP
+GE
 Pk
 si
 yp
@@ -27304,8 +27410,8 @@ FP
 AP
 Jr
 yU
-mP
-mP
+dZ
+px
 px
 Lf
 wT
@@ -27423,7 +27529,7 @@ mP
 Pk
 si
 yp
-mP
+ah
 DO
 OZ
 AE
@@ -27503,27 +27609,27 @@ Lf
 Lf
 Lf
 Lf
+uN
+FP
+FP
+FP
+FP
+FP
+FP
+FP
+uN
+FP
+FP
+FP
+FP
+FP
+FP
+FP
+FP
+FP
+FP
+FP
 px
-FP
-FP
-FP
-FP
-FP
-FP
-FP
-px
-FP
-FP
-FP
-FP
-FP
-FP
-FP
-FP
-FP
-FP
-FP
-px
 Lf
 Lf
 Lf
@@ -27532,7 +27638,7 @@ FP
 FP
 FP
 FP
-mP
+yW
 FP
 px
 FP
@@ -27560,7 +27666,7 @@ FP
 Pk
 si
 yp
-FP
+fK
 DO
 iI
 Kb
@@ -27672,7 +27778,7 @@ px
 px
 px
 px
-px
+dZ
 ug
 zt
 zt
@@ -27697,7 +27803,7 @@ fK
 Pk
 si
 yp
-FP
+fK
 DO
 OZ
 RE
@@ -27800,11 +27906,7 @@ CN
 SZ
 SZ
 SZ
-SZ
-SZ
-CN
-SZ
-SZ
+uN
 SZ
 CN
 SZ
@@ -27812,9 +27914,13 @@ SZ
 SZ
 CN
 SZ
-mP
+SZ
+SZ
+CN
+SZ
+MQ
 FP
-mP
+MQ
 FP
 FP
 FP
@@ -27937,7 +28043,7 @@ SZ
 Mv
 vc
 eV
-vc
+Ei
 Dk
 SZ
 Es
@@ -28269,7 +28375,7 @@ zz
 zz
 FP
 FP
-mP
+tI
 FP
 Lf
 wT
@@ -28523,13 +28629,13 @@ OZ
 OZ
 OZ
 FP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
+OZ
+OZ
+OZ
+OZ
+OZ
+OZ
+OZ
 FP
 wT
 wT
@@ -28652,7 +28758,7 @@ nK
 FP
 wj
 mP
-mP
+nV
 Pk
 si
 yp
@@ -28660,13 +28766,13 @@ OZ
 OZ
 OZ
 FP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
+OZ
+OZ
+OZ
+OZ
+OZ
+OZ
+OZ
 FP
 wT
 wT
@@ -28798,12 +28904,12 @@ FP
 FP
 FP
 FP
-mP
-ws
-mP
-mP
-mP
-mP
+OZ
+fD
+OZ
+OZ
+OZ
+OZ
 FP
 FP
 FP
@@ -28817,7 +28923,7 @@ zz
 Wj
 FP
 FP
-mP
+tI
 FP
 Lf
 wT
@@ -29200,7 +29306,7 @@ Uf
 FP
 wj
 mP
-mP
+nV
 Pk
 si
 yp
@@ -29222,7 +29328,7 @@ FP
 Pk
 jf
 yp
-FP
+fK
 mP
 RG
 mP
@@ -29359,11 +29465,11 @@ FP
 Pk
 jf
 yp
-FP
+fK
 RU
 BV
 mP
-mP
+gX
 xA
 mP
 EI
@@ -29481,7 +29587,7 @@ yp
 FP
 Pm
 uQ
-jS
+EN
 FP
 zM
 wk
@@ -29752,11 +29858,11 @@ FP
 Pk
 si
 yp
-mP
+ui
 CK
 Zz
 ld
-mP
+Oa
 zM
 mP
 mP
@@ -29909,7 +30015,7 @@ jf
 mP
 mP
 yp
-mP
+Db
 gv
 px
 px
@@ -30163,11 +30269,11 @@ mY
 mC
 si
 yp
-mP
+ui
 zM
 mP
 wk
-mP
+Oa
 zM
 fE
 gz
@@ -30183,7 +30289,7 @@ jf
 mP
 mP
 yp
-mP
+Db
 gv
 px
 fq
@@ -31279,7 +31385,7 @@ jf
 yp
 FP
 FP
-mP
+uH
 FP
 FP
 fK
@@ -31965,7 +32071,7 @@ yp
 FP
 kw
 yM
-mP
+aN
 mP
 mP
 mP
@@ -32161,7 +32267,7 @@ FP
 FP
 FP
 FP
-px
+uN
 FP
 Pk
 nI
@@ -32443,7 +32549,7 @@ FP
 FP
 FP
 FP
-px
+uN
 FP
 FP
 FP
@@ -32649,7 +32755,7 @@ FP
 FP
 FP
 FP
-mP
+Iw
 Lf
 Lf
 Lf
@@ -33287,7 +33393,7 @@ lC
 KR
 un
 nT
-mP
+bC
 px
 FP
 CK
@@ -33426,7 +33532,7 @@ Lf
 Lf
 Lf
 px
-px
+dZ
 zM
 Ly
 Ly
@@ -34393,7 +34499,7 @@ px
 px
 px
 px
-px
+dZ
 ef
 ef
 jk
@@ -35235,7 +35341,7 @@ px
 px
 px
 px
-px
+dZ
 mP
 mP
 mP
