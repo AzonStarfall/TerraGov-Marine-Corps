@@ -1,4 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/turf/closed/wall/mainship/white/outer,
+/area/space)
 "ac" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 5;
@@ -1687,13 +1690,6 @@
 	dir = 5
 	},
 /area/space)
-"jb" = (
-/obj/machinery/door/poddoor/mainship{
-	icon_state = "pdoor1";
-	dir = 1
-	},
-/turf/open/floor/mainship/mono,
-/area/space)
 "jd" = (
 /obj/machinery/landinglight/alamo{
 	dir = 8;
@@ -1850,12 +1846,6 @@
 /obj/structure/target_stake,
 /obj/item/target/alien,
 /turf/open/floor/plating/mainship,
-/area/space)
-"jJ" = (
-/obj/machinery/door/poddoor/mainship/umbilical/south{
-	dir = 2
-	},
-/turf/open/space/basic,
 /area/space)
 "jK" = (
 /obj/structure/reagent_dispensers/fueltank,
@@ -2620,11 +2610,6 @@
 	dir = 4
 	},
 /turf/open/floor/mainship/mono,
-/area/space)
-"nT" = (
-/turf/open/floor/mainship{
-	icon_state = "cargo"
-	},
 /area/space)
 "nV" = (
 /obj/machinery/door/airlock/mainship/command/officer{
@@ -3739,10 +3724,8 @@
 /obj/structure/bed/chair/comfy{
 	dir = 1
 	},
-/turf/open/floor/mainship{
-	dir = 1;
-	icon_regular_floor = "cargo_arrow";
-	icon_state = "cargo_arrow"
+/turf/open/floor/mainship/cargo/arrow{
+	dir = 1
 	},
 /area/space)
 "uo" = (
@@ -7191,6 +7174,10 @@
 	},
 /turf/open/floor/mainship/cargo/arrow,
 /area/space)
+"Nh" = (
+/obj/structure/window/framed/mainship/toughened,
+/turf/open/floor/mainship,
+/area/space)
 "Nk" = (
 /obj/machinery/door/airlock/multi_tile/mainship/marine/general/sl,
 /obj/effect/turf_decal/warning_stripes/box/arrow{
@@ -7836,13 +7823,6 @@
 "Qw" = (
 /obj/machinery/vending/uniform_supply,
 /turf/open/floor/plating/mainship,
-/area/space)
-"Qx" = (
-/turf/open/floor/mainship{
-	dir = 1;
-	icon_regular_floor = "cargo_arrow";
-	icon_state = "cargo_arrow"
-	},
 /area/space)
 "Qz" = (
 /obj/machinery/marine_selector/clothes/medic,
@@ -9324,6 +9304,10 @@
 	dir = 1
 	},
 /turf/open/floor/mainship/orange/full,
+/area/space)
+"YN" = (
+/obj/structure/noticeboard,
+/turf/closed/wall/mainship/outer,
 /area/space)
 "YO" = (
 /obj/structure/prop/mainship/railing{
@@ -15546,9 +15530,9 @@ nj
 nj
 nj
 nj
-jJ
+Yn
 mP
-jb
+DE
 mP
 si
 bl
@@ -15683,9 +15667,9 @@ nj
 nj
 nj
 nj
-jJ
+Yn
 mP
-jb
+DE
 mP
 si
 IW
@@ -15715,8 +15699,8 @@ FP
 KS
 vm
 jS
-SZ
-SZ
+ab
+ab
 rL
 ke
 ke
@@ -15820,9 +15804,9 @@ nj
 nj
 nj
 nj
-jJ
+Yn
 mP
-jb
+DE
 mP
 si
 IW
@@ -15852,7 +15836,7 @@ FP
 MQ
 FP
 MQ
-SZ
+ab
 KD
 wl
 Vh
@@ -15957,9 +15941,9 @@ nj
 nj
 nj
 nj
-jJ
+Yn
 mP
-jb
+DE
 YU
 si
 XN
@@ -16094,9 +16078,9 @@ nj
 nj
 nj
 nj
-jJ
+Yn
 mP
-jb
+DE
 mP
 si
 IW
@@ -16119,10 +16103,10 @@ si
 wk
 mP
 mP
-FP
+Lf
 JH
 JH
-FP
+Lf
 mP
 si
 mP
@@ -16150,10 +16134,10 @@ CN
 OB
 si
 mP
-FP
+Lf
 JH
 JH
-FP
+Lf
 OB
 si
 mP
@@ -16231,9 +16215,9 @@ nj
 nj
 nj
 nj
-jJ
+Yn
 mP
-jb
+DE
 mP
 si
 IW
@@ -16256,10 +16240,10 @@ si
 wk
 mP
 mP
-FP
-FP
-FP
-FP
+Lf
+Lf
+Lf
+Lf
 mP
 si
 mP
@@ -16287,10 +16271,10 @@ Zz
 mP
 si
 mP
-FP
-FP
-FP
-FP
+Lf
+Lf
+Lf
+Lf
 OB
 si
 mP
@@ -16368,9 +16352,9 @@ nj
 nj
 nj
 nj
-jJ
+Yn
 mP
-jb
+DE
 mP
 si
 IW
@@ -16505,9 +16489,9 @@ nj
 nj
 nj
 nj
-jJ
+Yn
 mP
-jb
+DE
 mP
 si
 IW
@@ -16530,10 +16514,10 @@ si
 wk
 mP
 mP
-FP
-FP
-FP
-FP
+Lf
+Lf
+Lf
+Lf
 mP
 si
 mP
@@ -16561,10 +16545,10 @@ hI
 mP
 si
 mP
-FP
-FP
-FP
-FP
+Lf
+Lf
+Lf
+Lf
 OB
 si
 mP
@@ -16642,9 +16626,9 @@ nj
 nj
 nj
 nj
-jJ
+Yn
 mP
-jb
+DE
 mP
 si
 IW
@@ -16667,10 +16651,10 @@ si
 wk
 mP
 mP
-FP
+Lf
 oh
 oh
-FP
+Lf
 mP
 si
 mP
@@ -16678,8 +16662,8 @@ FP
 FP
 RC
 FP
-FP
-FP
+Lf
+Lf
 FP
 FP
 mP
@@ -16698,10 +16682,10 @@ FP
 OB
 si
 mP
-FP
+Lf
 oh
 oh
-FP
+Lf
 OB
 si
 mP
@@ -16779,9 +16763,9 @@ nj
 nj
 nj
 nj
-jJ
+Yn
 mP
-jb
+DE
 YU
 si
 XN
@@ -16815,7 +16799,7 @@ FP
 US
 si
 up
-FP
+Lf
 pz
 mP
 mP
@@ -16916,9 +16900,9 @@ nj
 nj
 nj
 nj
-jJ
+Yn
 mP
-jb
+DE
 mP
 si
 IW
@@ -16952,7 +16936,7 @@ FP
 GK
 si
 si
-FP
+Lf
 pz
 bl
 lA
@@ -17053,9 +17037,9 @@ nj
 nj
 nj
 nj
-jJ
+Yn
 mP
-jb
+DE
 mP
 si
 IW
@@ -17089,8 +17073,8 @@ FP
 FP
 FP
 FP
-FP
-FP
+Lf
+Lf
 FP
 jw
 px
@@ -17190,9 +17174,9 @@ nj
 nj
 nj
 nj
-jJ
+Yn
 mP
-jb
+DE
 mP
 si
 TJ
@@ -18739,13 +18723,13 @@ uk
 bK
 aZ
 pW
-FP
-FP
-FP
-FP
-FP
-FP
-FP
+Lf
+Lf
+Lf
+Lf
+Lf
+Lf
+Lf
 aP
 Ro
 rK
@@ -18757,13 +18741,13 @@ Uj
 Pb
 Uj
 UP
-FP
-FP
-FP
-FP
-FP
-FP
-er
+Lf
+Lf
+Lf
+Lf
+Lf
+Lf
+YN
 CK
 oc
 KL
@@ -18876,13 +18860,13 @@ lF
 qU
 sj
 BE
-FP
+Lf
 Ns
 yA
-yv
+Nh
 yA
 xo
-FP
+Lf
 Bz
 Bh
 ZT
@@ -18894,13 +18878,13 @@ KY
 ha
 KY
 lK
-FP
+Lf
 Ns
 yA
-yv
+Nh
 yA
 xo
-FP
+Lf
 TF
 je
 Hg
@@ -19287,13 +19271,13 @@ lF
 qU
 Qq
 Im
-FP
+Lf
 rv
 JH
-yv
+Nh
 JH
 PZ
-FP
+Lf
 Bz
 GH
 ZT
@@ -19305,13 +19289,13 @@ ue
 ha
 ue
 lK
-FP
+Lf
 rv
 JH
-yv
+Nh
 JH
 PZ
-FP
+Lf
 bv
 UN
 Hg
@@ -19424,13 +19408,13 @@ Hn
 Ga
 ii
 Ur
-FP
-FP
-FP
-FP
-FP
-FP
-FP
+Lf
+Lf
+Lf
+Lf
+Lf
+Lf
+Lf
 aP
 Ro
 rK
@@ -19442,13 +19426,13 @@ Uj
 Pb
 Uj
 UP
-FP
-FP
-FP
-FP
-FP
-FP
-FP
+Lf
+Lf
+Lf
+Lf
+Lf
+Lf
+Lf
 uE
 oc
 KL
@@ -26816,7 +26800,7 @@ lC
 lC
 KR
 un
-nT
+HQ
 bC
 px
 FP
@@ -26952,8 +26936,8 @@ Lf
 Ml
 uy
 QI
-Qx
-nT
+YU
+HQ
 FP
 px
 FP
@@ -27090,7 +27074,7 @@ lC
 lC
 KR
 un
-nT
+HQ
 FP
 px
 FP
@@ -33118,7 +33102,7 @@ lC
 lC
 KR
 un
-nT
+HQ
 FP
 px
 FP
@@ -33254,8 +33238,8 @@ Lf
 yz
 bq
 hX
-Qx
-nT
+YU
+HQ
 FP
 px
 FP
@@ -33392,7 +33376,7 @@ lC
 lC
 KR
 un
-nT
+HQ
 bC
 px
 FP
