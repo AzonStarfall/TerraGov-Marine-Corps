@@ -149,6 +149,11 @@
 	desc = "A sign which reads 'Smartgunner Preparation Area'."
 	icon_state = "gunnery"
 
+/obj/structure/sign/corpsman
+	name = "\improper Corpsman Preparation"
+	desc = "A sign which reads 'Corpsman Preparation Area'."
+	icon_state = "corpsman"
+
 /obj/structure/sign/biohazard
 	name = "\improper BIOHAZARD"
 	desc = "A warning sign which reads 'BIOHAZARD'."
