@@ -79,7 +79,7 @@
 /turf/open/floor/carpet,
 /area/space)
 "ak" = (
-/obj/structure/prop/flag,
+/obj/structure/prop/half_flag,
 /turf/open/floor/grass,
 /area/space)
 "al" = (
@@ -981,9 +981,10 @@
 /turf/open/floor/mainship/mono,
 /area/space)
 "dY" = (
-/turf/open/floor/mainship/terragov/north{
+/obj/effect/turf_decal/logo/logo_peripheral{
 	dir = 8
 	},
+/turf/open/floor/mainship/floor,
 /area/space)
 "dZ" = (
 /obj/machinery/door/airlock/mainship/maint{
@@ -1310,9 +1311,10 @@
 /turf/open/floor/wood,
 /area/space)
 "fE" = (
-/turf/open/floor/mainship/terragov/north{
+/obj/effect/turf_decal/logo/logo_peripheral{
 	dir = 5
 	},
+/turf/open/floor/mainship/floor,
 /area/space)
 "fG" = (
 /obj/structure/table/mainship/nometal,
@@ -1485,9 +1487,10 @@
 	},
 /area/space)
 "gz" = (
-/turf/open/floor/mainship/terragov/north{
+/obj/effect/turf_decal/logo/logo_peripheral{
 	dir = 4
 	},
+/turf/open/floor/mainship/floor,
 /area/space)
 "gA" = (
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -1602,6 +1605,12 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"hc" = (
+/obj/structure/prop/mainship/name_stencil,
+/turf/open/floor/mainship/black{
+	dir = 4
+	},
+/area/space)
 "hd" = (
 /obj/structure/closet/toolcloset,
 /turf/open/floor/mainship/mono,
@@ -1672,6 +1681,12 @@
 	dir = 10
 	},
 /turf/open/floor/mainship/floor,
+/area/space)
+"hx" = (
+/obj/structure/prop/mainship/name_stencil/C,
+/turf/open/floor/mainship/black{
+	dir = 6
+	},
 /area/space)
 "hA" = (
 /obj/structure/bed/stool{
@@ -2474,9 +2489,10 @@
 /turf/open/floor/wood/fancy,
 /area/space)
 "kW" = (
-/turf/open/floor/mainship/terragov/north{
+/obj/effect/turf_decal/logo/logo_peripheral{
 	dir = 10
 	},
+/turf/open/floor/mainship/floor,
 /area/space)
 "kX" = (
 /obj/structure/closet/l3closet/virology,
@@ -2882,6 +2898,12 @@
 "mr" = (
 /turf/open/floor/mainship/research,
 /area/space)
+"ms" = (
+/obj/structure/prop/mainship/name_stencil/G,
+/turf/open/floor/mainship/black{
+	dir = 6
+	},
+/area/space)
 "mt" = (
 /obj/machinery/vending/weapon,
 /turf/open/floor/wood/fancy,
@@ -3123,9 +3145,10 @@
 /turf/open/floor/mainship/mono,
 /area/space)
 "nF" = (
-/turf/open/floor/mainship/terragov/north{
+/obj/effect/turf_decal/logo/logo_peripheral{
 	dir = 6
 	},
+/turf/open/floor/mainship/floor,
 /area/space)
 "nI" = (
 /turf/open/floor/mainship/yellow_cargo,
@@ -4443,6 +4466,12 @@
 /obj/structure/dropship_equipment/shuttle/rappel_system,
 /turf/open/floor/mainship/cargo,
 /area/space)
+"tG" = (
+/obj/structure/prop/mainship/name_stencil/M,
+/turf/open/floor/mainship/black{
+	dir = 4
+	},
+/area/space)
 "tH" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 4;
@@ -4657,9 +4686,10 @@
 /turf/open/floor/mainship/mono,
 /area/space)
 "uC" = (
-/turf/open/floor/mainship/terragov/north{
+/obj/effect/turf_decal/logo/logo_peripheral{
 	dir = 1
 	},
+/turf/open/floor/mainship/floor,
 /area/space)
 "uE" = (
 /turf/open/floor/mainship/black{
@@ -4894,6 +4924,7 @@
 /area/space)
 "vD" = (
 /obj/structure/table/mainship/nometal,
+/obj/structure/prop/mainship/tgmc_table_flag,
 /turf/open/floor/mainship/silver{
 	dir = 1
 	},
@@ -5406,6 +5437,7 @@
 /area/space)
 "xp" = (
 /obj/structure/table/mainship/nometal,
+/obj/structure/prop/mainship/tgmc_table_flag,
 /turf/open/floor/mainship/silver,
 /area/space)
 "xq" = (
@@ -5460,6 +5492,9 @@
 /obj/structure/table/wood/fancy,
 /obj/item/storage/bible/booze,
 /obj/item/reagent_containers/food/drinks/britcup,
+/obj/structure/prop/mainship/tgmc_table_flag{
+	pixel_x = 8
+	},
 /turf/open/floor/carpet,
 /area/space)
 "xD" = (
@@ -5852,6 +5887,10 @@
 	dir = 1
 	},
 /turf/open/floor/tile/darkgreen/darkgreen2,
+/area/space)
+"zc" = (
+/obj/structure/prop/half_flag,
+/turf/open/floor/mainship/floor,
 /area/space)
 "ze" = (
 /turf/open/floor/mainship/research/containment/floor2{
@@ -6544,6 +6583,9 @@
 "BV" = (
 /obj/structure/table/mainship/nometal,
 /obj/item/blueprints,
+/obj/structure/prop/mainship/tgmc_table_flag{
+	pixel_x = 8
+	},
 /turf/open/floor/mainship/mono,
 /area/space)
 "BW" = (
@@ -7433,6 +7475,13 @@
 	},
 /turf/open/floor/mainship/silver,
 /area/space)
+"FT" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 8
+	},
+/obj/structure/prop/mainship/prop_sec,
+/turf/open/floor/mainship/mono,
+/area/space)
 "FU" = (
 /obj/structure/platform{
 	dir = 4
@@ -7629,9 +7678,8 @@
 	},
 /area/space)
 "GT" = (
-/turf/open/floor/mainship/terragov{
-	dir = 1
-	},
+/obj/effect/turf_decal/logo,
+/turf/open/floor/mainship/floor,
 /area/space)
 "GW" = (
 /obj/effect/turf_decal/logo/logo_peripheral{
@@ -7998,6 +8046,9 @@
 	pixel_y = 5
 	},
 /obj/item/reagent_containers/food/drinks/britcup,
+/obj/structure/prop/mainship/tgmc_table_flag{
+	pixel_x = 8
+	},
 /turf/open/floor/carpet/green,
 /area/space)
 "IL" = (
@@ -8260,7 +8311,8 @@
 /turf/open/floor/mainship/mono,
 /area/space)
 "JO" = (
-/turf/open/floor/mainship/terragov/north,
+/obj/effect/turf_decal/logo/logo_peripheral,
+/turf/open/floor/mainship/floor,
 /area/space)
 "JP" = (
 /obj/structure/table/mainship/nometal,
@@ -9235,6 +9287,13 @@
 /obj/machinery/door/airlock/multi_tile/mainship/comdoor,
 /turf/open/floor/mainship/mono,
 /area/space)
+"Ob" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 4
+	},
+/obj/structure/prop/mainship/prop_sec,
+/turf/open/floor/mainship/mono,
+/area/space)
 "Oc" = (
 /obj/machinery/camera/autoname/mainship{
 	dir = 10
@@ -9695,9 +9754,10 @@
 /turf/open/floor/tile/dark2,
 /area/space)
 "PW" = (
-/turf/open/floor/mainship/terragov/north{
+/obj/effect/turf_decal/logo/logo_peripheral{
 	dir = 9
 	},
+/turf/open/floor/mainship/floor,
 /area/space)
 "PX" = (
 /mob/living/simple_animal/catslug/newt,
@@ -10642,6 +10702,11 @@
 "Uj" = (
 /turf/open/floor/mainship/orange/full,
 /area/space)
+"Uo" = (
+/obj/structure/table/mainship/nometal,
+/obj/structure/prop/mainship/tgmc_table_flag,
+/turf/open/floor/mainship/sterile/dark,
+/area/space)
 "Up" = (
 /obj/structure/platform{
 	dir = 1
@@ -11547,6 +11612,7 @@
 	dir = 10
 	},
 /obj/structure/table/mainship/nometal,
+/obj/structure/prop/mainship/tgmc_table_flag,
 /turf/open/floor/mainship/black{
 	dir = 10
 	},
@@ -15292,7 +15358,7 @@ VK
 MU
 SZ
 hS
-Ey
+Uo
 Zh
 yb
 yb
@@ -17356,7 +17422,7 @@ si
 wk
 FP
 UX
-xz
+FT
 FP
 mP
 mP
@@ -27911,7 +27977,7 @@ Jt
 FP
 FP
 UX
-cb
+Ob
 FP
 mP
 xM
@@ -28586,7 +28652,7 @@ OZ
 OZ
 FP
 oA
-xz
+FT
 mP
 mP
 mP
@@ -32230,7 +32296,7 @@ md
 jn
 yU
 FP
-Ly
+zc
 Ly
 Ly
 Ly
@@ -32778,7 +32844,7 @@ zv
 Fj
 lc
 FP
-Ly
+zc
 Ly
 Ly
 Ly
@@ -36392,16 +36458,16 @@ FP
 zM
 Ly
 uE
+hc
 hI
 hI
-hI
-jS
+ms
 vR
 uE
+tG
 hI
 hI
-hI
-jS
+hx
 Ly
 Ly
 FP
