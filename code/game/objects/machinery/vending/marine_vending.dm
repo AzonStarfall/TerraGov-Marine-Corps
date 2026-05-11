@@ -844,7 +844,6 @@
 	wrenchable = FALSE
 	req_one_access = list(ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
 	products = list(
-		"Reqtorio Basics" = list(
 			/obj/item/paper/factoryhowto = -1,
 			/obj/machinery/factory/cutter = 1,
 			/obj/machinery/factory/heater = 1,
@@ -854,7 +853,6 @@
 			/obj/machinery/unboxer = 1,
 			/obj/item/stack/conveyor/thirty = 10,
 			/obj/item/conveyor_switch_construct = 10,
-		)
 	)
 
 /obj/machinery/vending/lasgun
