@@ -3148,6 +3148,10 @@
 /obj/item/clock,
 /turf/open/floor/wood,
 /area/space)
+"oa" = (
+/obj/effect/turf_decal/logo/logo_peripheral,
+/turf/open/floor/mainship/mono,
+/area/space)
 "oc" = (
 /obj/machinery/vending/MarineMed,
 /turf/open/floor/mainship/black/full,
@@ -5013,6 +5017,12 @@
 	dir = 9
 	},
 /area/space)
+"wp" = (
+/obj/effect/turf_decal/logo/logo_peripheral{
+	dir = 4
+	},
+/turf/open/floor/mainship/mono,
+/area/space)
 "wr" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -5555,6 +5565,12 @@
 /turf/open/floor/mainship/red{
 	dir = 8
 	},
+/area/space)
+"yn" = (
+/obj/effect/turf_decal/logo/logo_peripheral{
+	dir = 8
+	},
+/turf/open/floor/mainship/mono,
 /area/space)
 "yp" = (
 /turf/open/floor/mainship/silver,
@@ -6636,6 +6652,10 @@
 	},
 /turf/open/floor/freezer,
 /area/space)
+"Dg" = (
+/obj/effect/turf_decal/nt,
+/turf/open/floor/mainship/mono,
+/area/space)
 "Di" = (
 /obj/structure/platform_decoration{
 	dir = 1
@@ -7468,6 +7488,12 @@
 /turf/open/floor/mainship/terragov{
 	dir = 1
 	},
+/area/space)
+"GW" = (
+/obj/effect/turf_decal/logo/logo_peripheral{
+	dir = 10
+	},
+/turf/open/floor/mainship/mono,
 /area/space)
 "GY" = (
 /obj/machinery/light/mainship{
@@ -8460,6 +8486,12 @@
 	},
 /turf/open/floor/mainship/floor,
 /area/space)
+"Lw" = (
+/obj/effect/turf_decal/logo/logo_peripheral{
+	dir = 9
+	},
+/turf/open/floor/mainship/mono,
+/area/space)
 "Ly" = (
 /turf/open/floor/mainship/floor,
 /area/space)
@@ -8563,9 +8595,8 @@
 /obj/machinery/cic_maptable/drawable/big{
 	pixel_x = -19
 	},
-/turf/open/floor/mainship/terragov{
-	dir = 1
-	},
+/obj/effect/turf_decal/logo,
+/turf/open/floor/mainship/mono,
 /area/space)
 "LZ" = (
 /obj/structure/mirror,
@@ -8677,6 +8708,10 @@
 /turf/open/floor/mainship/orange{
 	dir = 4
 	},
+/area/space)
+"MC" = (
+/obj/effect/turf_decal/nt/nt_peripheral,
+/turf/open/floor/mainship/mono,
 /area/space)
 "MD" = (
 /obj/structure/platform{
@@ -8873,6 +8908,12 @@
 	dir = 8
 	},
 /area/space)
+"No" = (
+/obj/effect/turf_decal/logo/logo_peripheral{
+	dir = 5
+	},
+/turf/open/floor/mainship/mono,
+/area/space)
 "Nq" = (
 /obj/machinery/door/airlock/mainship/command/CPToffice{
 	dir = 2
@@ -8993,6 +9034,12 @@
 /turf/open/floor/mainship/black{
 	dir = 1
 	},
+/area/space)
+"NZ" = (
+/obj/effect/turf_decal/nt/nt_peripheral{
+	dir = 4
+	},
+/turf/open/floor/mainship/mono,
 /area/space)
 "Oa" = (
 /obj/machinery/door/airlock/multi_tile/mainship/comdoor,
@@ -9126,6 +9173,12 @@
 /turf/open/floor/mainship/black/corner{
 	dir = 1
 	},
+/area/space)
+"OE" = (
+/obj/effect/turf_decal/logo/logo_peripheral{
+	dir = 6
+	},
+/turf/open/floor/mainship/mono,
 /area/space)
 "OF" = (
 /obj/machinery/door/airlock/mainship/generic{
@@ -11539,6 +11592,12 @@
 "ZC" = (
 /obj/structure/window/framed/mainship/white,
 /turf/open/floor/mainship/sterile/purple,
+/area/space)
+"ZD" = (
+/obj/effect/turf_decal/logo/logo_peripheral{
+	dir = 1
+	},
+/turf/open/floor/mainship/mono,
 /area/space)
 "ZE" = (
 /obj/structure/table/wood/fancy,
@@ -27873,7 +27932,7 @@ mP
 si
 mP
 Wm
-mP
+MC
 mP
 Wm
 mP
@@ -28010,7 +28069,7 @@ mP
 si
 mP
 FP
-mP
+Dg
 mP
 FP
 mP
@@ -28147,7 +28206,7 @@ mP
 si
 mP
 Wm
-mP
+NZ
 mP
 Wm
 mP
@@ -32127,9 +32186,9 @@ mP
 qU
 mP
 Pk
-PW
-dY
-kW
+Lw
+yn
+GW
 mP
 CT
 Jr
@@ -32264,9 +32323,9 @@ mP
 qU
 fK
 Pk
-uC
+ZD
 LY
-JO
+oa
 mP
 NH
 MF
@@ -32401,9 +32460,9 @@ mP
 qU
 Oa
 Pk
-fE
-gz
-nF
+No
+wp
+OE
 mP
 aD
 bW
