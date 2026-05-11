@@ -1347,8 +1347,6 @@
 "fO" = (
 /obj/machinery/vending/cargo_supply,
 /obj/machinery/vending/cargo_supply,
-/obj/item/tool/wirecutters,
-/obj/item/tool/screwdriver,
 /turf/open/floor/mainship/floor,
 /area/space)
 "fQ" = (
@@ -3025,10 +3023,6 @@
 "nr" = (
 /obj/structure/lattice,
 /turf/open/space,
-/area/space)
-"ns" = (
-/obj/machinery/vending/MarineMed/Blood,
-/turf/open/floor/mainship/sterile/dark,
 /area/space)
 "nt" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
@@ -6366,7 +6360,7 @@
 	},
 /area/space)
 "BM" = (
-/obj/machinery/vending/cargo_supply,
+/obj/machinery/vending/reqtorio_supply,
 /turf/open/floor/mainship/mono,
 /area/space)
 "BO" = (
@@ -9987,6 +9981,9 @@
 /obj/machinery/iv_drip,
 /obj/machinery/iv_drip,
 /obj/effect/turf_decal/medical_decals/doc,
+/obj/machinery/vending/nanoblood{
+	dir = 8
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
 "Sm" = (
@@ -31409,7 +31406,7 @@ SZ
 lZ
 IV
 lZ
-ns
+SZ
 lZ
 UU
 lZ
