@@ -230,6 +230,13 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/space)
+"aO" = (
+/obj/structure/ladder/id_linked{
+	height = 2;
+	id = "hall4"
+	},
+/turf/open/floor/plating,
+/area/space)
 "aP" = (
 /obj/machinery/vending/weapon,
 /obj/structure/sign/nosmoking_2{
@@ -1585,6 +1592,10 @@
 	dir = 1
 	},
 /area/space)
+"gU" = (
+/obj/structure/prop/half_flag,
+/turf/open/floor/mainship/floor,
+/area/space)
 "gV" = (
 /obj/structure/prop/mainship/valmoric,
 /turf/open/floor/grass,
@@ -1604,12 +1615,6 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/space)
-"hc" = (
-/obj/structure/prop/mainship/name_stencil,
-/turf/open/floor/mainship/black{
-	dir = 4
-	},
 /area/space)
 "hd" = (
 /obj/structure/closet/toolcloset,
@@ -1682,12 +1687,6 @@
 	},
 /turf/open/floor/mainship/floor,
 /area/space)
-"hx" = (
-/obj/structure/prop/mainship/name_stencil/C,
-/turf/open/floor/mainship/black{
-	dir = 6
-	},
-/area/space)
 "hA" = (
 /obj/structure/bed/stool{
 	pixel_y = 6;
@@ -1724,6 +1723,13 @@
 /obj/effect/turf_decal/warning_stripes/thin,
 /obj/item/paper/arachneresearch1,
 /turf/open/floor/mainship/sterile/dark,
+/area/space)
+"hH" = (
+/obj/structure/ladder/id_linked{
+	height = 1;
+	id = "hall1"
+	},
+/turf/open/floor/plating,
 /area/space)
 "hI" = (
 /turf/open/floor/mainship/black{
@@ -1902,6 +1908,13 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/space)
+"im" = (
+/obj/structure/ladder/id_linked{
+	height = 2;
+	id = "hall6"
+	},
+/turf/open/floor/plating,
+/area/space)
 "in" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -1929,6 +1942,13 @@
 	dir = 8
 	},
 /turf/open/floor/wood/fancy,
+/area/space)
+"ir" = (
+/obj/structure/ladder/id_linked{
+	height = 2;
+	id = "hall1"
+	},
+/turf/open/floor/plating,
 /area/space)
 "is" = (
 /obj/effect/spawner/random/engineering/wood,
@@ -2898,12 +2918,6 @@
 "mr" = (
 /turf/open/floor/mainship/research,
 /area/space)
-"ms" = (
-/obj/structure/prop/mainship/name_stencil/G,
-/turf/open/floor/mainship/black{
-	dir = 6
-	},
-/area/space)
 "mt" = (
 /obj/machinery/vending/weapon,
 /turf/open/floor/wood/fancy,
@@ -3143,6 +3157,12 @@
 /obj/item/clothing/head/welding,
 /obj/item/tool/weldpack,
 /turf/open/floor/mainship/mono,
+/area/space)
+"nD" = (
+/obj/structure/prop/mainship/name_stencil/C,
+/turf/open/floor/mainship/black{
+	dir = 6
+	},
 /area/space)
 "nF" = (
 /obj/effect/turf_decal/logo/logo_peripheral{
@@ -3899,6 +3919,13 @@
 	dir = 8
 	},
 /area/space)
+"rb" = (
+/obj/structure/ladder/id_linked{
+	height = 1;
+	id = "hall4"
+	},
+/turf/open/floor/plating,
+/area/space)
 "rd" = (
 /obj/machinery/power/monitor,
 /turf/open/floor/mainship/mono,
@@ -4296,6 +4323,13 @@
 	},
 /turf/open/floor/wood,
 /area/space)
+"sU" = (
+/obj/structure/ladder/id_linked{
+	height = 2;
+	id = "hall2"
+	},
+/turf/open/floor/plating,
+/area/space)
 "sV" = (
 /obj/structure/window/framed/mainship/toughened,
 /turf/open/floor/mainship/mono,
@@ -4465,12 +4499,6 @@
 "tF" = (
 /obj/structure/dropship_equipment/shuttle/rappel_system,
 /turf/open/floor/mainship/cargo,
-/area/space)
-"tG" = (
-/obj/structure/prop/mainship/name_stencil/M,
-/turf/open/floor/mainship/black{
-	dir = 4
-	},
 /area/space)
 "tH" = (
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -4652,6 +4680,13 @@
 	},
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
+"ut" = (
+/obj/structure/ladder/id_linked{
+	height = 1;
+	id = "hall5"
+	},
+/turf/open/floor/plating,
+/area/space)
 "uu" = (
 /obj/effect/spawner/random/misc/structure/flavorvending/colaweighted,
 /turf/open/floor/wood,
@@ -4826,6 +4861,12 @@
 	},
 /turf/open/floor/mainship/silver/corner{
 	dir = 8
+	},
+/area/space)
+"ve" = (
+/obj/structure/prop/mainship/name_stencil/M,
+/turf/open/floor/mainship/black{
+	dir = 4
 	},
 /area/space)
 "vf" = (
@@ -5776,6 +5817,13 @@
 "yD" = (
 /turf/open/floor/mainship/blue/corner,
 /area/space)
+"yF" = (
+/obj/structure/ladder/id_linked{
+	height = 2;
+	id = "hall3"
+	},
+/turf/open/floor/plating,
+/area/space)
 "yG" = (
 /obj/effect/turf_decal/trimline/blue/line{
 	dir = 4
@@ -5887,10 +5935,6 @@
 	dir = 1
 	},
 /turf/open/floor/tile/darkgreen/darkgreen2,
-/area/space)
-"zc" = (
-/obj/structure/prop/half_flag,
-/turf/open/floor/mainship/floor,
 /area/space)
 "ze" = (
 /turf/open/floor/mainship/research/containment/floor2{
@@ -6297,6 +6341,12 @@
 	},
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
+"AN" = (
+/obj/structure/prop/mainship/name_stencil,
+/turf/open/floor/mainship/black{
+	dir = 4
+	},
+/area/space)
 "AO" = (
 /obj/machinery/vending/marineFood,
 /obj/item/reagent_containers/food/snacks/protein_pack,
@@ -6632,6 +6682,13 @@
 	dir = 8
 	},
 /turf/open/floor/wood,
+/area/space)
+"Cj" = (
+/obj/structure/ladder/id_linked{
+	height = 1;
+	id = "hall3"
+	},
+/turf/open/floor/plating,
 /area/space)
 "Cl" = (
 /obj/machinery/gear{
@@ -7357,6 +7414,13 @@
 /obj/effect/turf_decal/warning_stripes/smartgunner,
 /turf/open/floor/mainship/floor,
 /area/space)
+"Fr" = (
+/obj/structure/ladder/id_linked{
+	height = 2;
+	id = "hall7"
+	},
+/turf/open/floor/plating,
+/area/space)
 "Ft" = (
 /obj/machinery/door/poddoor/mainship,
 /turf/open/floor/mainship/mono,
@@ -7475,13 +7539,6 @@
 	},
 /turf/open/floor/mainship/silver,
 /area/space)
-"FT" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 8
-	},
-/obj/structure/prop/mainship/prop_sec,
-/turf/open/floor/mainship/mono,
-/area/space)
 "FU" = (
 /obj/structure/platform{
 	dir = 4
@@ -7567,6 +7624,13 @@
 "Gu" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/tile/dark2,
+/area/space)
+"Gv" = (
+/obj/structure/ladder/id_linked{
+	height = 1;
+	id = "hall2"
+	},
+/turf/open/floor/plating,
 /area/space)
 "Gz" = (
 /obj/structure/bed/chair/office/dark{
@@ -9053,6 +9117,13 @@
 	dir = 8
 	},
 /area/space)
+"MX" = (
+/obj/structure/ladder/id_linked{
+	height = 2;
+	id = "hall8"
+	},
+/turf/open/floor/plating,
+/area/space)
 "MZ" = (
 /obj/machinery/gear{
 	id = "supply_elevator_gear"
@@ -9285,13 +9356,6 @@
 /area/space)
 "Oa" = (
 /obj/machinery/door/airlock/multi_tile/mainship/comdoor,
-/turf/open/floor/mainship/mono,
-/area/space)
-"Ob" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 4
-	},
-/obj/structure/prop/mainship/prop_sec,
 /turf/open/floor/mainship/mono,
 /area/space)
 "Oc" = (
@@ -10167,6 +10231,13 @@
 /obj/machinery/grill/unwrenched,
 /turf/open/floor/freezer,
 /area/space)
+"RA" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 8
+	},
+/obj/structure/prop/mainship/prop_sec,
+/turf/open/floor/mainship/mono,
+/area/space)
 "RD" = (
 /obj/machinery/holopad,
 /turf/open/floor/mainship/blue/corner{
@@ -10182,6 +10253,13 @@
 /obj/structure/table/mainship/nometal,
 /obj/machinery/keycard_auth,
 /turf/open/floor/mainship/mono,
+/area/space)
+"RH" = (
+/obj/structure/ladder/id_linked{
+	height = 1;
+	id = "hall7"
+	},
+/turf/open/floor/plating,
 /area/space)
 "RL" = (
 /obj/machinery/vending/weapon,
@@ -10391,6 +10469,19 @@
 /turf/open/floor/mainship/silver{
 	dir = 8
 	},
+/area/space)
+"SF" = (
+/obj/structure/prop/mainship/name_stencil/G,
+/turf/open/floor/mainship/black{
+	dir = 6
+	},
+/area/space)
+"SJ" = (
+/obj/structure/ladder/id_linked{
+	height = 2;
+	id = "hall5"
+	},
+/turf/open/floor/plating,
 /area/space)
 "SK" = (
 /obj/structure/bed/chair/nometal{
@@ -10781,6 +10872,13 @@
 "UH" = (
 /obj/machinery/light/mainship,
 /turf/open/floor/mainship/black,
+/area/space)
+"UI" = (
+/obj/structure/ladder/id_linked{
+	height = 1;
+	id = "hall8"
+	},
+/turf/open/floor/plating,
 /area/space)
 "UJ" = (
 /obj/structure/dropship_equipment/shuttle/operatingtable,
@@ -11441,6 +11539,13 @@
 	dir = 8
 	},
 /area/space)
+"XJ" = (
+/obj/structure/ladder/id_linked{
+	height = 1;
+	id = "hall6"
+	},
+/turf/open/floor/plating,
+/area/space)
 "XL" = (
 /obj/structure/bed/chair/comfy{
 	dir = 1
@@ -11742,6 +11847,13 @@
 /area/space)
 "YX" = (
 /obj/structure/closet/emcloset,
+/turf/open/floor/mainship/mono,
+/area/space)
+"Zc" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 4
+	},
+/obj/structure/prop/mainship/prop_sec,
 /turf/open/floor/mainship/mono,
 /area/space)
 "Zd" = (
@@ -14682,7 +14794,7 @@ px
 px
 px
 px
-px
+Cj
 Lf
 nj
 nj
@@ -15477,7 +15589,7 @@ nj
 nj
 nj
 Lf
-px
+Gv
 px
 px
 px
@@ -16558,7 +16670,7 @@ Lf
 Lf
 Lf
 Lf
-px
+hH
 px
 px
 px
@@ -16889,7 +17001,7 @@ lC
 lC
 EC
 dZ
-px
+rb
 px
 px
 px
@@ -17422,7 +17534,7 @@ si
 wk
 FP
 UX
-FT
+RA
 FP
 mP
 mP
@@ -21216,7 +21328,7 @@ Lf
 Lf
 Lf
 Lf
-px
+ut
 px
 px
 px
@@ -22327,7 +22439,7 @@ nj
 nj
 nj
 Lf
-px
+XJ
 px
 px
 px
@@ -22356,6 +22468,7 @@ UV
 UV
 UV
 dZ
+RH
 px
 px
 px
@@ -22368,8 +22481,7 @@ px
 px
 px
 px
-px
-px
+UI
 Lf
 nj
 nj
@@ -27409,6 +27521,7 @@ wT
 wT
 wT
 Lf
+yF
 px
 px
 px
@@ -27448,8 +27561,7 @@ px
 px
 px
 px
-px
-px
+aO
 Lf
 aT
 nj
@@ -27977,7 +28089,7 @@ Jt
 FP
 FP
 UX
-Ob
+Zc
 FP
 mP
 xM
@@ -28652,7 +28764,7 @@ OZ
 OZ
 FP
 oA
-FT
+RA
 mP
 mP
 mP
@@ -29975,7 +30087,7 @@ wT
 wT
 wT
 Lf
-px
+ir
 px
 px
 px
@@ -30280,7 +30392,7 @@ px
 px
 px
 px
-px
+sU
 dZ
 ug
 zt
@@ -32296,7 +32408,7 @@ md
 jn
 yU
 FP
-zc
+gU
 Ly
 Ly
 Ly
@@ -32844,7 +32956,7 @@ zv
 Fj
 lc
 FP
-zc
+gU
 Ly
 Ly
 Ly
@@ -34938,7 +35050,7 @@ px
 px
 px
 px
-px
+im
 FP
 Kx
 xH
@@ -35181,7 +35293,7 @@ wT
 wT
 wT
 Lf
-px
+SJ
 px
 px
 px
@@ -36458,16 +36570,16 @@ FP
 zM
 Ly
 uE
-hc
+AN
 hI
 hI
-ms
+SF
 vR
 uE
-tG
+ve
 hI
 hI
-hx
+nD
 Ly
 Ly
 FP
@@ -37158,7 +37270,7 @@ mP
 mP
 mP
 dZ
-px
+MX
 FP
 Bu
 si
@@ -37821,7 +37933,7 @@ wT
 wT
 wT
 Lf
-px
+Fr
 px
 px
 px
