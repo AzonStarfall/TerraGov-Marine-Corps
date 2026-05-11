@@ -2244,7 +2244,9 @@
 	},
 /area/space)
 "kf" = (
-/obj/machinery/door/airlock/mainship/medical/glass/research,
+/obj/machinery/door/airlock/multi_tile/mainship/research{
+	dir = 1
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
 "kg" = (
@@ -2254,10 +2256,6 @@
 	},
 /obj/machinery/door/firedoor/multi_tile,
 /turf/open/floor/mainship/mono,
-/area/space)
-"ki" = (
-/obj/structure/morgue/crematorium,
-/turf/open/floor/mainship/research,
 /area/space)
 "kj" = (
 /obj/effect/landmark/start/job/ai,
@@ -4608,6 +4606,13 @@
 /obj/structure/sign/securearea/firingrange,
 /turf/open/floor/mainship/silver,
 /area/space)
+"uY" = (
+/obj/machinery/crema_switch{
+	pixel_x = 20;
+	pixel_y = 5
+	},
+/turf/open/floor/mainship/research,
+/area/space)
 "uZ" = (
 /obj/structure/bookcase{
 	icon_state = "book-5";
@@ -4994,6 +4999,12 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/grass,
+/area/space)
+"wB" = (
+/obj/structure/morgue/crematorium{
+	dir = 8
+	},
+/turf/open/floor/mainship/research,
 /area/space)
 "wC" = (
 /obj/machinery/computer/camera_advanced/remote_fob,
@@ -7050,17 +7061,6 @@
 /turf/open/floor/mainship/red{
 	dir = 9
 	},
-/area/space)
-"Fh" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/effect/spawner/random/misc/structure/showcase,
-/obj/structure/window/reinforced,
-/turf/open/floor/mainship/sterile/dark,
 /area/space)
 "Fi" = (
 /turf/open/floor/mainship/red{
@@ -15967,7 +15967,7 @@ SZ
 OH
 sy
 SZ
-SZ
+yb
 kf
 SZ
 SZ
@@ -16097,14 +16097,14 @@ px
 px
 px
 SZ
-ki
+EO
 mr
 mr
 gT
 SZ
 SZ
 SZ
-Fh
+yb
 yb
 Is
 Lq
@@ -16234,14 +16234,14 @@ FP
 FP
 uN
 SZ
-SZ
 EO
+mr
 mr
 gT
 Jc
 EM
 SZ
-Vh
+yb
 yb
 SZ
 Vv
@@ -16371,14 +16371,14 @@ Zo
 tw
 ld
 SZ
-SZ
 EO
+mr
 mr
 gT
 yb
 zF
 SZ
-Fh
+yb
 yb
 Is
 sN
@@ -16508,8 +16508,8 @@ Zo
 zL
 wk
 SZ
-SZ
 EO
+mr
 mr
 gT
 yb
@@ -16645,8 +16645,8 @@ Zo
 zL
 wk
 SZ
-SZ
 EO
+mr
 mr
 gT
 FG
@@ -16783,7 +16783,7 @@ zL
 NJ
 SZ
 SZ
-EO
+mr
 mr
 ab
 ab
@@ -16920,7 +16920,7 @@ zL
 fz
 Wc
 SZ
-EO
+mr
 mr
 ab
 jJ
@@ -17057,8 +17057,8 @@ rl
 fz
 XG
 SZ
-EO
-mr
+wB
+uY
 ab
 jJ
 yb
@@ -19529,9 +19529,9 @@ FP
 FP
 FP
 FP
-tW
-fo
-xO
+FP
+FP
+FP
 FP
 mP
 xM
