@@ -791,6 +791,17 @@
 /obj/machinery/light/mainship,
 /turf/open/floor/plating/mainship,
 /area/space)
+"df" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 6
+	},
+/turf/open/floor/mainship/cargo/arrow{
+	dir = 1
+	},
+/area/space)
 "di" = (
 /obj/effect/turf_decal/medical_decals/doc/two,
 /turf/open/floor/mainship/sterile/dark,
@@ -1385,6 +1396,19 @@
 	dir = 8
 	},
 /area/space)
+"fZ" = (
+/obj/effect/turf_decal/trimline/yellow/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/yellow/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/yellow/filled/corner,
+/obj/effect/turf_decal/trimline/yellow/filled/corner,
+/turf/open/floor/mainship/silver{
+	dir = 8
+	},
+/area/space)
 "ga" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 1;
@@ -1878,6 +1902,12 @@
 	dir = 1
 	},
 /area/space)
+"iz" = (
+/obj/effect/turf_decal/warning_stripes/thin,
+/turf/open/floor/mainship/silver{
+	dir = 10
+	},
+/area/space)
 "iA" = (
 /obj/structure/bed/chair/nometal{
 	dir = 1
@@ -2278,9 +2308,11 @@
 "ko" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line,
 /obj/effect/turf_decal/trimline/yellow/filled/line,
-/turf/open/floor/mainship/cargo/arrow{
-	dir = 8
+/obj/effect/turf_decal/warning_stripes/thin{
+	dir = 4;
+	pixel_x = 1
 	},
+/turf/open/floor/mainship/mono,
 /area/space)
 "kp" = (
 /obj/machinery/telecomms/server/presets/common,
@@ -2949,6 +2981,17 @@
 /obj/machinery/fuelcell_recycler,
 /turf/open/floor/mainship/mono,
 /area/space)
+"nd" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 1
+	},
+/turf/open/floor/mainship/black{
+	dir = 4
+	},
+/area/space)
 "nh" = (
 /obj/structure/window/reinforced,
 /obj/effect/turf_decal/warning_stripes,
@@ -3039,6 +3082,17 @@
 	dir = 8
 	},
 /turf/open/floor/mainship/floor,
+/area/space)
+"nO" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 10
+	},
+/turf/open/floor/mainship/cargo/arrow{
+	dir = 1
+	},
 /area/space)
 "nQ" = (
 /obj/machinery/atmospherics/components/unary/cryo_cell,
@@ -3822,6 +3876,23 @@
 	},
 /turf/open/floor/mainship/silver{
 	dir = 5
+	},
+/area/space)
+"rA" = (
+/obj/effect/turf_decal/trimline/yellow/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/yellow/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/yellow/filled/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/yellow/filled/corner{
+	dir = 8
+	},
+/turf/open/floor/mainship/silver{
+	dir = 4
 	},
 /area/space)
 "rD" = (
@@ -5182,6 +5253,12 @@
 	},
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 8
+	},
+/obj/effect/turf_decal/trimline/yellow/filled/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/yellow/filled/corner{
+	dir = 4
 	},
 /turf/open/floor/mainship/silver{
 	dir = 8
@@ -6729,9 +6806,11 @@
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1
 	},
-/turf/open/floor/mainship/cargo/arrow{
-	dir = 8
+/obj/effect/turf_decal/warning_stripes/thin{
+	dir = 4;
+	pixel_x = 1
 	},
+/turf/open/floor/mainship/mono,
 /area/space)
 "DM" = (
 /obj/machinery/vending/MarineMed,
@@ -6789,9 +6868,10 @@
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1
 	},
-/turf/open/floor/mainship/cargo/arrow{
-	dir = 4
+/obj/effect/turf_decal/warning_stripes/thin{
+	dir = 8
 	},
+/turf/open/floor/mainship/mono,
 /area/space)
 "Ec" = (
 /obj/effect/turf_decal/trimline/dark_red/corner{
@@ -7113,6 +7193,17 @@
 "Fy" = (
 /obj/structure/curtain/temple,
 /turf/open/floor/mainship/mono,
+/area/space)
+"Fz" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 1
+	},
+/turf/open/floor/mainship/black{
+	dir = 8
+	},
 /area/space)
 "FA" = (
 /obj/structure/closet/firecloset/full,
@@ -8317,7 +8408,9 @@
 /obj/structure/platform_decoration{
 	dir = 1
 	},
-/turf/open/floor/mainship/silver/full,
+/turf/open/floor/mainship/silver/corner{
+	dir = 8
+	},
 /area/space)
 "Lj" = (
 /obj/structure/window/full,
@@ -8627,6 +8720,12 @@
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 4
 	},
+/obj/effect/turf_decal/trimline/yellow/filled/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/yellow/filled/corner{
+	dir = 1
+	},
 /turf/open/floor/mainship/silver{
 	dir = 4
 	},
@@ -8891,7 +8990,7 @@
 /area/space)
 "NW" = (
 /obj/structure/platform_decoration,
-/turf/open/floor/mainship/silver/full,
+/turf/open/floor/mainship/silver/corner,
 /area/space)
 "NX" = (
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -9572,9 +9671,10 @@
 "QR" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line,
 /obj/effect/turf_decal/trimline/yellow/filled/line,
-/turf/open/floor/mainship/cargo/arrow{
-	dir = 4
+/obj/effect/turf_decal/warning_stripes/thin{
+	dir = 8
 	},
+/turf/open/floor/mainship/mono,
 /area/space)
 "QS" = (
 /turf/open/floor/mainship/cargo/arrow,
@@ -10459,6 +10559,10 @@
 /area/space)
 "Vk" = (
 /obj/machinery/door/airlock/multi_tile/mainship/marine/requisitions,
+/turf/open/floor/mainship/mono,
+/area/space)
+"Vl" = (
+/obj/item/toy/plush/royalqueen,
 /turf/open/floor/mainship/mono,
 /area/space)
 "Vm" = (
@@ -17348,7 +17452,7 @@ Cf
 OZ
 OZ
 FP
-mP
+Vl
 FP
 tz
 My
@@ -17476,7 +17580,7 @@ sK
 ep
 Uf
 Uf
-ce
+nO
 bT
 OZ
 Et
@@ -17485,7 +17589,7 @@ lp
 MW
 cn
 FP
-mP
+FP
 FP
 Ml
 si
@@ -17604,16 +17708,16 @@ hZ
 vm
 jS
 FP
-Mu
+Jk
 Uf
 Uf
-YU
+mP
 Fd
 Fd
-QS
+mP
 Uf
 Uf
-ce
+vh
 OZ
 OZ
 zn
@@ -17878,16 +17982,16 @@ sK
 sK
 tb
 FP
-Mu
+Jk
 Uf
 Uf
-YU
+mP
 cs
 pc
-QS
+mP
 Uf
 Uf
-ce
+vh
 OZ
 OZ
 zn
@@ -18153,14 +18257,14 @@ si
 WS
 FP
 DK
-KY
-KY
-KY
-mP
-mP
-KY
-KY
-KY
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
 ko
 FP
 FP
@@ -18289,7 +18393,7 @@ Jk
 si
 vh
 ea
-Jk
+Fz
 Zz
 Zz
 Uj
@@ -18563,7 +18667,7 @@ Jk
 si
 vh
 xd
-Jk
+nd
 hI
 hI
 Uj
@@ -18701,14 +18805,14 @@ si
 WS
 FP
 Ea
-ue
-ue
-ue
-mP
-mP
-ue
-ue
-ue
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
 QR
 FP
 FP
@@ -18974,16 +19078,16 @@ fo
 fo
 xO
 FP
-Mu
+Jk
 Uf
 Uf
-YU
+mP
 GC
 Xt
-QS
+mP
 Uf
 Uf
-ce
+vh
 FP
 mP
 xM
@@ -19248,16 +19352,16 @@ br
 si
 wk
 FP
-Mu
+Jk
 Uf
 Uf
-YU
+mP
 Fd
 Fd
-QS
+mP
 Uf
 Uf
-ce
+vh
 mP
 mP
 xM
@@ -19394,7 +19498,7 @@ fo
 Bj
 Uf
 Uf
-ce
+df
 FP
 mP
 xM
@@ -29926,7 +30030,7 @@ kk
 kk
 Xa
 Ly
-Ly
+Ou
 FP
 FP
 SZ
@@ -30063,9 +30167,9 @@ wT
 wT
 Oz
 Jr
-yU
-OZ
-OZ
+iz
+yi
+pl
 SZ
 XF
 yb
@@ -30200,9 +30304,9 @@ wT
 wT
 dD
 si
-yp
-fs
+GB
 OZ
+fs
 SZ
 yb
 yb
@@ -30337,9 +30441,9 @@ wT
 wT
 dD
 si
-yp
-iX
+GB
 OZ
+iX
 SZ
 uF
 yb
@@ -30474,9 +30578,9 @@ wT
 wT
 dD
 si
-yp
-qb
+GB
 OZ
+qb
 SZ
 fQ
 yb
@@ -30611,9 +30715,9 @@ wT
 wT
 dD
 si
-yp
-OZ
-OZ
+GB
+rZ
+yw
 SZ
 nQ
 rL
@@ -30748,7 +30852,7 @@ If
 If
 sR
 si
-yp
+FS
 SZ
 SZ
 SZ
@@ -31892,7 +31996,7 @@ Pk
 mP
 mP
 mP
-Ls
+mP
 Km
 Mx
 Ak
@@ -31983,7 +32087,7 @@ Jx
 si
 jn
 kx
-ZQ
+fZ
 ZQ
 ZQ
 ZQ
@@ -32023,13 +32127,13 @@ yp
 mP
 lF
 mP
-bK
+qU
 mP
 Pk
 PW
 dY
 kW
-Ls
+mP
 CT
 Jr
 yU
@@ -32166,7 +32270,7 @@ Pk
 uC
 LY
 JO
-Ls
+mP
 NH
 MF
 XL
@@ -32257,7 +32361,7 @@ dU
 si
 Fj
 EU
-Qt
+rA
 Qt
 SL
 Qt
@@ -32303,7 +32407,7 @@ Pk
 fE
 gz
 nF
-Ls
+mP
 aD
 bW
 lc
@@ -32440,7 +32544,7 @@ Pk
 mP
 mP
 mP
-Ls
+mP
 NC
 Da
 Vi
@@ -34195,7 +34299,7 @@ vu
 Wk
 Ig
 wM
-fI
+wM
 MI
 fI
 fI
