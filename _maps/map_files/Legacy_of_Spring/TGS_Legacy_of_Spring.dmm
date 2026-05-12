@@ -200,7 +200,7 @@
 	id = "ammo1";
 	name = "\improper Heavy Ordinance Storage"
 	},
-/turf/open/floor/mainship/stripesquare,
+/turf/open/floor/plating/plating_catwalk,
 /area/space)
 "aG" = (
 /obj/structure/platform_decoration,
@@ -302,14 +302,6 @@
 /obj/effect/turf_decal/warning_stripes/leader,
 /turf/open/floor/mainship,
 /area/space)
-"ba" = (
-/obj/structure/rack,
-/obj/item/weapon/gun/revolver/standard_revolver,
-/obj/item/clothing/gloves/marine/fingerless,
-/obj/item/ammo_magazine/revolver/standard_revolver,
-/obj/item/clothing/head/tgmcberet/red,
-/turf/open/floor/mainship/mono,
-/area/space)
 "bb" = (
 /obj/machinery/photocopier,
 /turf/open/floor/mainship/sterile/dark,
@@ -334,10 +326,6 @@
 "bn" = (
 /obj/machinery/vending/weapon,
 /turf/open/floor/mainship/black/full,
-/area/space)
-"bo" = (
-/obj/machinery/vending/weapon,
-/turf/open/floor/mainship/silver/full,
 /area/space)
 "bq" = (
 /obj/structure/window/reinforced,
@@ -444,6 +432,14 @@
 	pixel_y = 25
 	},
 /turf/open/floor/mainship/sterile/dark,
+/area/space)
+"bJ" = (
+/obj/machinery/door/poddoor/mainship/ammo{
+	dir = 4;
+	id = "ammo1";
+	name = "\improper Heavy Ordinance Storage"
+	},
+/turf/open/floor/plating/plating_catwalk,
 /area/space)
 "bK" = (
 /turf/open/floor/mainship/blue{
@@ -1002,6 +998,12 @@
 /obj/machinery/vending/MarineMed,
 /turf/open/floor/mainship/silver/full,
 /area/space)
+"dK" = (
+/obj/machinery/vending/marineFood,
+/turf/open/floor/mainship/green{
+	dir = 1
+	},
+/area/space)
 "dN" = (
 /obj/machinery/vending/lasgun,
 /turf/open/floor/mainship/orange{
@@ -1071,7 +1073,10 @@
 /turf/open/floor/mainship/mono,
 /area/space)
 "eb" = (
-/turf/open/floor/mainship/silver/full,
+/obj/machinery/vending/armor_supply,
+/turf/open/floor/mainship/green{
+	dir = 9
+	},
 /area/space)
 "ec" = (
 /obj/effect/turf_decal/warning_stripes/thick{
@@ -1088,7 +1093,8 @@
 /area/space)
 "eg" = (
 /obj/structure/rack,
-/obj/item/binoculars,
+/obj/item/reagent_containers/jerrycan,
+/obj/item/reagent_containers/jerrycan,
 /turf/open/floor/mainship/floor,
 /area/space)
 "eh" = (
@@ -1946,10 +1952,6 @@
 	dir = 5
 	},
 /area/space)
-"ib" = (
-/obj/machinery/vending/uniform_supply,
-/turf/open/floor/mainship/silver/full,
-/area/space)
 "ic" = (
 /obj/effect/turf_decal/warning_stripes/thin,
 /turf/open/floor/mainship/floor,
@@ -2357,7 +2359,7 @@
 /turf/open/floor/plating/mainship,
 /area/space)
 "jJ" = (
-/obj/structure/stairs/multiz/directional/north,
+/obj/structure/stairs/multiz/seamless/directional/north,
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
 "jK" = (
@@ -4102,6 +4104,12 @@
 	},
 /turf/open/floor/wood,
 /area/space)
+"rc" = (
+/obj/structure/sign/fire{
+	dir = 8
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/space)
 "rd" = (
 /obj/machinery/power/monitor,
 /turf/open/floor/mainship/mono,
@@ -4166,6 +4174,11 @@
 /turf/open/floor/mainship/mono,
 /area/space)
 "ru" = (
+/obj/structure/rack,
+/obj/item/weapon/gun/revolver/standard_revolver,
+/obj/item/clothing/gloves/marine/fingerless,
+/obj/item/ammo_magazine/revolver/standard_revolver,
+/obj/item/clothing/head/tgmcberet/red,
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 5;
 	pixel_x = 1;
@@ -4176,10 +4189,10 @@
 	},
 /area/space)
 "rv" = (
-/obj/structure/stairs/multiz/directional/east,
 /obj/structure/sign/engie{
 	dir = 1
 	},
+/obj/structure/stairs/multiz/seamless/directional/east,
 /turf/open/floor/mainship/mono,
 /area/space)
 "rx" = (
@@ -4711,10 +4724,6 @@
 /obj/effect/turf_decal/trimline/dark_red/line,
 /turf/open/floor/plating/plating_catwalk,
 /area/space)
-"tF" = (
-/obj/machinery/vending/engivend,
-/turf/open/floor/mainship/silver/full,
-/area/space)
 "tH" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 4;
@@ -4894,6 +4903,10 @@
 	dir = 1
 	},
 /turf/open/floor/mainship/sterile/dark,
+/area/space)
+"us" = (
+/obj/machinery/loadout_vendor,
+/turf/open/floor/mainship/green,
 /area/space)
 "uu" = (
 /obj/effect/spawner/random/misc/structure/flavorvending/colaweighted,
@@ -5725,13 +5738,11 @@
 	},
 /area/space)
 "xo" = (
-/obj/structure/stairs/multiz/directional/east{
-	dir = 8
-	},
 /obj/structure/sign/prop1{
 	dir = 8
 	},
 /obj/structure/sign/corpsman,
+/obj/structure/stairs/multiz/seamless/directional/west,
 /turf/open/floor/mainship/mono,
 /area/space)
 "xp" = (
@@ -6415,13 +6426,11 @@
 	},
 /area/space)
 "Aa" = (
-/obj/structure/stairs/multiz/directional/east{
-	dir = 8
-	},
 /obj/structure/sign/prop1{
 	dir = 8
 	},
 /obj/structure/sign/gunnery,
+/obj/structure/stairs/multiz/seamless/directional/west,
 /turf/open/floor/mainship/mono,
 /area/space)
 "Ad" = (
@@ -6606,10 +6615,6 @@
 /turf/open/floor/mainship/orange{
 	dir = 4
 	},
-/area/space)
-"AL" = (
-/obj/machinery/loadout_vendor,
-/turf/open/floor/mainship/silver/full,
 /area/space)
 "AM" = (
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -6827,6 +6832,10 @@
 /obj/structure/window/reinforced,
 /turf/open/floor/mainship/silver/full,
 /area/space)
+"Bw" = (
+/obj/machinery/vending/MarineMed,
+/turf/open/floor/mainship/green,
+/area/space)
 "Bx" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 8
@@ -6862,6 +6871,12 @@
 	},
 /obj/item/tool/pen,
 /turf/open/floor/mainship/sterile/purple/corner{
+	dir = 1
+	},
+/area/space)
+"BI" = (
+/obj/machinery/vending/weapon,
+/turf/open/floor/mainship/green{
 	dir = 1
 	},
 /area/space)
@@ -6990,13 +7005,9 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
 "Ci" = (
-/obj/structure/stairs/multiz/directional/east,
 /obj/structure/sign/corpsman,
+/obj/structure/stairs/multiz/seamless/directional/east,
 /turf/open/floor/mainship/mono,
-/area/space)
-"Cj" = (
-/obj/machinery/vending/tool,
-/turf/open/floor/mainship/silver/full,
 /area/space)
 "Cl" = (
 /obj/machinery/gear{
@@ -7895,9 +7906,13 @@
 	},
 /area/space)
 "FZ" = (
-/obj/structure/rack,
-/obj/item/storage/belt,
-/turf/open/floor/mainship/mono,
+/obj/vehicle/ridden/motorbike{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/oil{
+	dir = 8
+	},
+/turf/open/floor/mainship/cargo,
 /area/space)
 "Ga" = (
 /turf/open/floor/mainship/blue{
@@ -7911,6 +7926,10 @@
 /turf/open/floor/mainship/sterile/side{
 	dir = 1
 	},
+/area/space)
+"Gd" = (
+/obj/structure/stairs/multiz/seamless/directional/west,
+/turf/open/floor/mainship/mono,
 /area/space)
 "Ge" = (
 /obj/structure/ship_ammo/cas/rocket/widowmaker,
@@ -8118,6 +8137,12 @@
 /obj/item/flashlight/lamp/green,
 /obj/item/clock,
 /turf/open/floor/carpet/green,
+/area/space)
+"Hd" = (
+/obj/machinery/vending/uniform_supply,
+/turf/open/floor/mainship/green{
+	dir = 10
+	},
 /area/space)
 "He" = (
 /obj/item/paper/xenoresearch2,
@@ -8751,7 +8776,7 @@
 /turf/open/floor/wood/fancy,
 /area/space)
 "JH" = (
-/obj/structure/stairs/multiz/directional/east,
+/obj/structure/stairs/multiz/seamless/directional/east,
 /turf/open/floor/mainship/mono,
 /area/space)
 "JI" = (
@@ -8891,6 +8916,12 @@
 	dir = 1
 	},
 /turf/open/floor/mainship/mono,
+/area/space)
+"Ks" = (
+/obj/machinery/vending/engivend,
+/turf/open/floor/mainship/green{
+	dir = 5
+	},
 /area/space)
 "Kt" = (
 /obj/structure/table/reinforced,
@@ -9235,10 +9266,6 @@
 	dir = 8
 	},
 /area/space)
-"LH" = (
-/obj/machinery/vending/armor_supply,
-/turf/open/floor/mainship/silver/full,
-/area/space)
 "LI" = (
 /obj/machinery/door/airlock/mainship/generic{
 	dir = 4;
@@ -9564,15 +9591,13 @@
 	},
 /area/space)
 "MY" = (
-/obj/structure/stairs/multiz/directional/east{
-	dir = 8
-	},
 /obj/structure/sign/prop1{
 	dir = 8
 	},
 /obj/structure/sign/engie{
 	dir = 1
 	},
+/obj/structure/stairs/multiz/seamless/directional/west,
 /turf/open/floor/mainship/mono,
 /area/space)
 "MZ" = (
@@ -9691,12 +9716,10 @@
 /turf/open/floor/wood/fancy,
 /area/space)
 "Ns" = (
-/obj/structure/stairs/multiz/directional/east{
-	dir = 8
-	},
 /obj/structure/sign/prop1{
 	dir = 8
 	},
+/obj/structure/stairs/multiz/seamless/directional/west,
 /turf/open/floor/mainship/mono,
 /area/space)
 "Nv" = (
@@ -9830,12 +9853,6 @@
 	},
 /turf/open/floor/plating,
 /area/space)
-"NZ" = (
-/obj/structure/shipmast{
-	pixel_y = 2
-	},
-/turf/open/floor/mainship/silver/full,
-/area/space)
 "Oa" = (
 /obj/machinery/door/airlock/multi_tile/mainship/comdoor,
 /turf/open/floor/mainship/mono,
@@ -9925,14 +9942,6 @@
 	dir = 4
 	},
 /area/space)
-"Os" = (
-/obj/machinery/door_control/mainship/ammo{
-	dir = 8
-	},
-/turf/open/floor/mainship/orange{
-	dir = 1
-	},
-/area/space)
 "Ot" = (
 /obj/structure/largecrate/random/case,
 /turf/open/floor/plating,
@@ -9972,9 +9981,10 @@
 	},
 /area/space)
 "OC" = (
-/obj/item/reagent_containers/jerrycan,
-/obj/structure/rack/nometal,
-/turf/open/floor/mainship/mono,
+/obj/vehicle/ridden/motorbike{
+	dir = 4
+	},
+/turf/open/floor/mainship/cargo,
 /area/space)
 "OE" = (
 /obj/effect/turf_decal/logo/logo_peripheral{
@@ -10106,6 +10116,11 @@
 	dir = 1
 	},
 /turf/open/floor/mainship/tcomms,
+/area/space)
+"Pf" = (
+/obj/structure/rack,
+/obj/item/storage/belt,
+/turf/open/floor/mainship/silver,
 /area/space)
 "Pg" = (
 /obj/effect/turf_decal/medical_decals/triage{
@@ -10372,8 +10387,8 @@
 	},
 /area/space)
 "PZ" = (
-/obj/structure/stairs/multiz/directional/east,
 /obj/structure/sign/gunnery,
+/obj/structure/stairs/multiz/seamless/directional/east,
 /turf/open/floor/mainship/mono,
 /area/space)
 "Qa" = (
@@ -10745,14 +10760,6 @@
 /obj/effect/spawner/random/food_or_drink/kitchen,
 /turf/open/floor/wood/fancy,
 /area/space)
-"Rv" = (
-/obj/effect/turf_decal/warning_stripes/thin{
-	dir = 8
-	},
-/turf/open/floor/mainship/silver{
-	dir = 9
-	},
-/area/space)
 "Rw" = (
 /obj/structure/stairs/railstairs_vert{
 	dir = 4
@@ -10776,9 +10783,22 @@
 /obj/machinery/computer/skills,
 /turf/open/floor/wood,
 /area/space)
+"RF" = (
+/obj/machinery/vending/tool,
+/turf/open/floor/mainship/green{
+	dir = 6
+	},
+/area/space)
 "RG" = (
 /obj/structure/table/mainship/nometal,
 /obj/machinery/keycard_auth,
+/turf/open/floor/mainship/mono,
+/area/space)
+"RK" = (
+/obj/structure/closet/toolcloset,
+/obj/machinery/door_control/mainship/ammo{
+	dir = 8
+	},
 /turf/open/floor/mainship/mono,
 /area/space)
 "RL" = (
@@ -11296,15 +11316,6 @@
 	dir = 4
 	},
 /area/space)
-"TX" = (
-/obj/effect/turf_decal/warning_stripes/thin{
-	dir = 9;
-	pixel_y = 1
-	},
-/turf/open/floor/mainship/silver/corner{
-	dir = 1
-	},
-/area/space)
 "TY" = (
 /obj/machinery/computer/security/marinemainship{
 	dir = 8
@@ -11361,10 +11372,6 @@
 /area/space)
 "Uj" = (
 /turf/open/floor/mainship/orange/full,
-/area/space)
-"Un" = (
-/obj/machinery/vending/marineFood,
-/turf/open/floor/mainship/silver/full,
 /area/space)
 "Uo" = (
 /obj/structure/table/mainship/nometal,
@@ -12395,9 +12402,8 @@
 /turf/open/floor/mainship/mono,
 /area/space)
 "YP" = (
-/obj/vehicle/ridden/motorbike,
 /obj/effect/decal/cleanable/blood/oil,
-/turf/open/floor/mainship/cargo,
+/turf/open/floor/mainship/mono,
 /area/space)
 "YQ" = (
 /obj/structure/window/reinforced{
@@ -18384,8 +18390,8 @@ FP
 uo
 NM
 xM
-Os
-hd
+xA
+RK
 FP
 uE
 hI
@@ -18519,9 +18525,9 @@ zK
 sr
 wu
 FP
-FP
+bJ
 aF
-FP
+bJ
 FP
 FP
 FP
@@ -18655,7 +18661,7 @@ si
 Bi
 si
 mP
-zf
+rc
 si
 si
 si
@@ -19904,9 +19910,9 @@ si
 wk
 mP
 Lf
-oh
-oh
-oh
+Gd
+Gd
+Gd
 Lf
 Jk
 si
@@ -19936,8 +19942,8 @@ Ml
 si
 Xw
 Lf
-oh
-oh
+Gd
+Gd
 Lf
 Ml
 si
@@ -21015,9 +21021,9 @@ mP
 mP
 mP
 Lf
-oh
-oh
-oh
+Gd
+Gd
+Gd
 Kr
 mP
 xM
@@ -31002,7 +31008,7 @@ AP
 Jq
 iz
 ra
-OZ
+yi
 SZ
 qG
 bG
@@ -31139,7 +31145,7 @@ Pk
 si
 GB
 OZ
-OZ
+pl
 Oo
 XP
 yb
@@ -31276,7 +31282,7 @@ Pk
 si
 GB
 OZ
-OZ
+yw
 SZ
 UW
 XF
@@ -31412,8 +31418,8 @@ GF
 Pk
 si
 GB
-yi
-pl
+OZ
+rZ
 SZ
 SZ
 SZ
@@ -31549,7 +31555,7 @@ IC
 Pk
 si
 GB
-yw
+OZ
 OZ
 fs
 fs
@@ -31960,7 +31966,7 @@ Ly
 Pk
 si
 GB
-rZ
+OZ
 OZ
 qb
 qb
@@ -32344,10 +32350,10 @@ wT
 wT
 wT
 Lf
-Rv
-Sz
-TX
-yp
+FP
+FP
+FP
+FP
 FP
 iB
 px
@@ -32484,7 +32490,7 @@ Lf
 ru
 OC
 FZ
-yp
+Pf
 FP
 iB
 px
@@ -32620,7 +32626,7 @@ FP
 eg
 lv
 YP
-ba
+mP
 yp
 FP
 iB
@@ -34015,10 +34021,10 @@ px
 Iz
 si
 yp
-eb
-eb
-eb
 FP
+Ly
+Ly
+Ly
 MZ
 kd
 kd
@@ -34152,10 +34158,10 @@ px
 Iz
 si
 yp
-LH
-ib
-eb
 FW
+Ly
+eb
+Hd
 DQ
 Zo
 Zo
@@ -34289,10 +34295,10 @@ px
 Iz
 si
 yp
-bo
-AL
-eb
 FW
+Ly
+BI
+us
 DQ
 Zo
 Zo
@@ -34426,10 +34432,10 @@ cu
 tR
 nI
 as
-eb
-eb
-eb
 FW
+Ly
+FW
+pJ
 LK
 Zo
 Zo
@@ -34563,10 +34569,10 @@ px
 tR
 nI
 LC
-NZ
-eb
-eb
 FW
+Ly
+dK
+Bw
 DQ
 Zo
 Zo
@@ -34700,10 +34706,10 @@ ec
 tR
 nI
 LC
-eb
-eb
-eb
 FW
+Ly
+Ks
+RF
 DQ
 Zo
 Zo
@@ -34837,10 +34843,10 @@ px
 ys
 si
 LC
-Un
-dJ
-eb
 FP
+Ly
+Ly
+Ly
 Qd
 dq
 dq
@@ -34974,17 +34980,17 @@ px
 at
 si
 qX
-tF
-Cj
-eb
 FP
 FP
+nu
+nu
+nu
+nu
 nu
 nu
 nu
 nu
 ik
-FP
 FP
 aV
 aV
@@ -35112,17 +35118,17 @@ ys
 si
 Vr
 lh
+hT
+lh
+Jg
+lh
+lh
+lh
+Jg
+lh
 lh
 lh
 Aj
-lh
-lh
-lh
-Jg
-lh
-lh
-hT
-Jg
 lh
 lh
 lh
