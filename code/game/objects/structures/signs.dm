@@ -144,6 +144,11 @@
 	desc = "A warning sign which reads 'LIVE AMMUNITION RANGE'."
 	icon_state = "firingrange"
 
+/obj/structure/sign/leader
+	name = "\improper Squad Leader Preparation"
+	desc = "A sign which reads 'Squad Leader Preparation Area'."
+	icon_state = "leader"
+
 /obj/structure/sign/gunnery
 	name = "\improper Smartgunner Preparation"
 	desc = "A sign which reads 'Smartgunner Preparation Area'."
