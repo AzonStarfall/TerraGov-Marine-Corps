@@ -241,6 +241,8 @@
 "aI" = (
 /obj/effect/landmark/corpsespawner/chef/regular,
 /obj/effect/turf_decal/tracks/wheels/bloody,
+/obj/structure/closet/bodybag,
+/obj/effect/decal/cleanable/blood,
 /turf/open/floor/freezer,
 /area/space)
 "aK" = (
@@ -863,14 +865,7 @@
 	},
 /area/space)
 "cJ" = (
-/obj/item/reagent_containers/glass/fertilizer/ez,
-/obj/item/reagent_containers/glass/fertilizer/ez,
-/obj/item/tool/minihoe,
-/obj/item/tool/minihoe,
-/obj/item/tool/plantspray/weeds,
-/obj/item/tool/plantspray/weeds,
-/obj/structure/closet/crate/freezer,
-/obj/effect/spawner/random/misc/gnome,
+/obj/machinery/biogenerator,
 /turf/open/floor/grass,
 /area/space)
 "cK" = (
@@ -1081,7 +1076,7 @@
 "dy" = (
 /obj/machinery/door/window/secure/bridge/aidoor,
 /obj/item/tool/wrench,
-/turf/open/floor/bcircuit,
+/turf/open/floor/bcircuit/anim,
 /area/space)
 "dz" = (
 /obj/structure/table/mainship/nometal,
@@ -1374,6 +1369,10 @@
 /obj/effect/landmark/start/job/mechpilot,
 /turf/open/floor/wood,
 /area/space)
+"eF" = (
+/obj/item/storage/fancy/egg_box,
+/turf/closed/wall/mainship/outer,
+/area/space)
 "eG" = (
 /obj/machinery/camera/autoname/mainship{
 	dir = 8
@@ -1511,6 +1510,12 @@
 /area/space)
 "ff" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
 /turf/open/floor/prison/kitchen,
 /area/space)
 "fg" = (
@@ -1713,6 +1718,12 @@
 /obj/machinery/robotic_cradle,
 /obj/effect/turf_decal/warning_stripes/stripedsquare/border,
 /turf/open/floor/mainship/sterile/dark,
+/area/space)
+"fR" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/grass,
 /area/space)
 "fS" = (
 /obj/machinery/door/airlock/mainship/secure{
@@ -2693,15 +2704,8 @@
 /turf/open/floor/freezer,
 /area/space)
 "jw" = (
-/obj/structure/table/mainship/nometal,
-/obj/item/clothing/suit/storage/hazardvest,
-/obj/item/clothing/suit/storage/hazardvest/lime,
-/obj/item/clothing/suit/storage/hazardvest/blue,
-/obj/item/tool/shovel/etool,
-/obj/item/storage/pouch/medkit/firstaid,
-/obj/item/tool/taperoll/engineering,
-/obj/item/stack/sandbags_empty/half,
-/turf/open/floor/plating/plating_catwalk,
+/obj/prop/mainship/prop/news_tv/tg,
+/turf/closed/wall/mainship,
 /area/space)
 "jy" = (
 /obj/effect/turf_decal/warning_stripes/thin,
@@ -2854,6 +2858,10 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"ka" = (
+/obj/machinery/vending/engivend,
+/turf/open/floor/plating/plating_catwalk,
+/area/space)
 "kb" = (
 /obj/structure/table/wood/fancy,
 /obj/machinery/computer/marine_card,
@@ -2908,7 +2916,7 @@
 /area/space)
 "kj" = (
 /obj/effect/landmark/start/job/ai,
-/turf/open/floor/bcircuit,
+/turf/open/floor/bcircuit/anim,
 /area/space)
 "kk" = (
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -3540,7 +3548,7 @@
 /obj/machinery/door/window/secure/bridge/aidoor{
 	dir = 8
 	},
-/turf/open/floor/bcircuit,
+/turf/open/floor/bcircuit/anim,
 /area/space)
 "mI" = (
 /obj/machinery/loadout_vendor,
@@ -4198,7 +4206,7 @@
 /obj/structure/window/reinforced/extratoughened{
 	dir = 8
 	},
-/turf/open/floor/bcircuit,
+/turf/open/floor/bcircuit/anim,
 /area/space)
 "pc" = (
 /obj/machinery/vending/MarineMed,
@@ -4329,11 +4337,13 @@
 /turf/open/floor/mainship/green,
 /area/space)
 "pD" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
+/obj/structure/sink/bathroom{
+	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/mainship/mono,
+/obj/structure/mirror{
+	dir = 4
+	},
+/turf/open/floor/freezer,
 /area/space)
 "pE" = (
 /obj/machinery/vending/boozeomat,
@@ -4873,6 +4883,10 @@
 	},
 /obj/structure/stairs/multiz/seamless/directional/east,
 /turf/open/floor/mainship/mono,
+/area/space)
+"rw" = (
+/obj/machinery/vending/tool,
+/turf/open/floor/plating/plating_catwalk,
 /area/space)
 "rx" = (
 /obj/machinery/firealarm,
@@ -5428,6 +5442,12 @@
 /obj/machinery/vending/uniform_supply,
 /turf/open/floor/mainship/floor,
 /area/space)
+"tC" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/grass,
+/area/space)
 "tD" = (
 /obj/docking_port/stationary/marine_dropship/hangar/one,
 /obj/docking_port/stationary/marine_dropship/crash_target,
@@ -5687,6 +5707,9 @@
 "uv" = (
 /obj/structure/safe,
 /obj/item/instrument/violin/golden,
+/obj/item/ore/diamond,
+/obj/item/ore/diamond,
+/obj/item/ore/gold,
 /turf/open/floor/urban_wood,
 /area/space)
 "uw" = (
@@ -6438,6 +6461,11 @@
 	},
 /turf/open/floor/wood,
 /area/space)
+"wR" = (
+/obj/structure/table/mainship/nometal,
+/obj/item/pizzabox,
+/turf/open/floor/mainship/mono,
+/area/space)
 "wS" = (
 /obj/machinery/door/airlock/mainship/maint{
 	no_panel = 1;
@@ -6616,6 +6644,27 @@
 	dir = 1
 	},
 /turf/open/floor/mainship/mono,
+/area/space)
+"xt" = (
+/obj/structure/closet/crate/hydroponics,
+/obj/item/clothing/gloves/botanic_leather,
+/obj/item/clothing/gloves/botanic_leather,
+/obj/item/clothing/under/rank/hydroponics,
+/obj/item/clothing/under/rank/hydroponics,
+/obj/item/tool/minihoe,
+/obj/item/tool/minihoe,
+/obj/item/tool/hatchet,
+/obj/item/tool/hatchet,
+/obj/item/clothing/suit/storage/apron/overalls,
+/obj/item/clothing/suit/storage/apron/overalls,
+/obj/item/storage/bag/plants,
+/obj/item/storage/bag/plants,
+/obj/item/tool/plantspray/weeds,
+/obj/item/tool/plantspray/weeds,
+/obj/item/reagent_containers/glass/fertilizer/ez,
+/obj/item/reagent_containers/glass/fertilizer/ez,
+/obj/effect/spawner/random/misc/gnome,
+/turf/open/floor/grass,
 /area/space)
 "xw" = (
 /obj/machinery/marine_selector/clothes/medic,
@@ -7052,6 +7101,13 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
+/turf/open/floor/mainship/mono,
+/area/space)
+"yN" = (
+/obj/item/ore/phoron,
+/obj/item/ore/phoron,
+/obj/structure/rack/nometal,
+/obj/structure/rack/nometal,
 /turf/open/floor/mainship/mono,
 /area/space)
 "yO" = (
@@ -7810,6 +7866,18 @@
 /obj/structure/window/reinforced,
 /turf/open/floor/mainship/silver/full,
 /area/space)
+"Bv" = (
+/obj/structure/table/mainship/nometal,
+/obj/item/clothing/suit/storage/hazardvest,
+/obj/item/clothing/suit/storage/hazardvest/lime,
+/obj/item/clothing/suit/storage/hazardvest/blue,
+/obj/item/tool/shovel/etool,
+/obj/item/storage/pouch/medkit/firstaid,
+/obj/item/tool/taperoll/engineering,
+/obj/item/stack/sandbags_empty/half,
+/obj/item/weapon/baton,
+/turf/open/floor/plating/plating_catwalk,
+/area/space)
 "Bw" = (
 /obj/machinery/vending/MarineMed,
 /turf/open/floor/mainship/green,
@@ -8244,7 +8312,10 @@
 /turf/open/floor/mainship/sterile/side,
 /area/space)
 "Df" = (
-/obj/machinery/light/mainship/small{
+/obj/structure/sink/bathroom{
+	dir = 8
+	},
+/obj/structure/mirror{
 	dir = 8
 	},
 /turf/open/floor/freezer,
@@ -8766,8 +8837,22 @@
 	},
 /area/space)
 "EX" = (
-/obj/structure/closet/bodybag,
-/obj/effect/decal/cleanable/blood,
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/dough,
+/obj/item/reagent_containers/food/snacks/dough,
+/obj/item/reagent_containers/food/snacks/dough,
+/obj/item/reagent_containers/food/snacks/dough,
+/obj/item/reagent_containers/food/snacks/dough,
+/obj/item/reagent_containers/food/snacks/dough,
+/obj/item/reagent_containers/food/snacks/dough,
+/obj/item/reagent_containers/food/snacks/dough,
+/obj/item/reagent_containers/food/snacks/dough,
+/obj/item/reagent_containers/food/snacks/dough,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
 /turf/open/floor/freezer,
 /area/space)
 "EY" = (
@@ -9071,6 +9156,13 @@
 /turf/open/floor/mainship/red{
 	dir = 1
 	},
+/area/space)
+"Gf" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/grass,
 /area/space)
 "Gg" = (
 /obj/item/trash/cheesie,
@@ -9921,6 +10013,14 @@
 /obj/item/reagent_containers/cup/glass/bottle/beer,
 /turf/open/floor/plating,
 /area/space)
+"Ji" = (
+/obj/structure/rack/nometal,
+/obj/structure/rack/nometal,
+/obj/item/ore/hydrogen,
+/obj/item/ore/hydrogen,
+/obj/item/ore/hydrogen,
+/turf/open/floor/mainship/mono,
+/area/space)
 "Jk" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1
@@ -10423,6 +10523,7 @@
 /area/space)
 "KX" = (
 /obj/structure/kitchenspike,
+/obj/effect/spawner/random/food_or_drink/kitchenknife/butcherweighted,
 /turf/open/floor/freezer,
 /area/space)
 "KY" = (
@@ -10534,6 +10635,7 @@
 "Lt" = (
 /obj/structure/table/mainship/nometal,
 /obj/item/reagent_containers/food/drinks/shaker,
+/obj/effect/spawner/random/food_or_drink/burger,
 /turf/open/floor/mainship/floor,
 /area/space)
 "Lu" = (
@@ -10687,7 +10789,7 @@
 /area/space)
 "LZ" = (
 /obj/structure/mirror,
-/obj/structure/sink,
+/obj/structure/urinal,
 /turf/open/floor/freezer,
 /area/space)
 "Ma" = (
@@ -10820,6 +10922,10 @@
 "MC" = (
 /obj/structure/sign/custodian,
 /turf/closed/wall/mainship,
+/area/space)
+"MD" = (
+/obj/machinery/vending/uniform_supply,
+/turf/open/floor/plating/plating_catwalk,
 /area/space)
 "ME" = (
 /obj/structure/bed/chair/wood/wings{
@@ -11596,7 +11702,7 @@
 /obj/structure/window/reinforced/extratoughened{
 	dir = 1
 	},
-/turf/open/floor/bcircuit,
+/turf/open/floor/bcircuit/anim,
 /area/space)
 "Pf" = (
 /obj/structure/rack,
@@ -11849,7 +11955,7 @@
 /obj/machinery/door_control/ai/interior{
 	dir = 8
 	},
-/turf/open/floor/bcircuit,
+/turf/open/floor/bcircuit/anim,
 /area/space)
 "PP" = (
 /obj/machinery/bodyscanner{
@@ -12484,6 +12590,7 @@
 /area/space)
 "RU" = (
 /obj/structure/bed/chair/office/dark,
+/obj/item/reagent_containers/food/snacks/baked_cheese_platter,
 /turf/open/floor/mainship/mono,
 /area/space)
 "RV" = (
@@ -12709,6 +12816,10 @@
 	id = "port_bow"
 	},
 /turf/open/floor/plating,
+/area/space)
+"SE" = (
+/obj/machinery/botany/extractor,
+/turf/open/floor/grass,
 /area/space)
 "SI" = (
 /obj/machinery/reagentgrinder,
@@ -13056,10 +13167,23 @@
 	},
 /area/space)
 "TV" = (
-/obj/item/pizzabox,
-/obj/structure/table/mainship/nometal,
-/obj/effect/spawner/random/food_or_drink/kitchenknife/butcherweighted,
-/obj/effect/spawner/random/food_or_drink/burger,
+/obj/structure/rack,
+/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/food/snacks/flour,
+/obj/item/reagent_containers/food/snacks/flour,
+/obj/item/storage/box/monkeycubes,
+/obj/item/reagent_containers/food/snacks/flour,
 /turf/open/floor/freezer,
 /area/space)
 "TW" = (
@@ -13430,6 +13554,11 @@
 /turf/open/floor/mainship/green/corner{
 	dir = 8
 	},
+/area/space)
+"Vs" = (
+/obj/structure/rack/nometal,
+/obj/structure/rack/nometal,
+/turf/open/floor/mainship/mono,
 /area/space)
 "Vt" = (
 /obj/item/toy/deck,
@@ -14092,6 +14221,10 @@
 "Ya" = (
 /obj/machinery/vending/dinnerware,
 /turf/open/floor/prison/kitchen,
+/area/space)
+"Yb" = (
+/obj/structure/concrete_planter/seat,
+/turf/open/floor/mainship/mono,
 /area/space)
 "Yc" = (
 /obj/structure/glowshroom,
@@ -31230,7 +31363,7 @@ nj
 nj
 nj
 nj
-Lf
+eF
 px
 FP
 Ya
@@ -31920,7 +32053,7 @@ Yc
 FP
 Eo
 fM
-az
+wR
 Lt
 zI
 FP
@@ -32193,10 +32326,10 @@ FP
 px
 FP
 DO
-OZ
-OZ
-OZ
-OZ
+ch
+Xl
+Hz
+Uc
 OZ
 JI
 xk
@@ -32330,10 +32463,10 @@ FP
 px
 FP
 DO
-ch
-Xl
-Hz
-Uc
+EP
+RW
+WH
+Ar
 OZ
 hA
 xk
@@ -32468,11 +32601,11 @@ px
 FP
 DO
 EP
-RW
-WH
-Ar
-OZ
-OZ
+Yy
+oU
+Pa
+ed
+Mt
 xk
 ea
 Pk
@@ -32602,14 +32735,14 @@ FP
 yW
 FP
 px
-FP
+jw
 DO
-EP
-Yy
-oU
-Pa
+Fm
+Wr
 OZ
-OZ
+FC
+ed
+Mt
 xk
 FP
 Pk
@@ -32741,10 +32874,10 @@ px
 px
 dZ
 DO
-Fm
-Wr
 OZ
-FC
+OZ
+OZ
+OZ
 OZ
 OZ
 xk
@@ -33011,13 +33144,13 @@ Kk
 yx
 Bl
 SZ
-HC
+na
 Yv
 Yv
-Fo
+fR
+tC
+Gf
 OZ
-ed
-Mt
 OZ
 yO
 ME
@@ -33150,11 +33283,11 @@ uG
 SZ
 WV
 Yv
+xt
 sM
 sM
+Fo
 OZ
-ed
-Mt
 MG
 Cx
 OZ
@@ -33285,12 +33418,12 @@ fB
 fB
 dJ
 SZ
-na
+UR
+Yv
 Yv
 sM
 sM
-OZ
-OZ
+Fo
 OZ
 OZ
 iJ
@@ -33422,12 +33555,12 @@ wT
 wT
 CG
 SZ
-UR
+HC
 cJ
+SE
 sM
 sM
-zt
-pD
+Fo
 OZ
 Tb
 Tb
@@ -37686,9 +37819,9 @@ CK
 mi
 Zz
 zM
-wk
+qU
 RT
-zM
+lF
 wk
 Zz
 mi
@@ -38358,15 +38491,15 @@ FP
 px
 FP
 LZ
+pD
 ef
-ef
 FP
 mP
 mP
 FP
 mP
 mP
-FP
+jw
 zM
 dS
 TA
@@ -38538,7 +38671,7 @@ FP
 FP
 FP
 FP
-mP
+Iw
 Lf
 px
 Lf
@@ -38674,7 +38807,7 @@ FP
 NV
 NV
 FP
-mP
+Ji
 mP
 Lf
 px
@@ -38811,8 +38944,8 @@ FP
 xR
 NV
 FP
-mP
-mP
+yN
+Vs
 Lf
 px
 Lf
@@ -39044,7 +39177,7 @@ px
 YC
 pR
 Xz
-FP
+jw
 IT
 IT
 IT
@@ -39065,10 +39198,10 @@ bV
 wk
 Ly
 Ly
-Ly
-Ly
-Ly
-Ly
+FP
+FP
+Eq
+FP
 FP
 Pk
 si
@@ -39203,9 +39336,9 @@ Ij
 Ly
 Ly
 FP
-FP
-Eq
-FP
+wV
+si
+Bv
 FP
 Pk
 si
@@ -39340,9 +39473,9 @@ Ly
 Ly
 Ly
 FP
-wV
+KD
 si
-jw
+Er
 FP
 Pk
 si
@@ -39477,9 +39610,9 @@ hI
 hI
 Nc
 FP
-KD
+MD
 si
-Er
+rw
 FP
 Pk
 si
@@ -39616,7 +39749,7 @@ jv
 FP
 xq
 si
-si
+ka
 FP
 zi
 si
@@ -39753,7 +39886,7 @@ jv
 FP
 FP
 FP
-CP
+FP
 FP
 Bu
 si
@@ -39763,13 +39896,13 @@ mP
 mP
 mP
 mP
+Yb
 mP
 mP
 mP
 mP
 mP
-mP
-mP
+Yb
 mP
 mP
 Lf
