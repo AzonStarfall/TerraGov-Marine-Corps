@@ -4313,7 +4313,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/machinery/vending/armor_supply,
+/obj/machinery/marine_selector/clothes,
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/general)
 "amT" = (
@@ -15491,7 +15491,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/vending/armor_supply,
+/obj/machinery/marine_selector/clothes,
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/general)
 "aTB" = (
@@ -17704,6 +17704,9 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/hallways/hangar/flight_observation)
+"iAo" = (
+/turf/open/floor/mainship/mono,
+/area/mainship/hull/upper/upper_starboard_hull)
 "jao" = (
 /turf/closed/wall/mainship,
 /area/mainship/hallways/hangar/flight_observation)
@@ -17744,6 +17747,10 @@
 	dir = 8
 	},
 /area/mainship/living/briefing)
+"qIt" = (
+/obj/machinery/door/airlock/multi_tile/mainship/maint,
+/turf/open/floor/mainship/mono,
+/area/mainship/hull/upper/upper_starboard_hull)
 "qTc" = (
 /obj/machinery/floodlight/landing,
 /turf/open/floor/plating,
@@ -42845,7 +42852,7 @@ anD
 atd
 anD
 anD
-asA
+qIt
 aTX
 asA
 aaT
@@ -42982,7 +42989,7 @@ anD
 anD
 anD
 anD
-asA
+iAo
 agd
 asA
 aaT
