@@ -1835,10 +1835,6 @@
 /obj/machinery/vending/armor_supply,
 /turf/open/floor/mainship/floor,
 /area/space)
-"go" = (
-/obj/effect/turf_decal/medical_decals/cryo/cell,
-/turf/open/floor/mainship/sterile/corner,
-/area/space)
 "gr" = (
 /turf/open/floor/mainship/red/corner,
 /area/space)
@@ -1975,9 +1971,7 @@
 /area/space)
 "gZ" = (
 /obj/effect/turf_decal/medical_decals/cryo/cell/two,
-/turf/open/floor/mainship/sterile/corner{
-	dir = 1
-	},
+/turf/open/floor/mainship/sterile/dark,
 /area/space)
 "ha" = (
 /obj/machinery/vending/MarineMed,
@@ -7296,6 +7290,7 @@
 	dir = 6;
 	pixel_x = 1
 	},
+/obj/effect/turf_decal/medical_decals/cryo/cell,
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
 "zx" = (
@@ -33185,7 +33180,7 @@ qG
 CD
 jL
 CD
-Bl
+yb
 SZ
 yx
 sk
@@ -33455,11 +33450,11 @@ AL
 XF
 XJ
 SZ
+UL
 yb
 yb
 yb
 yb
-uF
 SZ
 yx
 Ax
@@ -33592,11 +33587,11 @@ SZ
 SZ
 SZ
 SZ
-UL
+nO
+lo
+gZ
 yb
-yb
-yb
-zJ
+uF
 SZ
 SZ
 iP
@@ -33728,12 +33723,12 @@ SZ
 Ax
 ms
 SZ
-nO
-lo
-gZ
+yb
+yb
+Lq
 ke
 jg
-yb
+zJ
 yL
 fB
 fB
@@ -34276,9 +34271,9 @@ SZ
 Ax
 ms
 SZ
-nO
-lo
-go
+yb
+yb
+sN
 ZM
 vf
 yb
@@ -34414,8 +34409,8 @@ SZ
 SZ
 SZ
 SZ
-UL
-yb
+nO
+lo
 zw
 le
 jY
@@ -34551,7 +34546,7 @@ zq
 dh
 XJ
 SZ
-yb
+UL
 yb
 ry
 ZF
