@@ -316,6 +316,15 @@
 	},
 /turf/closed/wall/mainship/outer,
 /area/space)
+"be" = (
+/obj/effect/turf_decal/warning_stripes/thin{
+	dir = 9
+	},
+/obj/effect/turf_decal/warning_stripes/thin,
+/turf/open/floor/mainship/sterile/corner{
+	dir = 4
+	},
+/area/space)
 "bg" = (
 /obj/structure/table/mainship/nometal,
 /obj/machinery/computer/skills{
@@ -429,10 +438,17 @@
 /turf/open/floor/mainship/black/full,
 /area/space)
 "bx" = (
-/obj/effect/turf_decal/warning_stripes/thin,
-/turf/open/floor/mainship/sterile/side{
-	dir = 1
-	},
+/obj/machinery/vending/marineFood,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/turf/open/floor/mainship/sterile/dark,
 /area/space)
 "by" = (
 /obj/structure/bed/chair/nometal{
@@ -1120,10 +1136,11 @@
 /area/space)
 "dJ" = (
 /obj/effect/turf_decal/warning_stripes/thin{
-	dir = 1;
-	pixel_y = 1
+	dir = 6;
+	pixel_x = 1
 	},
-/turf/open/floor/mainship/sterile/side,
+/obj/effect/turf_decal/medical_decals/cryo/cell,
+/turf/open/floor/mainship/sterile/dark,
 /area/space)
 "dK" = (
 /obj/machinery/vending/marineFood,
@@ -1835,6 +1852,12 @@
 /obj/machinery/vending/armor_supply,
 /turf/open/floor/mainship/floor,
 /area/space)
+"go" = (
+/obj/effect/turf_decal/warning_stripes/thin{
+	dir = 9
+	},
+/turf/open/floor/mainship/sterile/side,
+/area/space)
 "gr" = (
 /turf/open/floor/mainship/red/corner,
 /area/space)
@@ -1970,8 +1993,16 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
 "gZ" = (
-/obj/effect/turf_decal/medical_decals/cryo/cell/two,
-/turf/open/floor/mainship/sterile/dark,
+/obj/machinery/computer/body_scanconsole{
+	dir = 8
+	},
+/obj/effect/turf_decal/warning_stripes/thin{
+	dir = 4;
+	pixel_x = 1
+	},
+/turf/open/floor/mainship/sterile/side{
+	dir = 4
+	},
 /area/space)
 "ha" = (
 /obj/machinery/vending/MarineMed,
@@ -2868,11 +2899,7 @@
 /turf/open/floor/plating,
 /area/space)
 "jY" = (
-/obj/effect/turf_decal/warning_stripes/thin{
-	dir = 5;
-	pixel_y = 1;
-	pixel_x = 1
-	},
+/obj/effect/turf_decal/medical_decals/cryo/cell/two,
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
 "kb" = (
@@ -3269,13 +3296,8 @@
 	},
 /area/space)
 "ly" = (
-/obj/machinery/computer/body_scanconsole{
-	dir = 8
-	},
-/obj/effect/turf_decal/warning_stripes/thin{
-	dir = 4;
-	pixel_x = 1
-	},
+/obj/structure/bed,
+/obj/item/bedsheet/medical,
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
 "lz" = (
@@ -3520,7 +3542,10 @@
 /turf/open/floor/mainship/research,
 /area/space)
 "ms" = (
-/obj/machinery/vending/marineFood,
+/obj/effect/turf_decal/warning_stripes/thin{
+	dir = 4;
+	pixel_x = 1
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
 "mt" = (
@@ -4144,12 +4169,14 @@
 /area/space)
 "oI" = (
 /obj/effect/turf_decal/warning_stripes/thin{
-	dir = 9;
+	dir = 1;
 	pixel_y = 1
 	},
-/turf/open/floor/mainship/sterile/side{
-	dir = 4
+/obj/effect/turf_decal/warning_stripes/thin{
+	dir = 6;
+	pixel_x = 1
 	},
+/turf/open/floor/mainship/sterile/side,
 /area/space)
 "oJ" = (
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -4259,11 +4286,10 @@
 /area/space)
 "pa" = (
 /obj/effect/turf_decal/warning_stripes/thin{
-	dir = 6;
-	pixel_x = 1
+	dir = 10
 	},
-/turf/open/floor/mainship/sterile/side{
-	dir = 1
+/turf/open/floor/mainship/sterile/corner{
+	dir = 8
 	},
 /area/space)
 "pb" = (
@@ -5014,9 +5040,6 @@
 /area/space)
 "rB" = (
 /obj/structure/table/mainship/nometal,
-/obj/machinery/vending/nanoblood{
-	pixel_y = 20
-	},
 /obj/item/reagent_containers/glass/beaker/cryomix{
 	name = "cryo beaker";
 	pixel_x = 17;
@@ -5038,6 +5061,7 @@
 	pixel_y = 6;
 	pixel_x = -19
 	},
+/obj/machinery/vending/nanoblood,
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
 "rC" = (
@@ -7290,7 +7314,6 @@
 	dir = 6;
 	pixel_x = 1
 	},
-/obj/effect/turf_decal/medical_decals/cryo/cell,
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
 "zx" = (
@@ -10747,10 +10770,17 @@
 /turf/open/floor/mainship/mono,
 /area/space)
 "LG" = (
-/obj/effect/turf_decal/warning_stripes/thin{
-	dir = 1;
-	pixel_y = 1
-	},
+/obj/machinery/vending/marineFood,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
+/obj/item/reagent_containers/food/snacks/protein_pack,
 /turf/open/floor/mainship/sterile/dark,
 /area/space)
 "LI" = (
@@ -33180,7 +33210,7 @@ qG
 CD
 jL
 CD
-yb
+uF
 SZ
 yx
 sk
@@ -33453,8 +33483,8 @@ SZ
 UL
 yb
 yb
-yb
-yb
+zw
+ms
 SZ
 yx
 Ax
@@ -33589,9 +33619,9 @@ SZ
 SZ
 nO
 lo
-gZ
-yb
-uF
+jY
+ry
+zJ
 SZ
 SZ
 iP
@@ -33721,15 +33751,15 @@ si
 fk
 SZ
 Ax
-ms
-SZ
+yb
+LG
 yb
 yb
 Lq
 ke
-jg
-zJ
-yL
+pa
+cp
+go
 fB
 fB
 hz
@@ -33857,10 +33887,10 @@ Pk
 si
 jy
 Is
-yb
-yb
-Is
-yb
+ke
+ke
+ke
+ke
 Lq
 pB
 HT
@@ -34131,10 +34161,10 @@ Pk
 si
 ri
 Is
-yb
-yb
-Is
-yb
+ZM
+ZM
+ZM
+ZM
 sN
 on
 HT
@@ -34269,8 +34299,8 @@ si
 FS
 SZ
 Ax
-ms
-SZ
+yb
+bx
 yb
 yb
 sN
@@ -34411,10 +34441,10 @@ SZ
 SZ
 nO
 lo
-zw
+dJ
 le
-jY
-yL
+nQ
+AB
 yb
 yb
 yb
@@ -34550,9 +34580,9 @@ UL
 yb
 ry
 ZF
-LG
-yL
-ZM
+xD
+oI
+gZ
 ZM
 ZM
 Is
@@ -34687,9 +34717,9 @@ ZM
 ZM
 Gc
 Ty
-oI
-vf
-ZM
+Ty
+be
+wc
 SZ
 SZ
 SZ
@@ -34959,9 +34989,9 @@ SZ
 SZ
 ly
 yb
-pa
-nQ
-AB
+Vv
+yb
+yL
 pD
 yb
 SZ
@@ -35094,11 +35124,11 @@ wT
 wT
 wT
 SZ
-wc
-LG
-bx
-xD
-dJ
+ly
+yb
+Vv
+yb
+yL
 MM
 wJ
 SZ
