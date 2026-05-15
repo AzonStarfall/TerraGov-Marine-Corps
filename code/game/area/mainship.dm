@@ -443,7 +443,7 @@
 	icon_state = "operating"
 
 /area/mainship/medical/medical_science
-	name = "Medical Research laboratories"
+	name = "Medical Research Laboratories"
 	icon_state = "science"
 
 

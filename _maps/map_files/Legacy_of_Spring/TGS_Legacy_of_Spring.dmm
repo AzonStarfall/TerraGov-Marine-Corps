@@ -854,9 +854,7 @@
 	dir = 8
 	},
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "acq" = (
 /obj/machinery/vending/marineFood,
 /obj/structure/platform{
@@ -2274,9 +2272,7 @@
 	dir = 9
 	},
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "agk" = (
 /obj/structure/ob_ammo/warhead/plasmaloss,
 /obj/structure/ob_ammo/warhead/plasmaloss,
@@ -2459,9 +2455,7 @@
 /turf/open/floor/mainship/sterile/purple/side{
 	dir = 4
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "agL" = (
 /turf/closed/wall/mainship/outer,
 /area/mainship/squads/squad_gunner)
@@ -2486,9 +2480,7 @@
 /obj/effect/urban/decal/trash/seven,
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "agR" = (
 /obj/machinery/loadout_vendor,
 /turf/open/floor/mainship/black/full,
@@ -2609,9 +2601,7 @@
 /turf/closed/wall/mainship/research/containment/wall/purple{
 	dir = 2
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "ahl" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 4;
@@ -2800,9 +2790,7 @@
 "ahF" = (
 /obj/item/clothing/under/rank/clown,
 /turf/open/floor/mainship/research/containment/floor1,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "ahG" = (
 /obj/effect/turf_decal/warning_stripes/thin,
 /obj/item/paper/arachneresearch1,
@@ -2810,9 +2798,7 @@
 	dir = 4
 	},
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "ahH" = (
 /obj/structure/bed/chair/comfy{
 	dir = 8
@@ -3050,9 +3036,7 @@
 	},
 /obj/effect/landmark/start/job/researcher,
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aio" = (
 /obj/effect/turf_decal/trimline/blue/line{
 	dir = 1
@@ -3067,9 +3051,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aiq" = (
 /obj/structure/safe,
 /obj/item/moneybag,
@@ -3189,9 +3171,7 @@
 /area/mainship/living/chapel)
 "aiG" = (
 /turf/closed/wall/mainship/research/containment/wall/west,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aiH" = (
 /obj/effect/decal/cleanable/blood/oil/streak,
 /turf/open/floor/mainship/silver{
@@ -3724,9 +3704,7 @@
 	dir = 1
 	},
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "akg" = (
 /obj/machinery/door/airlock/multi_tile/mainship/secdoor/glass{
 	req_access = null;
@@ -3950,9 +3928,7 @@
 /obj/structure/table/mainship/nometal,
 /obj/item/camera,
 /turf/open/floor/mainship/research,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "akM" = (
 /obj/machinery/marine_selector/gear/medic,
 /turf/open/floor/mainship/sterile/corner{
@@ -4032,9 +4008,7 @@
 "akX" = (
 /obj/structure/closet/l3closet/virology,
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "akY" = (
 /obj/machinery/door/airlock/mainship/generic{
 	dir = 2;
@@ -4212,9 +4186,7 @@
 /turf/open/floor/mainship/research/containment/floor2{
 	dir = 8
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "alu" = (
 /obj/machinery/marine_selector/clothes/commander{
 	pixel_y = -13
@@ -4380,9 +4352,7 @@
 /turf/open/floor/mainship/sterile/purple/side{
 	dir = 4
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "alU" = (
 /obj/structure/bed/chair/comfy{
 	dir = 1
@@ -4698,9 +4668,7 @@
 /turf/closed/wall/mainship/research/containment/wall/corner{
 	dir = 8
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "amM" = (
 /obj/vehicle/unmanned/droid/ripley,
 /turf/open/floor/mech_bay_recharge_floor,
@@ -5510,9 +5478,7 @@
 	on = 1
 	},
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aoX" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 4;
@@ -5693,14 +5659,10 @@
 /turf/open/floor/mainship/sterile/purple/corner{
 	dir = 8
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "apw" = (
 /turf/closed/wall/mainship/white,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "apx" = (
 /turf/open/floor/plating,
 /area/mainship/hull/lower/lower_port_hull)
@@ -6167,9 +6129,7 @@
 /area/mainship/squads/req)
 "aqJ" = (
 /turf/closed/wall/mainship/research/containment/wall/corner,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aqK" = (
 /turf/closed/wall/mainship,
 /area/mainship/command/corporateliaison)
@@ -6613,9 +6573,7 @@
 /area/mainship/living/briefing)
 "arX" = (
 /turf/open/floor/mainship/sterile/purple/corner,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "arY" = (
 /obj/structure/closet/secure_closet/captain,
 /obj/item/reagent_containers/food/snacks/bearmeat,
@@ -6740,9 +6698,7 @@
 	dir = 8
 	},
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "asr" = (
 /obj/machinery/door/poddoor/mainship/open{
 	id = "fuelshed";
@@ -6809,9 +6765,7 @@
 /turf/open/floor/mainship/sterile/purple/corner{
 	dir = 8
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "asz" = (
 /obj/effect/turf_decal/warning_stripes/thick{
 	dir = 1
@@ -6930,9 +6884,7 @@
 "asR" = (
 /obj/effect/soundplayer/deltaplayer,
 /turf/closed/wall/mainship/white,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "asS" = (
 /turf/open/floor/mainship/empty,
 /area/mainship/squads/req)
@@ -7271,9 +7223,7 @@
 /obj/effect/urban/decal/trash/two,
 /obj/effect/spawner/random/misc/trash,
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "atP" = (
 /obj/machinery/shower{
 	dir = 8
@@ -7332,9 +7282,7 @@
 /obj/item/tool/pen,
 /obj/machinery/holopad,
 /turf/open/floor/mainship/research,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "atW" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 5
@@ -7664,9 +7612,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "auO" = (
 /obj/machinery/vending/weapon,
 /turf/open/floor/mainship/orange{
@@ -7814,9 +7760,7 @@
 /obj/structure/table/mainship/nometal,
 /obj/machinery/faxmachine/research,
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "avj" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 1;
@@ -8354,9 +8298,7 @@
 /turf/open/floor/mainship/sterile/purple/side{
 	dir = 8
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "awA" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
@@ -9342,9 +9284,7 @@
 /turf/open/floor/mainship/research/containment/floor2{
 	dir = 6
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "azf" = (
 /obj/structure/sign/fire{
 	dir = 8
@@ -10254,9 +10194,7 @@
 /area/mainship/squads/squad_lead)
 "aBF" = (
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aBH" = (
 /obj/structure/table/mainship/nometal,
 /obj/effect/spawner/random/misc/paperbin,
@@ -10268,9 +10206,7 @@
 /turf/open/floor/mainship/sterile/purple/corner{
 	dir = 1
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aBI" = (
 /obj/machinery/vending/weapon,
 /turf/open/floor/mainship/green{
@@ -10608,9 +10544,7 @@
 /turf/closed/wall/mainship/research/containment/wall/purple{
 	dir = 1
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aCB" = (
 /turf/closed/wall/mainship/bulletproof,
 /area/mainship/shipboard/firing_range)
@@ -10912,9 +10846,7 @@
 	on = 1
 	},
 /turf/open/floor/mainship/research,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aDu" = (
 /obj/structure/rack,
 /obj/item/clothing/head/welding,
@@ -11315,9 +11247,7 @@
 	dir = 8
 	},
 /turf/open/floor/mainship/sterile/purple/side,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aEx" = (
 /obj/structure/bed/chair/comfy{
 	dir = 1
@@ -11368,9 +11298,7 @@
 /turf/closed/wall/mainship/research/containment/wall/corner{
 	dir = 1
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aEF" = (
 /obj/structure/table/mainship/nometal,
 /obj/machinery/computer/marine_card{
@@ -11448,9 +11376,7 @@
 "aEQ" = (
 /obj/item/clothing/shoes/clown_shoes,
 /turf/open/floor/mainship/research/containment/floor2,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aER" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line,
 /obj/effect/turf_decal/trimline/yellow/filled/line,
@@ -12253,9 +12179,7 @@
 	pixel_x = 1
 	},
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aHf" = (
 /obj/machinery/mech_bay_recharge_port{
 	dir = 8
@@ -12274,9 +12198,7 @@
 /turf/open/floor/mainship/sterile/purple/side{
 	dir = 8
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aHi" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/corner,
 /turf/open/floor/mainship/mono,
@@ -12568,9 +12490,7 @@
 /turf/open/floor/mainship/research/containment/floor2{
 	dir = 5
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aIf" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 9;
@@ -13114,9 +13034,7 @@
 	pixel_y = 1
 	},
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aJv" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/cup/glass/drinkingglass,
@@ -13259,9 +13177,7 @@
 "aJR" = (
 /obj/machinery/chem_dispenser,
 /turf/open/floor/mainship/sterile/purple/corner,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aJS" = (
 /turf/open/floor/wood/fancy,
 /area/mainship/living/commandbunks)
@@ -14144,9 +14060,7 @@
 "aMr" = (
 /obj/structure/window/framed/mainship/white/toughened,
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aMs" = (
 /turf/open/floor/mainship/red{
 	dir = 8
@@ -14370,9 +14284,7 @@
 "aMU" = (
 /obj/structure/foamedmetal,
 /turf/open/floor/mainship/research,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aMV" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 10
@@ -14881,9 +14793,7 @@
 /turf/open/floor/mainship/sterile/purple/side{
 	dir = 1
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aOn" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -15041,9 +14951,7 @@
 /turf/open/floor/mainship/sterile/purple/corner{
 	dir = 1
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aOI" = (
 /obj/structure/ship_ammo/cas/minirocket/illumination,
 /turf/open/floor/mainship/red,
@@ -15307,9 +15215,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/plating_catwalk,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aPv" = (
 /obj/structure/closet/radiation,
 /turf/open/floor/mainship/orange{
@@ -15424,9 +15330,7 @@
 /area/mainship/hallways/hangar)
 "aPG" = (
 /turf/closed/wall/mainship/research/containment/wall/north,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aPH" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -15562,9 +15466,7 @@
 /turf/open/floor/mainship/sterile/purple/side{
 	dir = 1
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aPY" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 8
@@ -15586,9 +15488,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/mainship/sterile/purple/side,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aQc" = (
 /obj/structure/prop/mainship/mapping_computer,
 /turf/open/floor/mainship/silver{
@@ -15641,9 +15541,7 @@
 	pixel_x = 1
 	},
 /turf/open/floor/mainship/sterile/purple/side,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aQk" = (
 /obj/structure/bed/chair,
 /turf/open/floor/wood,
@@ -16145,9 +16043,7 @@
 /turf/open/floor/mainship/research/containment/floor2{
 	dir = 1
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aRt" = (
 /obj/structure/platform{
 	dir = 4
@@ -16468,9 +16364,7 @@
 	dir = 8
 	},
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aSo" = (
 /obj/machinery/door/airlock/mainship/generic{
 	dir = 4;
@@ -16781,9 +16675,7 @@
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/storage/box/monkeycubes,
 /turf/open/floor/mainship/research,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aTb" = (
 /obj/structure/bed/chair/wood/wings{
 	dir = 4
@@ -17126,9 +17018,7 @@
 /turf/open/floor/mainship/sterile/purple/side{
 	dir = 4
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aTX" = (
 /obj/structure/glowshroom,
 /turf/open/floor/plating,
@@ -17187,9 +17077,7 @@
 /turf/open/floor/mainship/sterile/purple/side{
 	dir = 1
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aUe" = (
 /turf/open/floor/mainship/red{
 	dir = 6
@@ -17315,9 +17203,7 @@
 /turf/open/floor/mainship/sterile/purple/side{
 	dir = 8
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aUC" = (
 /obj/effect/turf_decal/trimline/dark_blue/filled/corner{
 	dir = 8
@@ -17746,9 +17632,7 @@
 /area/mainship/hallways/hangar_lower)
 "aVK" = (
 /turf/closed/wall/mainship/research/containment/wall/south,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aVL" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 4;
@@ -17960,9 +17844,7 @@
 /turf/open/floor/mainship/research/containment/floor2{
 	dir = 10
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aWr" = (
 /obj/structure/bed/chair/sofa/left{
 	dir = 8
@@ -17974,9 +17856,7 @@
 /turf/open/floor/mainship/research/containment/floor2{
 	dir = 4
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aWt" = (
 /obj/structure/window/framed/mainship,
 /turf/open/floor/plating,
@@ -18079,9 +17959,7 @@
 /turf/open/floor/mainship/research/containment/floor2{
 	dir = 9
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aWJ" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 4;
@@ -18220,9 +18098,7 @@
 "aXc" = (
 /obj/structure/closet/secure_closet/guncabinet/mp_armory,
 /turf/open/floor/mainship/research,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aXd" = (
 /obj/structure/dropship_equipment/shuttle/weapon_holder/mortar_holder,
 /turf/open/floor/mainship/orange{
@@ -18235,9 +18111,7 @@
 	},
 /obj/effect/landmark/start/job/researcher,
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aXf" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 6;
@@ -18396,9 +18270,7 @@
 /area/mainship/living/field_command_bunks)
 "aXA" = (
 /turf/open/floor/mainship/research,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aXB" = (
 /obj/machinery/power/monitor,
 /obj/structure/cable,
@@ -18442,9 +18314,7 @@
 /turf/closed/wall/mainship/research/containment/wall/corner{
 	dir = 4
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aXI" = (
 /obj/structure/ship_ammo/cas/heavygun,
 /turf/open/floor/mainship/red{
@@ -18639,9 +18509,7 @@
 /turf/open/floor/mainship/sterile/purple/corner{
 	dir = 1
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aYk" = (
 /obj/structure/bed/chair/nometal{
 	dir = 8
@@ -18760,9 +18628,7 @@
 /turf/open/floor/mainship/sterile/purple/corner{
 	dir = 4
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aYA" = (
 /obj/effect/turf_decal/trimline/dark_blue/filled/corner{
 	dir = 4
@@ -18997,9 +18863,7 @@
 /turf/open/floor/mainship/sterile/purple/side{
 	dir = 1
 	},
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "aZh" = (
 /obj/structure/table/mainship/nometal,
 /obj/machinery/faxmachine,
@@ -20327,9 +20191,7 @@
 "euA" = (
 /obj/structure/cable,
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "euV" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -20861,9 +20723,7 @@
 	dir = 8
 	},
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "gpD" = (
 /obj/machinery/power/apc/mainship{
 	dir = 4
@@ -22164,9 +22024,7 @@
 "kuL" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/mainship/research,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "kzJ" = (
 /obj/effect/turf_decal/warning_stripes/thin,
 /obj/structure/disposalpipe/segment,
@@ -22353,9 +22211,7 @@
 	dir = 4
 	},
 /turf/open/floor/mainship/research,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "kYi" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -24140,9 +23996,7 @@
 	dir = 6
 	},
 /turf/open/floor/mainship/research,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "rwe" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 8
@@ -24295,9 +24149,7 @@
 	dir = 4
 	},
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "sfj" = (
 /turf/open/floor/mainship/silver{
 	dir = 1
@@ -24594,9 +24446,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "sIH" = (
 /obj/structure/cable,
 /turf/open/floor/mainship/orange{
@@ -24637,9 +24487,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "sMs" = (
 /obj/structure/window/framed/mainship,
 /obj/structure/cable,
@@ -25116,9 +24964,7 @@
 	dir = 4
 	},
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "utu" = (
 /obj/structure/bed/chair/comfy/beige{
 	dir = 8
@@ -25227,9 +25073,7 @@
 	dir = 10
 	},
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "uQu" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
@@ -25324,9 +25168,7 @@
 	dir = 4
 	},
 /turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/medical_science{
-	name = "Medical Research Laboratories"
-	})
+/area/mainship/medical/medical_science)
 "vcV" = (
 /obj/machinery/light/mainship{
 	dir = 4
