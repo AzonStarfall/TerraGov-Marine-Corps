@@ -1075,9 +1075,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/engineering/upper_engine_monitoring)
 "acW" = (
-/obj/structure/platform{
-	layer = 2.7
-	},
+/obj/structure/platform,
 /turf/open/floor/mainship/silver{
 	dir = 10
 	},
@@ -3216,9 +3214,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/hangar_lower)
 "aiO" = (
-/obj/structure/platform{
-	layer = 2.7
-	},
+/obj/structure/platform,
 /turf/open/floor/mainship/silver,
 /area/mainship/command/cic)
 "aiP" = (
@@ -5588,9 +5584,7 @@
 /turf/open/floor/wood,
 /area/mainship/living/pilotbunks)
 "apm" = (
-/obj/structure/platform{
-	layer = 2.7
-	},
+/obj/structure/platform,
 /turf/open/floor/mainship/silver{
 	dir = 6
 	},
@@ -7679,12 +7673,8 @@
 	},
 /area/mainship/hallways/repair_bay)
 "auZ" = (
-/obj/structure/bookcase{
-	icon_state = "book-5";
-	name = "medical manuals bookcase";
-	opacity = 0
-	},
 /obj/item/book/manual/medical_diagnostics_manual,
+/obj/structure/bookcase,
 /turf/open/floor/wood/fancy,
 /area/mainship/living/commandbunks)
 "ava" = (
@@ -10309,11 +10299,6 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/engineering/ce_room)
 "aBW" = (
-/obj/structure/bookcase{
-	icon_state = "book-5";
-	name = "law and engineering manuals bookcase";
-	opacity = 0
-	},
 /obj/item/book/manual/marine_law,
 /obj/item/book/manual/detective,
 /obj/item/book/manual/security_space_law,
@@ -10323,6 +10308,7 @@
 /obj/item/book/manual/ripley_build_and_repair,
 /obj/item/book/manual/engineering_hacking,
 /obj/item/book/manual/marine_law,
+/obj/structure/bookcase,
 /turf/open/floor/wood/fancy,
 /area/mainship/living/commandbunks)
 "aBX" = (
@@ -14019,7 +14005,7 @@
 /area/mainship/living/courtroom)
 "aMj" = (
 /obj/structure/window/framed/mainship/hull,
-/turf/closed/wall/mainship,
+/turf/open/floor/plating,
 /area/mainship/squads/squad_gunner)
 "aMk" = (
 /obj/structure/table/wood,
@@ -16001,10 +15987,7 @@
 /turf/open/floor/carpet,
 /area/mainship/living/commandbunks)
 "aRn" = (
-/obj/structure/bookcase{
-	icon_state = "book-5";
-	pixel_x = -3
-	},
+/obj/structure/bookcase,
 /turf/open/floor/wood/fancy,
 /area/mainship/living/commandbunks)
 "aRo" = (
@@ -21011,7 +20994,7 @@
 "hpY" = (
 /obj/structure/window/framed/mainship/hull,
 /obj/structure/cable,
-/turf/closed/wall/mainship,
+/turf/open/floor/plating,
 /area/mainship/squads/squad_gunner)
 "hsh" = (
 /obj/structure/cable,
@@ -24110,11 +24093,6 @@
 	dir = 4
 	},
 /area/mainship/living/pilotbunks)
-"saW" = (
-/obj/structure/cable,
-/obj/structure/cable,
-/turf/open/floor/tile/dark2,
-/area/mainship/living/basketball)
 "sba" = (
 /obj/structure/cable,
 /turf/open/floor/mainship/black{
@@ -36682,7 +36660,7 @@ aVS
 awr
 aYI
 avU
-saW
+uys
 uys
 yeE
 poo
