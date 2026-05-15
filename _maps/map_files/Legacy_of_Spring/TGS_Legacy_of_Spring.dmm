@@ -1200,6 +1200,12 @@
 /obj/machinery/door/firedoor{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 2
+	},
+/obj/machinery/holosign/surgery{
+	id = "or1sign"
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/operating_room_one)
 "adc" = (
@@ -2470,6 +2476,11 @@
 /area/mainship/command/corporateliaison)
 "agx" = (
 /obj/machinery/bioprinter/stocked,
+/obj/machinery/holosign_switch{
+	id = "or1sign";
+	pixel_x = 19;
+	pixel_y = -4
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/operating_room_one)
 "agy" = (
@@ -3665,9 +3676,11 @@
 /area/mainship/shipboard/firing_range)
 "ajJ" = (
 /obj/structure/window/framed/mainship/white,
-/obj/machinery/door/firedoor/mainship,
-/obj/machinery/door/poddoor/shutters/opened/medbay{
-	dir = 2
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/mainship/medical/chemistry)
@@ -4077,6 +4090,7 @@
 /obj/machinery/door/firedoor/multi_tile{
 	dir = 1
 	},
+/obj/machinery/door/poddoor/shutters/mainship/open/medical,
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/lower_medical)
 "akL" = (
@@ -5840,6 +5854,12 @@
 	dir = 8
 	},
 /obj/effect/ai_node,
+/obj/machinery/door_control/old/medbay{
+	id = "medbay_lockdown";
+	name = "Medbay Lockdown";
+	pixel_x = -13;
+	pixel_y = 13
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/upper_medical)
 "aps" = (
@@ -6637,6 +6657,12 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 8
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/upper_medical)
 "arx" = (
@@ -6737,6 +6763,12 @@
 /area/mainship/living/mechpilotquarters)
 "arH" = (
 /obj/machinery/smartfridge/chemistry,
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 8
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/chemistry)
 "arI" = (
@@ -7752,6 +7784,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor{
+	dir = 2
+	},
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
 	dir = 2
 	},
 /turf/open/floor/mainship/sterile/dark,
@@ -8974,12 +9009,18 @@
 "axp" = (
 /obj/structure/table/mainship/nometal,
 /obj/machinery/door_control/old/cic/armory{
-	pixel_x = -4;
-	pixel_y = 2
+	pixel_x = -7;
+	pixel_y = -2
 	},
 /obj/machinery/door_control/old/cic{
-	pixel_x = 6;
-	pixel_y = 2
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/machinery/door_control/old/medbay{
+	id = "medbay_lockdown";
+	name = "Medbay Lockdown";
+	pixel_x = -7;
+	pixel_y = 9
 	},
 /turf/open/floor/mainship/silver,
 /area/mainship/command/cic)
@@ -9598,6 +9639,12 @@
 /obj/machinery/door/firedoor{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 2
+	},
+/obj/machinery/holosign/surgery{
+	id = "or2sign"
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/operating_room_two)
 "ayZ" = (
@@ -10154,6 +10201,12 @@
 	dir = 2
 	},
 /obj/structure/window/framed/mainship/white,
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/mainship/medical/chemistry)
 "aAz" = (
@@ -12619,6 +12672,9 @@
 /area/mainship/squads/squad_gunner)
 "aGZ" = (
 /obj/structure/window/framed/mainship/white/toughened,
+/obj/machinery/door/firedoor/mainship{
+	dir = 2
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/operating_room_two)
 "aHa" = (
@@ -13720,6 +13776,12 @@
 	},
 /obj/machinery/door/firedoor{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 2
+	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 2
 	},
 /turf/open/floor/mainship/sterile/side{
 	dir = 4
@@ -15169,6 +15231,12 @@
 "aNL" = (
 /obj/structure/table/mainship/nometal,
 /obj/machinery/door/window{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/mainship{
 	dir = 8
 	},
 /turf/open/floor/mainship/sterile/dark,
@@ -17267,6 +17335,9 @@
 /area/mainship/engineering/ce_room)
 "aSW" = (
 /obj/structure/window/framed/mainship/white/toughened,
+/obj/machinery/door/firedoor/mainship{
+	dir = 2
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/operating_room_one)
 "aSX" = (
@@ -17926,6 +17997,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/door/firedoor{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 2
+	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 2
 	},
 /turf/open/floor/mainship/sterile/side{
 	dir = 8
@@ -19017,6 +19094,11 @@
 /obj/machinery/optable,
 /obj/item/reagent_containers/blood/OMinus,
 /obj/item/tank/anesthetic,
+/obj/machinery/holosign_switch{
+	id = "or2sign";
+	pixel_x = 19;
+	pixel_y = -4
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/operating_room_two)
 "aXK" = (
@@ -20199,6 +20281,24 @@
 	},
 /turf/open/floor/tile/dark2,
 /area/mainship/living/basketball)
+"bBn" = (
+/obj/machinery/door/airlock/mainship/medical/glass/free_access,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 8
+	},
+/turf/open/floor/mainship/sterile/dark,
+/area/mainship/medical/chemistry)
 "bBC" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
@@ -22677,6 +22777,17 @@
 	dir = 1
 	},
 /area/mainship/hallways/hangar_lower)
+"hnO" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/mainship/open/medical,
+/turf/open/floor/mainship/sterile/dark,
+/area/mainship/medical/lower_medical)
 "hpY" = (
 /obj/structure/window/framed/mainship/hull,
 /obj/structure/cable,
@@ -22820,6 +22931,16 @@
 	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/lower_medical)
+"hBl" = (
+/obj/structure/window/framed/mainship/white,
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 8
+	},
+/turf/open/floor/mainship/sterile/dark,
+/area/mainship/medical/upper_medical)
 "hBr" = (
 /obj/structure/disposalpipe/segment,
 /turf/closed/wall/mainship,
@@ -24592,6 +24713,13 @@
 	},
 /turf/open/floor/mainship/floor,
 /area/mainship/shipboard/weapon_room)
+"lmt" = (
+/obj/structure/window/framed/mainship/white/toughened,
+/obj/machinery/door/firedoor/mainship{
+	dir = 8
+	},
+/turf/open/floor/mainship/sterile/dark,
+/area/mainship/medical/operating_room_two)
 "lmE" = (
 /obj/machinery/door/airlock/multi_tile/mainship/blackgeneric,
 /obj/machinery/door/poddoor/mainship/ai/exterior{
@@ -24656,6 +24784,16 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/living/chapel)
+"lrX" = (
+/obj/structure/window/framed/mainship/white,
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 8
+	},
+/turf/open/floor/mainship/sterile/dark,
+/area/mainship/medical/chemistry)
 "lsh" = (
 /obj/machinery/camera/autoname{
 	dir = 4
@@ -27665,6 +27803,9 @@
 /obj/machinery/door/firedoor{
 	dir = 2
 	},
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 2
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/lower_medical)
 "ssC" = (
@@ -28232,6 +28373,13 @@
 	},
 /turf/open/floor/plating,
 /area/mainship/hull/upper/upper_port_hull)
+"tuH" = (
+/obj/structure/window/framed/mainship/white/toughened,
+/obj/machinery/door/firedoor/mainship{
+	dir = 8
+	},
+/turf/open/floor/mainship/sterile/dark,
+/area/mainship/medical/operating_room_one)
 "tvG" = (
 /obj/structure/sign/mait{
 	dir = 8
@@ -29311,6 +29459,12 @@
 /obj/effect/ai_node,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/upper_ert)
+"vCu" = (
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 2
+	},
+/turf/closed/wall/mainship/white,
+/area/mainship/medical/lower_medical)
 "vCx" = (
 /obj/effect/turf_decal/warning_stripes/thin,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
@@ -29448,6 +29602,12 @@
 /obj/structure/window/framed/mainship/white,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 2
+	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 2
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/upper_medical)
 "vQO" = (
@@ -29518,6 +29678,16 @@
 	dir = 4
 	},
 /area/mainship/hallways/hangar)
+"vYQ" = (
+/obj/structure/window/framed/mainship/white,
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 2
+	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 2
+	},
+/turf/open/floor/mainship/sterile/dark,
+/area/mainship/medical/upper_medical)
 "vZj" = (
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 8
@@ -29741,6 +29911,21 @@
 	dir = 4
 	},
 /area/mainship/hallways/hangar/droppod)
+"wuy" = (
+/obj/machinery/door/airlock/mainship/medical/glass/free_access{
+	dir = 1
+	},
+/obj/machinery/door/firedoor{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 2
+	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 2
+	},
+/turf/open/floor/mainship/sterile/dark,
+/area/mainship/medical/upper_medical)
 "wwC" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -30398,6 +30583,12 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/mainship/open/medical{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/mainship{
+	dir = 8
+	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/upper_medical)
 "xJC" = (
@@ -35463,7 +35654,7 @@ nSo
 aBu
 aVh
 aeW
-arF
+vCu
 uvi
 mkw
 asJ
@@ -36407,7 +36598,7 @@ arF
 akC
 akC
 arF
-dPc
+hnO
 akK
 aLT
 aLT
@@ -49411,9 +49602,9 @@ ano
 nIw
 ahv
 aMw
-aGZ
-aGZ
-aGZ
+lmt
+lmt
+lmt
 aMw
 anO
 alo
@@ -49684,7 +49875,7 @@ aGF
 ano
 nIw
 ajy
-aeR
+wuy
 aiy
 xvU
 nei
@@ -49958,7 +50149,7 @@ aXU
 ano
 lZe
 avz
-aeR
+wuy
 aMS
 dGC
 vgK
@@ -50233,9 +50424,9 @@ ano
 iSd
 aVd
 aIH
-aSW
-aSW
-aSW
+tuH
+tuH
+tuH
 aIH
 anO
 alo
@@ -50251,7 +50442,7 @@ wbD
 hcN
 dcV
 app
-ahB
+vYQ
 aPk
 lQB
 krF
@@ -51059,19 +51250,19 @@ aDD
 aDD
 aDD
 ans
-ahB
+hBl
 qtr
 xJv
-ahB
+hBl
 arw
 atJ
-ahB
+hBl
 aHb
 aAy
 arH
 aNL
-aiP
-aZC
+lrX
+bBn
 ajJ
 aHb
 aRR
