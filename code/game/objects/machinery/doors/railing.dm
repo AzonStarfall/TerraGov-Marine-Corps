@@ -21,7 +21,7 @@
 		COMSIG_ATOM_EXIT = PROC_REF(on_try_exit)
 	)
 	AddElement(/datum/element/connect_loc, connections)
-
+	
 	if(dir == SOUTH)
 		closed_layer = ABOVE_MOB_LAYER
 	layer = closed_layer
