@@ -23014,9 +23014,6 @@
 	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/lower_medical)
-"hoB" = (
-/turf/open/floor/mainship/floor,
-/area/mainship/hallways/lower_ert)
 "hpY" = (
 /obj/structure/window/framed/mainship/hull,
 /obj/structure/cable,
@@ -26865,7 +26862,6 @@
 /turf/open/floor/mainship/stripesquare,
 /area/mainship/hallways/hangar/droppod)
 "oXv" = (
-/obj/machinery/conveyor,
 /obj/structure/disposalpipe/segment/corner{
 	dir = 1
 	},
@@ -26874,6 +26870,10 @@
 	},
 /obj/machinery/door/window{
 	dir = 1
+	},
+/obj/machinery/conveyor{
+	dir = 2;
+	id = "garbage"
 	},
 /turf/open/floor/plating,
 /area/mainship/hull/lower/lower_starboard_hull)
@@ -37415,7 +37415,7 @@ aFh
 kLj
 ghR
 apS
-hoB
+aFh
 aFh
 aVO
 aFh
