@@ -21994,6 +21994,28 @@
 	},
 /turf/open/floor/mainship/blue,
 /area/mainship/hallways/upper_hallway)
+"heD" = (
+/obj/effect/turf_decal/warning_stripes/thin{
+	dir = 1;
+	pixel_y = 1
+	},
+/obj/machinery/landinglight/alamo{
+	dir = 1;
+	pixel_y = -4
+	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 8
+	},
+/turf/open/floor/mainship/yellow_cargo/arrow{
+	dir = 1
+	},
+/area/mainship/hallways/hangar)
 "heL" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -22665,6 +22687,15 @@
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 1;
 	pixel_y = 1
+	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 4
 	},
 /turf/open/floor/mainship/yellow_cargo/arrow{
 	dir = 1
@@ -53928,7 +53959,7 @@ aif
 aif
 rcr
 acZ
-atR
+heD
 als
 iSd
 far
