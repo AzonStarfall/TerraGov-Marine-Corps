@@ -19008,7 +19008,9 @@
 /obj/machinery/light/mainship{
 	dir = 4
 	},
-/turf/open/floor/mainship/mono,
+/turf/open/floor/mainship/silver{
+	dir = 4
+	},
 /area/mainship/hallways/upper_hallway)
 "bME" = (
 /obj/structure/cable,
@@ -19126,7 +19128,6 @@
 	},
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -19575,7 +19576,6 @@
 	},
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/structure/transport/linear/public,
@@ -19609,7 +19609,6 @@
 /obj/structure/window/framed/mainship/requisitions,
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /turf/open/floor/mainship/floor,
@@ -19763,7 +19762,6 @@
 /obj/machinery/vending/weapon,
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/structure/supply_drop,
@@ -19855,7 +19853,6 @@
 "dxd" = (
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/machinery/vending/cargo_supply,
@@ -20757,7 +20754,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/structure/bed/chair/comfy{
@@ -21303,7 +21299,6 @@
 /obj/structure/supply_drop,
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /turf/open/floor/mainship/floor,
@@ -21476,7 +21471,6 @@
 	},
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/machinery/elevator_control_panel/directional/east{
@@ -21714,12 +21708,6 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/living/grunt_rnr)
-"gIH" = (
-/obj/machinery/firealarm{
-	dir = 4
-	},
-/turf/open/floor/mainship/mono,
-/area/mainship/hallways/upper_hallway)
 "gII" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -22419,7 +22407,6 @@
 	},
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
@@ -22740,7 +22727,6 @@
 	},
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/structure/transport/linear/public,
@@ -22838,7 +22824,6 @@
 	},
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/structure/window/reinforced{
@@ -24123,7 +24108,6 @@
 	},
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /turf/open/floor/mainship/mono,
@@ -25471,7 +25455,9 @@
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
-/turf/open/floor/mainship/mono,
+/turf/open/floor/mainship/silver{
+	dir = 4
+	},
 /area/mainship/hallways/upper_hallway)
 "nnu" = (
 /obj/machinery/light/mainship,
@@ -26158,7 +26144,6 @@
 	},
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
@@ -27011,7 +26996,6 @@
 	},
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /turf/open/floor/mainship/mono,
@@ -27142,6 +27126,10 @@
 /obj/effect/landmark/start/job/assault_crewman,
 /turf/open/floor/wood,
 /area/mainship/living/pilotbunks)
+"qko" = (
+/obj/structure/closet/firecloset/full,
+/turf/open/floor/mainship/mono,
+/area/mainship/shipboard/weapon_room)
 "qkw" = (
 /obj/structure/bed/chair/nometal,
 /obj/effect/landmark/start/job/pilotofficer,
@@ -27287,7 +27275,6 @@
 	},
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
@@ -27318,12 +27305,6 @@
 	dir = 9
 	},
 /area/mainship/command/self_destruct)
-"qDU" = (
-/obj/machinery/light/mainship{
-	dir = 8
-	},
-/turf/open/floor/mainship/mono,
-/area/mainship/hallways/upper_hallway)
 "qDV" = (
 /obj/structure/sign/mait{
 	dir = 4
@@ -27525,7 +27506,6 @@
 	},
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/machinery/elevator_control_panel/directional/west{
@@ -27584,7 +27564,6 @@
 /obj/machinery/vending/marineFood,
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/machinery/vending/MarineMed,
@@ -27663,6 +27642,11 @@
 	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/upper_medical)
+"rjf" = (
+/turf/open/floor/mainship/silver{
+	dir = 4
+	},
+/area/mainship/hallways/upper_hallway)
 "rjJ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
@@ -27672,11 +27656,6 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/shipboard/brig)
-"rkS" = (
-/turf/closed/wall/mainship/bulletproof{
-	soft_armor = list("melee" = 0, "bullet" = s, "laser" = 200, "energy" = 200, "bomb" = 200, "bio" = 0, "fire" = 0, "acid" = 0)
-	},
-/area/mainship/shipboard/firing_range)
 "rlu" = (
 /obj/structure/bed,
 /obj/item/bedsheet/medical,
@@ -27859,7 +27838,6 @@
 	},
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/structure/cable,
@@ -28129,7 +28107,6 @@
 /obj/machinery/door/firedoor/multi_tile,
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -28683,7 +28660,6 @@
 	},
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
@@ -31368,7 +31344,6 @@
 	},
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/structure/rack/nometal,
@@ -31450,7 +31425,6 @@
 /obj/machinery/vending/MarineMed,
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/machinery/vending/weapon,
@@ -31694,7 +31668,6 @@
 /obj/structure/closet/secure_closet/req_officer,
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/effect/landmark/start/job/requisitionsofficer,
@@ -31848,7 +31821,6 @@
 "yio" = (
 /obj/merge_conflict_marker{
 	name = "---Merge Conflict Marker---";
-	
 	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/machinery/vending/marineFood,
@@ -52393,17 +52365,17 @@ aAX
 alI
 aof
 sCe
-ajs
-ajs
-qDU
-ajs
-ajs
-ajs
-ajs
-qDU
-gIH
-ajs
-ajs
+aJr
+aJr
+dyg
+aJr
+aJr
+aJr
+aJr
+dyg
+yjr
+aJr
+aJr
 sCe
 aTt
 azh
@@ -52667,17 +52639,17 @@ aWz
 cMK
 ajQ
 sCe
-ajs
-ajs
+rjf
+rjf
 bMf
-ajs
+rjf
 nlS
-ajs
-ajs
+rjf
+rjf
 bMf
-ajs
-ajs
-ajs
+rjf
+rjf
+rjf
 sCe
 amC
 afA
@@ -52807,7 +52779,7 @@ lCo
 aho
 aho
 aSH
-abB
+qko
 aSH
 aho
 aho
@@ -54746,7 +54718,7 @@ jTr
 hVf
 vHq
 aCB
-rkS
+aCB
 aCB
 aCB
 vcv
