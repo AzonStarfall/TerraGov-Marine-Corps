@@ -7,6 +7,10 @@
 	GLOB.alive_living_list -= src
 	LAZYREMOVE(GLOB.ssd_living_mobs, src)
 	GLOB.key_to_time_of_death[key] = world.time
+	if(iszombie(src))
+		GLOB.key_to_time_of_zombie_death[key] = world.time
+	else
+		GLOB.key_to_time_of_zombie_death[key] = null
 	if(job?.job_flags & (JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE))//Only some jobs cost you your respawn timer.
 		GLOB.key_to_time_of_role_death[key] = world.time
 	return ..()

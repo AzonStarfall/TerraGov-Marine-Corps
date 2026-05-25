@@ -63,6 +63,13 @@
 	if(new_mob.stat == DEAD)
 		to_chat(owner, span_warning("You cannot join if the mob is dead."))
 		return FALSE
+
+	if(iszombiecrashgamemode(SSticker.mode) && iszombie(new_mob) && !dead_owner.started_as_observer)
+		var/last_zombie_death_time = GLOB.key_to_time_of_zombie_death[owner.key]
+		if(last_zombie_death_time && (last_zombie_death_time + TIME_BEFORE_TAKING_ZOMBIE_BODY > world.time))
+			to_chat(owner, span_warning("You died as a zombie too recently to take another zombie body. Please wait [round((last_zombie_death_time + TIME_BEFORE_TAKING_ZOMBIE_BODY - world.time) * 0.1)] second\s."))
+			return FALSE
+
 	if(tgui_alert(owner, "Are you sure you want to take " + new_mob.real_name +" ("+new_mob.job.title+")?", "Take SSD mob", list("Yes", "No",)) != "Yes")
 		return
 
